@@ -26,7 +26,7 @@
       background: #f5f5f5;
       padding: 18px;
       border-radius: 10px;
-      margin-bottom: 25px;
+      margin-bottom: 18px; /* slightly tighter since button comes next */
       border: 1px solid #e2e2e2;
     }
 
@@ -35,13 +35,12 @@
       line-height: 1.5;
     }
 
-    <div style="margin: 0 0 14px;">
-  <a
-    href="https://docs.google.com/spreadsheets/d/e/2PACX-1vT52G37krYJ9CGdOPl0sd4hb2fca0ua0ITD2wBG4XemqD78rIseibSqd6_wardFKKDKlE5gpIHFtok6/pubhtml?gid=0&single=true"
-    target="_blank"
-    rel="noopener"
-    style="
-      display:inline-block;
+    .open-sheet {
+      margin: 0 0 14px;
+    }
+
+    .open-sheet a {
+      display: inline-block;
       padding: 12px 14px;
       border-radius: 12px;
       border: 1px solid #ddd;
@@ -49,12 +48,8 @@
       color: #111;
       background: #fff;
       font-weight: 700;
-    "
-  >
-    Open the ticket sheet in a new tab
-  </a>
-</div>
-    
+    }
+
     iframe {
       width: 100%;
       height: 1000px;
@@ -91,13 +86,21 @@
     <h1>2026 Red Sox Tickets</h1>
 
     <div class="info-box">
-      <p>This page is for friends.</p>
-      <p>Text me the game(s) you want and how many tickets.</p>
-      <p>First to confirm gets them until paid.</p>
-      <p>Payment: Venmo / Zelle.</p>
+      <p>Under construction.</p>
+      <p>Last updated: Feb. 27, 2026</p>
     </div>
 
-    <iframe 
+    <div class="open-sheet">
+      <a
+        href="https://docs.google.com/spreadsheets/d/e/2PACX-1vT52G37krYJ9CGdOPl0sd4hb2fca0ua0ITD2wBG4XemqD78rIseibSqd6_wardFKKDKlE5gpIHFtok6/pubhtml?gid=0&single=true"
+        target="_blank"
+        rel="noopener"
+      >
+        Open the ticket sheet in a new tab
+      </a>
+    </div>
+
+    <iframe
       src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT52G37krYJ9CGdOPl0sd4hb2fca0ua0ITD2wBG4XemqD78rIseibSqd6_wardFKKDKlE5gpIHFtok6/pubhtml?gid=0&single=true">
     </iframe>
 
