@@ -26,7 +26,7 @@
       background: #f5f5f5;
       padding: 18px;
       border-radius: 10px;
-      margin-bottom: 18px; /* slightly tighter since button comes next */
+      margin-bottom: 18px;
       border: 1px solid #e2e2e2;
     }
 
@@ -36,13 +36,13 @@
     }
 
     .open-sheet {
-      margin: 0 0 14px;
+      margin: 0 0 20px;
     }
 
     .open-sheet a {
       display: inline-block;
-      padding: 12px 14px;
-      border-radius: 12px;
+      padding: 14px 16px;
+      border-radius: 14px;
       border: 1px solid #ddd;
       text-decoration: none;
       color: #111;
@@ -57,6 +57,7 @@
       border-radius: 14px;
     }
 
+    /* Mobile adjustments */
     @media (max-width: 700px) {
       body {
         margin: 16px;
@@ -67,26 +68,38 @@
       }
 
       iframe {
-        height: 1200px;
+        display: none;   /* HIDE EMBED ON PHONES */
       }
 
-      .info-box {
+      .mobile-note {
+        display: block;
         font-size: 15px;
+        margin-bottom: 12px;
       }
     }
+
+    .mobile-note {
+      display: none;
+    }
+
   </style>
 </head>
 
 <body>
   <div class="container">
 
-    <!-- Red Sox accent bar -->
     <div style="height:4px; background:#BD3039; border-radius:2px; margin-bottom:18px;"></div>
 
-    <h1>2026 Red Sox Tickets - Under Construction</h1>
+    <h1>2026 Red Sox Tickets</h1>
 
     <div class="info-box">
+      <p>Text me the game(s) you want + quantity.</p>
+      <p>I’ll confirm availability.</p>
       <p>Last updated: Feb. 27, 2026</p>
+    </div>
+
+    <div class="mobile-note">
+      For the best experience on mobile, open the sheet directly:
     </div>
 
     <div class="open-sheet">
@@ -95,7 +108,7 @@
         target="_blank"
         rel="noopener"
       >
-        Open the ticket sheet in a new tab
+        Open the ticket sheet
       </a>
     </div>
 
