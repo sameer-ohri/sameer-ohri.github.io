@@ -110,6 +110,20 @@
       font-weight: 400 !important;
     }
 
+    /* Division tables: fixed-width data columns for even distribution */
+    #divisions table {
+      table-layout: fixed;
+    }
+    #divisions table th:not(:first-child),
+    #divisions table td:not(:first-child) {
+      width: 68px;
+    }
+
+    /* Mobile: hide Division and Pennant% columns from league table */
+    @media (max-width: 599px) {
+      .hide-mobile { display: none; }
+    }
+
     #error {
       color: #c0392b;
       font-size: 14px;
@@ -132,11 +146,11 @@
         <thead>
           <tr>
             <th>Team</th>
-            <th>Division</th>
+            <th class="hide-mobile">Division</th>
             <th>Proj&nbsp;W</th>
-            <th>Playoff%</th>
+            <th>POFF%</th>
             <th>Div%</th>
-            <th>Pennant%</th>
+            <th class="hide-mobile">Pennant%</th>
             <th class="ws">WS%</th>
           </tr>
         </thead>
@@ -170,11 +184,11 @@
     function leagueRow(t) {
       return `<tr>
         <td>${t.team}</td>
-        <td class="div-col">${t.division}</td>
+        <td class="div-col hide-mobile">${t.division}</td>
         <td>${fmtW(t.avg_wins)}</td>
         <td>${fmtPct(t.playoff_pct)}</td>
         <td>${fmtPct(t.division_pct)}</td>
-        <td>${fmtPct(t.pennant_pct)}</td>
+        <td class="hide-mobile">${fmtPct(t.pennant_pct)}</td>
         <td class="ws">${fmtPct(t.ws_pct)}</td>
       </tr>`;
     }
@@ -209,7 +223,7 @@
               <th>W</th>
               <th>L</th>
               <th>Pct</th>
-              <th>Playoff%</th>
+              <th>POFF%</th>
               <th>Div%</th>
             </tr>
           </thead>
