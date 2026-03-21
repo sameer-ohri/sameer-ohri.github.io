@@ -116,7 +116,7 @@
     }
     #divisions table th:first-child,
     #divisions table td:first-child {
-      width: 34%;
+      width: 28%;
     }
 
     /* Mobile: hide Division and Pennant% columns from league table */
@@ -147,10 +147,10 @@
           <tr>
             <th>Team</th>
             <th class="hide-mobile">Division</th>
-            <th>Proj&nbsp;W</th>
+            <th>W</th>
             <th>POFF%</th>
             <th>Div%</th>
-            <th class="hide-mobile">Pennant%</th>
+            <th>PEN%</th>
             <th class="ws">WS%</th>
           </tr>
         </thead>
@@ -181,14 +181,17 @@
       return `${months[+m - 1]} ${+d}`;
     }
 
+    const DISPLAY_NAME = { "Diamondbacks": "D'Backs" };
+    function displayTeam(name) { return DISPLAY_NAME[name] || name; }
+
     function leagueRow(t) {
       return `<tr>
-        <td>${t.team}</td>
+        <td>${displayTeam(t.team)}</td>
         <td class="div-col hide-mobile">${t.division}</td>
         <td>${fmtW(t.avg_wins)}</td>
         <td>${fmtPct(t.playoff_pct)}</td>
         <td>${fmtPct(t.division_pct)}</td>
-        <td class="hide-mobile">${fmtPct(t.pennant_pct)}</td>
+        <td>${fmtPct(t.pennant_pct)}</td>
         <td class="ws">${fmtPct(t.ws_pct)}</td>
       </tr>`;
     }
@@ -198,7 +201,7 @@
       const l = (162 - w).toFixed(1);
       const pct = (w / 162).toFixed(3).replace(/^0/, "");
       return `<tr>
-        <td>${t.team}</td>
+        <td>${displayTeam(t.team)}</td>
         <td>${w.toFixed(1)}</td>
         <td>${l}</td>
         <td>${pct}</td>
