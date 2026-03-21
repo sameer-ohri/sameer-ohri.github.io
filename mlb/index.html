@@ -110,13 +110,13 @@
       font-weight: 400 !important;
     }
 
-    /* Division tables: fixed-width data columns for even distribution */
+    /* Division tables: percentage widths so Team col doesn't dominate */
     #divisions table {
       table-layout: fixed;
     }
-    #divisions table th:not(:first-child),
-    #divisions table td:not(:first-child) {
-      width: 68px;
+    #divisions table th:first-child,
+    #divisions table td:first-child {
+      width: 34%;
     }
 
     /* Mobile: hide Division and Pennant% columns from league table */
