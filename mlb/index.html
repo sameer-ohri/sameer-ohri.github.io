@@ -180,13 +180,16 @@
     }
 
     function divisionRow(t) {
+      const w = t.avg_wins;
+      const l = (162 - w).toFixed(1);
+      const pct = (w / 162).toFixed(3).replace(/^0/, "");
       return `<tr>
         <td>${t.team}</td>
-        <td>${fmtW(t.avg_wins)}</td>
+        <td>${w.toFixed(1)}</td>
+        <td>${l}</td>
+        <td>${pct}</td>
         <td>${fmtPct(t.playoff_pct)}</td>
         <td>${fmtPct(t.division_pct)}</td>
-        <td>${fmtPct(t.pennant_pct)}</td>
-        <td class="ws">${fmtPct(t.ws_pct)}</td>
       </tr>`;
     }
 
@@ -203,11 +206,11 @@
           <thead>
             <tr>
               <th>Team</th>
-              <th>Proj&nbsp;W</th>
+              <th>W</th>
+              <th>L</th>
+              <th>Pct</th>
               <th>Playoff%</th>
               <th>Div%</th>
-              <th>Pennant%</th>
-              <th class="ws">WS%</th>
             </tr>
           </thead>
           <tbody>${rows}</tbody>
@@ -222,9 +225,8 @@
       })
       .then(data => {
         // Subtitle
-        const n = (data.n_sims / 1000).toFixed(0);
         document.getElementById("subtitle").textContent =
-          `${Number(data.n_sims).toLocaleString()} simulations · Through ${formatDate(data.date)}`;
+          `Based on 100,000 simulations - Updated ${formatDate(data.date)}.`;
 
         // League table (already sorted by ws_pct from exporter)
         document.getElementById("league-body").innerHTML =
