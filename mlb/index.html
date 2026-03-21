@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow,noarchive" />
+  <title>2026 MLB Season Projections</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      margin: 0;
+      padding: 24px 16px;
+      background: #f7f8fa;
+      color: #111;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .accent-bar {
+      height: 5px;
+      background: #002D72;
+      border-radius: 3px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 22px;
+      font-weight: 600;
+      margin: 0 0 4px;
+      letter-spacing: -0.3px;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      color: #666;
+      margin: 0 0 24px;
+    }
+
+    h2 {
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: #444;
+      margin: 0 0 10px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 14px;
+      border: 1px solid #e2e6ea;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .card-header {
+      padding: 14px 16px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    thead th {
+      padding: 8px 6px;
+      text-align: right;
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      color: #888;
+      border-bottom: 1px solid #e8eaed;
+    }
+
+    thead th:first-child {
+      text-align: left;
+    }
+
+    tbody td {
+      padding: 9px 6px;
+      text-align: right;
+      border-bottom: 1px solid #f0f2f5;
+    }
+
+    tbody td:first-child {
+      text-align: left;
+      font-weight: 500;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    td.ws, th.ws {
+      color: #002D72;
+      font-weight: 700;
+    }
+
+    /* League table: Division column is smaller */
+    .div-col {
+      font-size: 11px;
+      color: #888;
+      font-weight: 400 !important;
+    }
+
+    #error {
+      color: #c0392b;
+      font-size: 14px;
+      margin: 40px 0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="accent-bar"></div>
+    <h1>2026 MLB Season Projections</h1>
+    <p class="subtitle" id="subtitle">Loading…</p>
+
+    <!-- League overview card -->
+    <div class="card">
+      <div class="card-header"><h2>MLB</h2></div>
+      <table id="league-table">
+        <thead>
+          <tr>
+            <th>Team</th>
+            <th>Division</th>
+            <th>Proj&nbsp;W</th>
+            <th>Playoff%</th>
+            <th>Div%</th>
+            <th>Pennant%</th>
+            <th class="ws">WS%</th>
+          </tr>
+        </thead>
+        <tbody id="league-body"></tbody>
+      </table>
+    </div>
+
+    <!-- Division cards injected by JS -->
+    <div id="divisions"></div>
+
+    <div id="error" style="display:none"></div>
+
+  </div>
+
+  <script>
+    const DIVISIONS = [
+      "AL East", "AL Central", "AL West",
+      "NL East", "NL Central", "NL West"
+    ];
+
+    function fmtW(v)   { return v.toFixed(1); }
+    function fmtPct(v) { return v.toFixed(1) + "%"; }
+
+    function formatDate(iso) {
+      const [, m, d] = iso.split("-");
+      const months = ["Jan","Feb","Mar","Apr","May","Jun",
+                      "Jul","Aug","Sep","Oct","Nov","Dec"];
+      return `${months[+m - 1]} ${+d}`;
+    }
+
+    function leagueRow(t) {
+      return `<tr>
+        <td>${t.team}</td>
+        <td class="div-col">${t.division}</td>
+        <td>${fmtW(t.avg_wins)}</td>
+        <td>${fmtPct(t.playoff_pct)}</td>
+        <td>${fmtPct(t.division_pct)}</td>
+        <td>${fmtPct(t.pennant_pct)}</td>
+        <td class="ws">${fmtPct(t.ws_pct)}</td>
+      </tr>`;
+    }
+
+    function divisionRow(t) {
+      return `<tr>
+        <td>${t.team}</td>
+        <td>${fmtW(t.avg_wins)}</td>
+        <td>${fmtPct(t.playoff_pct)}</td>
+        <td>${fmtPct(t.division_pct)}</td>
+        <td>${fmtPct(t.pennant_pct)}</td>
+        <td class="ws">${fmtPct(t.ws_pct)}</td>
+      </tr>`;
+    }
+
+    function buildDivisionCard(divName, teams) {
+      const rows = teams
+        .slice()
+        .sort((a, b) => b.avg_wins - a.avg_wins)
+        .map(divisionRow)
+        .join("");
+
+      return `<div class="card">
+        <div class="card-header"><h2>${divName}</h2></div>
+        <table>
+          <thead>
+            <tr>
+              <th>Team</th>
+              <th>Proj&nbsp;W</th>
+              <th>Playoff%</th>
+              <th>Div%</th>
+              <th>Pennant%</th>
+              <th class="ws">WS%</th>
+            </tr>
+          </thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>`;
+    }
+
+    fetch("data/team_results_latest.json")
+      .then(r => {
+        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+        return r.json();
+      })
+      .then(data => {
+        // Subtitle
+        const n = (data.n_sims / 1000).toFixed(0);
+        document.getElementById("subtitle").textContent =
+          `${Number(data.n_sims).toLocaleString()} simulations · Through ${formatDate(data.date)}`;
+
+        // League table (already sorted by ws_pct from exporter)
+        document.getElementById("league-body").innerHTML =
+          data.teams.map(leagueRow).join("");
+
+        // Division cards
+        const byDiv = {};
+        for (const t of data.teams) {
+          if (!byDiv[t.division]) byDiv[t.division] = [];
+          byDiv[t.division].push(t);
+        }
+
+        document.getElementById("divisions").innerHTML =
+          DIVISIONS.map(d => buildDivisionCard(d, byDiv[d] || [])).join("");
+      })
+      .catch(err => {
+        document.getElementById("subtitle").textContent = "";
+        const el = document.getElementById("error");
+        el.style.display = "block";
+        el.textContent = `Failed to load data: ${err.message}`;
+      });
+  </script>
+</body>
+</html>
