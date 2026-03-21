@@ -116,7 +116,7 @@
     }
     #divisions table th:first-child,
     #divisions table td:first-child {
-      width: 28%;
+      width: 22%;
     }
 
     /* Mobile: hide Division and Pennant% columns from league table */
@@ -235,10 +235,18 @@
       </div>`;
     }
 
-    fetch("data/team_results_latest.json")
+    const S3_URL    = "https://sameer-ohri.s3.us-east-2.amazonaws.com/mlb/latest/team_results_latest.json";
+    const LOCAL_URL = "data/team_results_latest.json";
+
+    fetch(S3_URL)
       .then(r => {
+        if (!r.ok) throw new Error(`S3 HTTP ${r.status}`);
+        return r.json();
+      })
+      .catch(() => fetch(LOCAL_URL).then(r => {
         if (!r.ok) throw new Error(`HTTP ${r.status}`);
         return r.json();
+      }))
       })
       .then(data => {
         // Subtitle
