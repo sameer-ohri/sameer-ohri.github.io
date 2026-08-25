@@ -1,5 +1,5 @@
 {
-  "date": "2026-08-23",
+  "date": "2026-08-24",
   "n_sims": 700000,
   "teams": [
     {
@@ -7,7 +7,7 @@
       "division": "NL West",
       "avg_wins": 99.2,
       "playoff_pct": 100.0,
-      "division_pct": 99.8,
+      "division_pct": 99.9,
       "pennant_pct": 37.5,
       "ws_pct": 24.7
     },
@@ -16,141 +16,141 @@
       "division": "NL Central",
       "avg_wins": 98.2,
       "playoff_pct": 100.0,
-      "division_pct": 92.8,
-      "pennant_pct": 25.9,
-      "ws_pct": 15.5
+      "division_pct": 91.2,
+      "pennant_pct": 25.8,
+      "ws_pct": 15.3
     },
     {
       "team": "Rays",
       "division": "AL East",
-      "avg_wins": 93.3,
+      "avg_wins": 93.9,
       "playoff_pct": 100.0,
-      "division_pct": 65.9,
-      "pennant_pct": 24.0,
-      "ws_pct": 10.4
+      "division_pct": 69.9,
+      "pennant_pct": 24.8,
+      "ws_pct": 10.8
     },
     {
       "team": "Yankees",
       "division": "AL East",
       "avg_wins": 91.1,
       "playoff_pct": 99.9,
-      "division_pct": 28.7,
-      "pennant_pct": 21.8,
-      "ws_pct": 9.9
+      "division_pct": 24.4,
+      "pennant_pct": 20.9,
+      "ws_pct": 9.4
     },
     {
       "team": "Red Sox",
       "division": "AL East",
-      "avg_wins": 87.8,
-      "playoff_pct": 98.0,
-      "division_pct": 5.4,
-      "pennant_pct": 14.3,
+      "avg_wins": 88.3,
+      "playoff_pct": 98.5,
+      "division_pct": 5.6,
+      "pennant_pct": 14.5,
       "ws_pct": 6.2
     },
     {
       "team": "Braves",
       "division": "NL East",
-      "avg_wins": 91.8,
-      "playoff_pct": 97.7,
-      "division_pct": 67.3,
-      "pennant_pct": 10.6,
-      "ws_pct": 5.6
-    },
-    {
-      "team": "Phillies",
-      "division": "NL East",
-      "avg_wins": 89.6,
-      "playoff_pct": 90.2,
-      "division_pct": 32.5,
-      "pennant_pct": 10.1,
-      "ws_pct": 5.6
+      "avg_wins": 91.9,
+      "playoff_pct": 98.4,
+      "division_pct": 71.9,
+      "pennant_pct": 10.8,
+      "ws_pct": 5.8
     },
     {
       "team": "Cubs",
       "division": "NL Central",
-      "avg_wins": 91.4,
-      "playoff_pct": 96.7,
-      "division_pct": 7.2,
-      "pennant_pct": 10.1,
-      "ws_pct": 5.4
+      "avg_wins": 91.9,
+      "playoff_pct": 98.5,
+      "division_pct": 8.8,
+      "pennant_pct": 10.7,
+      "ws_pct": 5.7
+    },
+    {
+      "team": "Phillies",
+      "division": "NL East",
+      "avg_wins": 89.0,
+      "playoff_pct": 89.7,
+      "division_pct": 28.0,
+      "pennant_pct": 9.6,
+      "ws_pct": 5.3
     },
     {
       "team": "White Sox",
       "division": "AL Central",
-      "avg_wins": 84.4,
-      "playoff_pct": 83.3,
-      "division_pct": 72.6,
-      "pennant_pct": 14.1,
-      "ws_pct": 4.7
+      "avg_wins": 83.8,
+      "playoff_pct": 77.3,
+      "division_pct": 64.8,
+      "pennant_pct": 12.4,
+      "ws_pct": 4.2
     },
     {
       "team": "Mariners",
       "division": "AL West",
-      "avg_wins": 79.2,
-      "playoff_pct": 31.9,
-      "division_pct": 25.8,
-      "pennant_pct": 5.0,
+      "avg_wins": 79.8,
+      "playoff_pct": 35.3,
+      "division_pct": 27.9,
+      "pennant_pct": 5.7,
+      "ws_pct": 2.5
+    },
+    {
+      "team": "Rangers",
+      "division": "AL West",
+      "avg_wins": 80.9,
+      "playoff_pct": 48.9,
+      "division_pct": 40.7,
+      "pennant_pct": 6.0,
       "ws_pct": 2.1
+    },
+    {
+      "team": "Guardians",
+      "division": "AL Central",
+      "avg_wins": 81.3,
+      "playoff_pct": 45.9,
+      "division_pct": 23.7,
+      "pennant_pct": 5.9,
+      "ws_pct": 2.0
     },
     {
       "team": "Astros",
       "division": "AL West",
       "avg_wins": 80.3,
-      "playoff_pct": 43.6,
-      "division_pct": 36.2,
-      "pennant_pct": 5.2,
-      "ws_pct": 1.9
-    },
-    {
-      "team": "Rangers",
-      "division": "AL West",
-      "avg_wins": 80.3,
-      "playoff_pct": 45.2,
-      "division_pct": 37.9,
-      "pennant_pct": 5.4,
-      "ws_pct": 1.9
-    },
-    {
-      "team": "Guardians",
-      "division": "AL Central",
-      "avg_wins": 80.8,
-      "playoff_pct": 41.2,
-      "division_pct": 17.9,
-      "pennant_pct": 5.1,
-      "ws_pct": 1.8
+      "playoff_pct": 39.6,
+      "division_pct": 31.3,
+      "pennant_pct": 4.8,
+      "ws_pct": 1.7
     },
     {
       "team": "Padres",
       "division": "NL West",
-      "avg_wins": 87.0,
-      "playoff_pct": 69.1,
-      "division_pct": 0.2,
-      "pennant_pct": 3.7,
-      "ws_pct": 1.7
-    },
-    {
-      "team": "Diamondbacks",
-      "division": "NL West",
-      "avg_wins": 84.9,
-      "playoff_pct": 34.5,
-      "division_pct": 0.0,
-      "pennant_pct": 1.7,
-      "ws_pct": 0.8
+      "avg_wins": 86.4,
+      "playoff_pct": 67.5,
+      "division_pct": 0.1,
+      "pennant_pct": 3.5,
+      "ws_pct": 1.6
     },
     {
       "team": "Twins",
       "division": "AL Central",
-      "avg_wins": 78.6,
-      "playoff_pct": 16.3,
-      "division_pct": 7.3,
-      "pennant_pct": 1.7,
-      "ws_pct": 0.6
+      "avg_wins": 79.0,
+      "playoff_pct": 18.9,
+      "division_pct": 9.8,
+      "pennant_pct": 2.0,
+      "ws_pct": 0.7
+    },
+    {
+      "team": "Diamondbacks",
+      "division": "NL West",
+      "avg_wins": 84.4,
+      "playoff_pct": 33.1,
+      "division_pct": 0.0,
+      "pennant_pct": 1.6,
+      "ws_pct": 0.7
     },
     {
       "team": "Blue Jays",
       "division": "AL East",
       "avg_wins": 79.3,
-      "playoff_pct": 21.2,
+      "playoff_pct": 19.8,
       "division_pct": 0.0,
       "pennant_pct": 1.5,
       "ws_pct": 0.5
@@ -159,27 +159,36 @@
       "team": "Orioles",
       "division": "AL East",
       "avg_wins": 78.3,
-      "playoff_pct": 12.7,
+      "playoff_pct": 11.5,
       "division_pct": 0.0,
-      "pennant_pct": 1.0,
-      "ws_pct": 0.4
+      "pennant_pct": 0.9,
+      "ws_pct": 0.3
     },
     {
       "team": "Tigers",
       "division": "AL Central",
-      "avg_wins": 76.8,
-      "playoff_pct": 6.5,
-      "division_pct": 2.3,
-      "pennant_pct": 0.8,
-      "ws_pct": 0.3
+      "avg_wins": 76.3,
+      "playoff_pct": 4.3,
+      "division_pct": 1.7,
+      "pennant_pct": 0.5,
+      "ws_pct": 0.2
     },
     {
       "team": "Marlins",
       "division": "NL East",
-      "avg_wins": 81.6,
-      "playoff_pct": 7.4,
+      "avg_wins": 81.1,
+      "playoff_pct": 6.6,
       "division_pct": 0.1,
       "pennant_pct": 0.3,
+      "ws_pct": 0.1
+    },
+    {
+      "team": "Cardinals",
+      "division": "NL Central",
+      "avg_wins": 80.9,
+      "playoff_pct": 4.6,
+      "division_pct": 0.0,
+      "pennant_pct": 0.2,
       "ws_pct": 0.1
     },
     {
@@ -194,7 +203,7 @@
     {
       "team": "Angels",
       "division": "AL West",
-      "avg_wins": 65.2,
+      "avg_wins": 64.7,
       "playoff_pct": 0.0,
       "division_pct": 0.0,
       "pennant_pct": 0.0,
@@ -203,7 +212,7 @@
     {
       "team": "Athletics",
       "division": "AL West",
-      "avg_wins": 63.8,
+      "avg_wins": 63.3,
       "playoff_pct": 0.0,
       "division_pct": 0.0,
       "pennant_pct": 0.0,
@@ -212,8 +221,8 @@
     {
       "team": "Nationals",
       "division": "NL East",
-      "avg_wins": 75.2,
-      "playoff_pct": 0.0,
+      "avg_wins": 75.7,
+      "playoff_pct": 0.1,
       "division_pct": 0.0,
       "pennant_pct": 0.0,
       "ws_pct": 0.0
@@ -228,19 +237,10 @@
       "ws_pct": 0.0
     },
     {
-      "team": "Cardinals",
-      "division": "NL Central",
-      "avg_wins": 80.9,
-      "playoff_pct": 3.5,
-      "division_pct": 0.0,
-      "pennant_pct": 0.1,
-      "ws_pct": 0.0
-    },
-    {
       "team": "Pirates",
       "division": "NL Central",
-      "avg_wins": 78.5,
-      "playoff_pct": 0.8,
+      "avg_wins": 79.1,
+      "playoff_pct": 1.5,
       "division_pct": 0.0,
       "pennant_pct": 0.1,
       "ws_pct": 0.0
@@ -248,7 +248,7 @@
     {
       "team": "Reds",
       "division": "NL Central",
-      "avg_wins": 74.8,
+      "avg_wins": 74.3,
       "playoff_pct": 0.0,
       "division_pct": 0.0,
       "pennant_pct": 0.0,
@@ -257,7 +257,7 @@
     {
       "team": "Giants",
       "division": "NL West",
-      "avg_wins": 65.5,
+      "avg_wins": 66.0,
       "playoff_pct": 0.0,
       "division_pct": 0.0,
       "pennant_pct": 0.0,
@@ -266,7 +266,7 @@
     {
       "team": "Rockies",
       "division": "NL West",
-      "avg_wins": 62.9,
+      "avg_wins": 62.4,
       "playoff_pct": 0.0,
       "division_pct": 0.0,
       "pennant_pct": 0.0,
