@@ -153,14 +153,15 @@
         { weekday: "long", month: "long", day: "numeric" });
     }
 
-    // "2026-10-31 11:04" → "Updated Oct. 31, 11:04 a.m. ET" (AP-style month; the file's
+    // "2026-10-31 11:04" → "Updated Saturday, Oct. 31, 11:04 a.m. ET" (AP-style month; the file's
     // time is the publishing Mac's, Eastern). No time in the file → date only.
     function updatedLine(stamp, fallbackIso) {
       const [day, hm] = String(stamp || "").split(" ");
       const [y, mo, d] = (day || fallbackIso).split("-").map(Number);
       const MONTHS = ["Jan.", "Feb.", "March", "April", "May", "June", "July", "Aug.",
         "Sept.", "Oct.", "Nov.", "Dec."];
-      let line = `Updated ${MONTHS[mo - 1]} ${d}`;
+      const weekday = new Date(y, mo - 1, d).toLocaleDateString("en-US", { weekday: "long" });
+      let line = `Updated ${weekday}, ${MONTHS[mo - 1]} ${d}`;
       const [h, m] = (hm || "").split(":").map(Number);
       if (Number.isFinite(h) && Number.isFinite(m)) {
         const h12 = h % 12 === 0 ? 12 : h % 12;
