@@ -152,7 +152,7 @@
       background: #fff;
       border: 1px solid #e2e6ea;
       border-radius: 12px;
-      padding: 11px 14px 11px 11px;
+      padding: 11px 11px 11px 14px;
       display: flex;
       gap: 11px;
       align-items: center;
@@ -210,6 +210,9 @@
     }
 
     .game.big .teams { font-weight: 700; }
+
+    /* One line if the matchup fits; otherwise it breaks only before the "@" */
+    .game .nw { white-space: nowrap; }
 
     .game .at {
       color: #999;
@@ -332,14 +335,14 @@
     function card(g) {
       const tv = g.tv ? `<span class="tv">${esc(g.tv)}</span>` : "";
       return `<div class="game ${g.big ? "big" : ""}">
-        <span class="qual" style="${qualStyle(g.qual)}">${g.qual == null ? "" : g.qual.toFixed(1)}</span>
         <div class="body">
           <div class="top"><span class="when">${esc(niceTime(g.tip))} ${tv}</span></div>
-          <div class="teams">${esc(g.visitor)}</div>
-          <div class="teams"><span class="at">@</span> ${esc(g.home)}</div>
+          <div class="teams"><span class="nw">${esc(g.visitor)}</span>
+            <span class="nw"><span class="at">@</span> ${esc(g.home)}</span></div>
           <div class="pred">${esc(g.prediction)}</div>
           ${g.venue ? `<div class="venue">${esc(g.venue)}</div>` : ""}
         </div>
+        <span class="qual" style="${qualStyle(g.qual)}">${g.qual == null ? "" : g.qual.toFixed(1)}</span>
       </div>`;
     }
 
