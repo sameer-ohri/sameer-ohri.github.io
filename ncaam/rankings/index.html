@@ -177,7 +177,7 @@
         { weekday: "long", month: "long", day: "numeric" });
     }
 
-    // "2026-10-31 11:04" → "Updated Saturday, Oct. 31, 11:04 a.m. ET" (AP-style month; the file's
+    // "2026-10-31 11:04" → "Updated Saturday, Oct. 31 · 11:04 a.m. ET" (AP-style month; the file's
     // time is the publishing Mac's, Eastern). No time in the file → date only.
     function updatedLine(stamp, fallbackIso) {
       const [day, hm] = String(stamp || "").split(" ");
@@ -189,7 +189,7 @@
       const [h, m] = (hm || "").split(":").map(Number);
       if (Number.isFinite(h) && Number.isFinite(m)) {
         const h12 = h % 12 === 0 ? 12 : h % 12;
-        line += `, ${h12}:${String(m).padStart(2, "0")} ${h < 12 ? "a.m." : "p.m."} ET`;
+        line += ` · ${h12}:${String(m).padStart(2, "0")} ${h < 12 ? "a.m." : "p.m."} ET`;
       }
       return line;
     }
