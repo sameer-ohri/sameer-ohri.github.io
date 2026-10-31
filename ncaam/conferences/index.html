@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow,noarchive" />
+  <title>NCAAM Conference Rankings</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      margin: 0;
+      padding: 24px 16px;
+      background: #f7f8fa;
+      color: #111;
+    }
+
+    .container { max-width: 480px; margin: 0 auto; }
+
+    .accent-bar {
+      height: 5px;
+      background: #002868;
+      border-radius: 3px;
+      margin-bottom: 20px;
+    }
+
+    h1 { font-size: 22px; font-weight: 600; margin: 0 0 4px; letter-spacing: -0.3px; text-align: center; }
+
+    .subtitle { font-size: 13px; color: #666; margin: 0 0 16px; text-align: center; }
+
+    .crosslink { font-size: 13px; margin: 0 0 16px; text-align: center; }
+    .crosslink a { color: #002868; }
+
+    .stale {
+      font-size: 13px;
+      color: #8a5a00;
+      background: #fff4d6;
+      border: 1px solid #f0dca0;
+      border-radius: 8px;
+      padding: 8px 12px;
+      margin: 0 0 16px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      background: #fff;
+      border: 1px solid #e3e6eb;
+      border-radius: 10px;
+    }
+
+    table { border-collapse: collapse; width: auto; margin: 0 auto; font-size: 13px; }
+
+    th, td {
+      padding: 9px 22px;
+      text-align: center;
+      white-space: nowrap;
+      border-bottom: 1px solid #eef0f3;
+    }
+
+    th {
+      background: #f2f4f7;
+      font-weight: 600;
+      color: #444;
+      cursor: pointer;
+      user-select: none;
+      position: sticky;
+      top: 0;
+    }
+
+    th.active::after { content: " \25B2"; font-size: 10px; }
+    th.active.desc::after { content: " \25BC"; }
+
+    td.rk { color: #666; }
+    tr:hover td { background: #f7fafd; }
+
+    td.conf { color: #222; }
+
+    .empty-line { color: #666; padding: 16px; margin: 0; text-align: center; }
+
+    /* Phone: tighter cells so all four columns fit without sideways scrolling */
+    @media (max-width: 480px) {
+      th, td { padding: 9px 10px; }
+      th.avg, td.avg, th.conf, td.conf { white-space: normal; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="accent-bar"></div>
+    <h1>NCAAM Conference Rankings</h1>
+    <p class="subtitle" id="subtitle"></p>
+    <p class="crosslink"><a href="/ncaam/rankings/">Rankings</a></p>
+    <div id="stale"></div>
+
+    <div class="table-wrap">
+      <table>
+        <thead id="head"></thead>
+        <tbody id="body"></tbody>
+      </table>
+    </div>
+    <p class="empty-line" id="empty" hidden>No conferences yet.</p>
+  </div>
+
+  <script>
+    const DATA_URL = "../rankings/data/rankings_latest.json";
+
+    function esc(s) {
+      return String(s ?? "").replace(/[&<>"']/g, c =>
+        ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+    }
+
+    function longDate(iso) {
+      const [y, m, d] = iso.split("-").map(Number);
+      return new Date(y, m - 1, d).toLocaleDateString("en-US",
+        { weekday: "long", month: "long", day: "numeric" });
+    }
+
+    // One row per conference, worked out from the team rankings in the browser.
+    // Average place = mean of the place numbers of its teams (lowest is best).
+    function conferenceRows(teams) {
+      const groups = new Map();
+      for (const t of teams) {
+        if (!t.conf) continue;
+        if (!groups.has(t.conf)) groups.set(t.conf, []);
+        groups.get(t.conf).push(t.rk);
+      }
+      const rows = [...groups].map(([conf, places]) => ({
+        conf,
+        teams: places.length,
+        avg: places.reduce((sum, p) => sum + p, 0) / places.length,
+      }));
+      rows.sort((a, b) => a.avg - b.avg || a.conf.localeCompare(b.conf));
+      rows.forEach((r, i) => { r.rk = i + 1; });
+      return rows;
+    }
+
+    // Columns: Rank, Conference, Average place, Teams. Click a header to sort; default is Rank.
+    const STATE = { key: "rk", desc: false };
+    let ROWS = [];
+
+    const COLS = [["rk", "Rank", ""], ["conf", "Conference", "conf"], ["avg", "Average place", "avg"], ["teams", "Teams", ""]];
+
+    function sortedRows() {
+      const k = STATE.key, dir = STATE.desc ? -1 : 1;
+      return ROWS.slice().sort((a, b) => {
+        const x = a[k], y = b[k];
+        if (typeof x === "string") return dir * x.localeCompare(y) || a.rk - b.rk;
+        return dir * (x - y) || a.rk - b.rk;
+      });
+    }
+
+    function renderHead() {
+      document.getElementById("head").innerHTML = "<tr>" + COLS.map(([key, label, extra]) => {
+        const cls = [extra, STATE.key === key ? "active" : "", STATE.key === key && STATE.desc ? "desc" : ""]
+          .filter(Boolean).join(" ");
+        return `<th class="${cls}" data-key="${esc(key)}">${esc(label)}</th>`;
+      }).join("") + "</tr>";
+    }
+
+    function renderBody() {
+      document.getElementById("body").innerHTML = sortedRows().map(r => `<tr>
+          <td class="rk">${r.rk}</td>
+          <td class="conf">${esc(r.conf)}</td>
+          <td class="avg">${r.avg.toFixed(1)}</td>
+          <td class="teams">${r.teams}</td>
+        </tr>`).join("");
+    }
+
+    function render() {
+      renderHead();
+      renderBody();
+    }
+
+    document.getElementById("head").addEventListener("click", e => {
+      const th = e.target.closest("th");
+      if (!th) return;
+      const key = th.dataset.key;
+      // Text sorts A to Z; numbers start with the best (lowest) value first.
+      if (STATE.key === key) STATE.desc = !STATE.desc;
+      else { STATE.key = key; STATE.desc = false; }
+      render();
+    });
+
+    fetch(DATA_URL, { cache: "no-cache" })
+      .then(r => r.json())
+      .then(d => {
+        const sub = document.getElementById("subtitle");
+        sub.textContent = longDate(d.date);
+        if (d.source_date && d.source_date !== d.date) {
+          document.getElementById("stale").innerHTML =
+            `<p class="stale">These rankings are from ${esc(longDate(d.source_date))}. Today's are not in yet.</p>`;
+        }
+        ROWS = conferenceRows(d.teams);
+        if (!ROWS.length) {
+          sub.textContent = "No rankings published yet.";
+          document.getElementById("empty").hidden = false;
+          return;
+        }
+        render();
+      })
+      .catch(() => {
+        document.getElementById("subtitle").textContent = "Could not load the rankings.";
+      });
+  </script>
+</body>
+</html>

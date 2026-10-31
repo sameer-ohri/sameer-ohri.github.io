@@ -13,15 +13,19 @@
       color: #111;
       text-align: center;
     }
-    ul { list-style: none; padding: 0; margin: 0; }
-    li { margin: 10px 0; }
+    .group { margin: 0 0 24px; }
+    .label { font-size: 13px; color: #888; margin: 0 0 4px; }
     a { color: #002868; font-size: 17px; }
   </style>
 </head>
 <body>
-  <ul>
-    <li><a href="/ncaam/rankings/">NCAAM Rankings</a></li>
-    <li><a href="/mlb/">MLB Season Projections</a></li>
-  </ul>
+  <div class="group">
+    <div class="label">NCAAM</div>
+    <div><a href="/ncaam/rankings/">Rankings</a> · <a href="/ncaam/conferences/">Conferences</a></div>
+  </div>
+  <div class="group">
+    <div class="label">MLB</div>
+    <div><a href="/mlb/">Season Projections</a></div>
+  </div>
 </body>
 </html>
