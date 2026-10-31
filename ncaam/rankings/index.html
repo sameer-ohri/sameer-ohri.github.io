@@ -109,13 +109,13 @@
 
     .empty-line { color: #666; padding: 16px; margin: 0; text-align: center; }
 
-    /* Phone: tighter cells so all three columns fit without sideways scrolling */
+    /* Phone: bigger text (15px), narrower page edges and cells, so all four columns fit
+       without sideways scrolling; the few longest team names wrap on the narrowest phones. */
     @media (max-width: 480px) {
-      th, td { padding: 9px 10px; }
-      td.conf, th.conf { white-space: normal; }
-      th, td { font-size: 12px; }
-      th, td { padding: 9px 6px; }
+      body { padding-left: 10px; padding-right: 10px; }
+      th, td { font-size: 15px; padding: 10px 5px; }
       td.rec { padding-left: 4px; padding-right: 4px; }
+      td.team { white-space: normal; }
     }
   </style>
 </head>
@@ -173,12 +173,25 @@
       return line;
     }
 
+    // Short conference names for the table (the dropdown keeps the full names).
+    // A name not listed here shows in full.
+    const CONF_SHORT = {
+      "America East": "AmEast", "American Athletic": "AAC", "Atlantic 10": "A-10",
+      "Coastal Athletic": "CAA", "Conference USA": "C-USA", "Horizon League": "Horizon",
+      "Ivy League": "Ivy", "Metro Atlantic": "MAAC", "Mid-American": "MAC",
+      "Missouri Valley": "MVC", "Mountain West": "MWC", "Northeast": "NEC",
+      "Ohio Valley": "OVC", "Patriot League": "Patriot", "Southern": "SoCon",
+      "Summit League": "Summit", "United Athletic": "UAC", "West Coast": "WCC",
+    };
+    const confShort = name => CONF_SHORT[name] || name;
+
     // Columns: Rk, Team, Conference, D1 Record. Click a header to sort; default is Rk.
     const STATE = { key: "rk", desc: false, query: "", conf: "" };
     let DATA = null;
 
     // A blank conference (unknown) counts as missing, so it sorts last.
     function value(t, key) {
+      if (key === "conf") return t.conf ? confShort(t.conf) : null;
       // Record sorts by win percentage, then wins (0-0 teams count as 0%).
       if (key === "rec") {
         const g = t.w + t.l;
@@ -200,7 +213,7 @@
     }
 
     function renderHead() {
-      const cols = [["rk", "Rk"], ["team", "Team"], ["conf", "Conference"], ["rec", "Record"]];
+      const cols = [["rk", "Rk"], ["team", "Team"], ["conf", "Conf"], ["rec", "Rec"]];
       document.getElementById("head").innerHTML = "<tr>" + cols.map(([key, label]) => {
         const cls = [key === "team" ? "team" : key === "conf" ? "conf" : "", STATE.key === key ? "active" : "", STATE.key === key && STATE.desc ? "desc" : ""]
           .filter(Boolean).join(" ");
@@ -216,7 +229,7 @@
       body.innerHTML = teams.map(t => `<tr>
           <td class="rk">${t.rk}</td>
           <td class="team">${esc(t.team)}</td>
-          <td class="conf">${esc(t.conf)}</td>
+          <td class="conf" title="${esc(t.conf)}">${esc(confShort(t.conf))}</td>
           <td class="rec">${t.w ?? 0}-${t.l ?? 0}</td>
         </tr>`).join("");
       document.getElementById("empty").hidden = teams.length > 0;
