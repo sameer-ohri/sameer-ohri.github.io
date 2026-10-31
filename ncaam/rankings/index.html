@@ -83,7 +83,6 @@
     td.team, th.team { text-align: left; position: sticky; left: 0; background: #fff; }
     th.team { background: #f2f4f7; }
     td.rk { color: #666; }
-    td.avg { font-weight: 600; }
     tr:hover td { background: #f7fafd; }
     tr:hover td.team { background: #f7fafd; }
 
@@ -122,13 +121,12 @@
         { weekday: "long", month: "long", day: "numeric" });
     }
 
-    // Columns: Rk, Team, Avg, then one per model. Click a header to sort; default is Rk.
+    // Columns: Rk, Team. Click a header to sort; default is Rk.
     const STATE = { key: "rk", desc: false, query: "" };
     let DATA = null;
 
     function value(t, key) {
-      if (key === "rk" || key === "avg" || key === "team") return t[key];
-      return t.ranks[key];
+      return t[key];
     }
 
     function sortedTeams() {
@@ -144,7 +142,7 @@
     }
 
     function renderHead() {
-      const cols = [["rk", "Rk"], ["team", "Team"], ["avg", "Avg"], ...DATA.models.map(m => [m, m])];
+      const cols = [["rk", "Rk"], ["team", "Team"]];
       document.getElementById("head").innerHTML = "<tr>" + cols.map(([key, label]) => {
         const cls = [key === "team" ? "team" : "", STATE.key === key ? "active" : "", STATE.key === key && STATE.desc ? "desc" : ""]
           .filter(Boolean).join(" ");
@@ -159,8 +157,6 @@
       body.innerHTML = teams.map(t => `<tr>
           <td class="rk">${t.rk}</td>
           <td class="team">${esc(t.team)}</td>
-          <td class="avg">${t.avg == null ? "" : t.avg.toFixed(1)}</td>
-          ${DATA.models.map(m => `<td>${t.ranks[m] ?? ""}</td>`).join("")}
         </tr>`).join("");
       document.getElementById("empty").hidden = teams.length > 0;
     }
@@ -190,7 +186,7 @@
       .then(d => {
         DATA = d;
         const sub = document.getElementById("subtitle");
-        sub.textContent = `${longDate(d.date)} · Average of ${d.models.length} public models`;
+        sub.textContent = longDate(d.date);
         if (d.source_date && d.source_date !== d.date) {
           document.getElementById("stale").innerHTML =
             `<p class="stale">These rankings are from ${esc(longDate(d.source_date))}. Today's are not in yet.</p>`;
