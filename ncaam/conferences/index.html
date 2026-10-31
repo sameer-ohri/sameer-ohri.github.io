@@ -75,6 +75,7 @@
     tr:hover td { background: #f7fafd; }
 
     td.conf { color: #222; }
+    td.conf a { color: #002868; }
 
     .empty-line { color: #666; padding: 16px; margin: 0; text-align: center; }
 
@@ -161,7 +162,7 @@
     function renderBody() {
       document.getElementById("body").innerHTML = sortedRows().map(r => `<tr>
           <td class="rk">${r.rk}</td>
-          <td class="conf">${esc(r.conf)}</td>
+          <td class="conf"><a href="/ncaam/rankings/?conf=${encodeURIComponent(r.conf)}">${esc(r.conf)}</a></td>
           <td class="avg">${r.avg.toFixed(1)}</td>
           <td class="teams">${r.teams}</td>
         </tr>`).join("");

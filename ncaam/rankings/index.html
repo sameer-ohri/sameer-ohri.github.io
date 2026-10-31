@@ -90,6 +90,9 @@
     tr:hover td.team { background: #f7fafd; }
 
     td.conf { color: #666; }
+    td.rec { color: #444; }
+
+    .note { font-size: 12px; color: #666; text-align: center; margin: 12px 0 0; }
 
     .empty-line { color: #666; padding: 16px; margin: 0; text-align: center; }
 
@@ -97,6 +100,8 @@
     @media (max-width: 480px) {
       th, td { padding: 9px 10px; }
       td.conf, th.conf { white-space: normal; }
+      th, td { font-size: 12px; }
+      th, td { padding: 9px 6px; }
     }
   </style>
 </head>
@@ -119,6 +124,7 @@
         <tbody id="body"></tbody>
       </table>
     </div>
+    <p class="note">Records count games between Division I teams only.</p>
     <p class="empty-line" id="empty" hidden>No teams match that search.</p>
   </div>
 
@@ -136,12 +142,17 @@
         { weekday: "long", month: "long", day: "numeric" });
     }
 
-    // Columns: Rk, Team, Conference. Click a header to sort; default is Rk.
+    // Columns: Rk, Team, Conference, D1 Record. Click a header to sort; default is Rk.
     const STATE = { key: "rk", desc: false, query: "", conf: "" };
     let DATA = null;
 
     // A blank conference (unknown) counts as missing, so it sorts last.
     function value(t, key) {
+      // Record sorts by win percentage, then wins (0-0 teams count as 0%).
+      if (key === "rec") {
+        const g = t.w + t.l;
+        return (g ? t.w / g : 0) * 1000 + t.w / 1000;
+      }
       return t[key] || null;
     }
 
@@ -158,7 +169,7 @@
     }
 
     function renderHead() {
-      const cols = [["rk", "Rk"], ["team", "Team"], ["conf", "Conference"]];
+      const cols = [["rk", "Rk"], ["team", "Team"], ["conf", "Conference"], ["rec", "D1 Record"]];
       document.getElementById("head").innerHTML = "<tr>" + cols.map(([key, label]) => {
         const cls = [key === "team" ? "team" : key === "conf" ? "conf" : "", STATE.key === key ? "active" : "", STATE.key === key && STATE.desc ? "desc" : ""]
           .filter(Boolean).join(" ");
@@ -175,6 +186,7 @@
           <td class="rk">${t.rk}</td>
           <td class="team">${esc(t.team)}</td>
           <td class="conf">${esc(t.conf)}</td>
+          <td class="rec">${t.w ?? 0}-${t.l ?? 0}</td>
         </tr>`).join("");
       document.getElementById("empty").hidden = teams.length > 0;
     }
@@ -201,6 +213,11 @@
 
     document.getElementById("conf-filter").addEventListener("change", e => {
       STATE.conf = e.target.value;
+      // Keep the address in step so a filtered view can be shared.
+      const url = new URL(location.href);
+      if (STATE.conf) url.searchParams.set("conf", STATE.conf);
+      else url.searchParams.delete("conf");
+      history.replaceState(null, "", url);
       renderBody();
     });
 
@@ -228,6 +245,13 @@
           return;
         }
         fillConferences();
+        // ?conf=<name> presets the dropdown; unknown names are ignored.
+        const want = new URLSearchParams(location.search).get("conf");
+        const sel = document.getElementById("conf-filter");
+        if (want && [...sel.options].some(o => o.value === want)) {
+          sel.value = want;
+          STATE.conf = want;
+        }
         render();
       })
       .catch(() => {
