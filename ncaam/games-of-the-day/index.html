@@ -155,7 +155,7 @@
       padding: 11px 14px 11px 11px;
       display: flex;
       gap: 11px;
-      align-items: flex-start;
+      align-items: center;
     }
 
     .game .body {
@@ -193,13 +193,12 @@
     }
 
     .qual {
-      font-size: 13px;
-      font-weight: 600;
+      font-size: 18px;
+      font-weight: 700;
       color: #111;
-      border-radius: 6px;
-      padding: 3px 0;
-      width: 46px;
-      margin-top: 1px;
+      border-radius: 10px;
+      padding: 11px 0;
+      width: 62px;
       text-align: center;
       flex: none;
     }
@@ -319,16 +318,15 @@
       return `${h12}${m ? ":" + String(m).padStart(2, "0") : ""} ${h < 12 ? "a.m." : "p.m."}`;
     }
 
-    // Same colors as the Excel attachment: red (low) → yellow (median) → green (high),
-    // by each game's percentile among ALL of the day's games.
-    const RED = [248, 105, 107], YELLOW = [255, 235, 132], GREEN = [99, 190, 123];
+    // One color, pale blue (lowest) → navy (highest), by each game's percentile among
+    // the games being shown (so Big games still range from light to dark).
+    const LIGHT = [226, 233, 245], DARK = [0, 40, 104];
     function mix(a, b, t) { return a.map((v, i) => Math.round(v + (b[i] - v) * t)); }
     let SORTED = [];
     function qualStyle(q) {
-      if (q == null || SORTED.length < 2) return "";
-      const p = SORTED.indexOf(q) / (SORTED.length - 1);
-      const c = p < 0.5 ? mix(RED, YELLOW, p / 0.5) : mix(YELLOW, GREEN, (p - 0.5) / 0.5);
-      return `background: rgb(${c.join(",")})`;
+      if (q == null) return "";
+      const p = SORTED.length < 2 ? 1 : SORTED.indexOf(q) / (SORTED.length - 1);
+      return `background: rgb(${mix(LIGHT, DARK, p).join(",")}); color: ${p > 0.45 ? "#fff" : "#002868"}`;
     }
 
     function card(g) {
@@ -337,7 +335,8 @@
         <span class="qual" style="${qualStyle(g.qual)}">${g.qual == null ? "" : g.qual.toFixed(1)}</span>
         <div class="body">
           <div class="top"><span class="when">${esc(niceTime(g.tip))} ${tv}</span></div>
-          <div class="teams">${esc(g.visitor)} <span class="at">@</span> ${esc(g.home)}</div>
+          <div class="teams">${esc(g.visitor)}</div>
+          <div class="teams"><span class="at">@</span> ${esc(g.home)}</div>
           <div class="pred">${esc(g.prediction)}</div>
           ${g.venue ? `<div class="venue">${esc(g.venue)}</div>` : ""}
         </div>
@@ -379,6 +378,7 @@
     function render() {
       const now = easternNow(DATA.date);
       const games = DATA.games.filter(g => STATE.filter === "all" || g.big);
+      SORTED = games.map(g => g.qual).filter(q => q != null).sort((a, b) => a - b);
 
       if (now.date !== DATA.date) {
         document.getElementById("sections").innerHTML = games.length
@@ -454,7 +454,6 @@
           return;
         }
 
-        SORTED = data.games.map(g => g.qual).filter(q => q != null).sort((a, b) => a - b);
         // Start on big games; a day with none starts on all games instead.
         if (!data.games.some(g => g.big)) STATE.filter = "all";
         document.getElementById("btn-big").onclick = () => { STATE.filter = "big"; render(); };
