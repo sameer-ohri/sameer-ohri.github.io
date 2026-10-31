@@ -145,7 +145,7 @@
     }
 
     @media (min-width: 700px) {
-      .list { grid-template-columns: 1fr 1fr; }
+      .list { grid-template-columns: repeat(2, minmax(0, 1fr)); }  /* always equal halves */
     }
 
     .game {
@@ -190,6 +190,7 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      min-width: 0;
     }
 
     .qual {
@@ -226,6 +227,7 @@
     }
 
     .game .venue {
+      overflow-wrap: anywhere;
       font-size: 11px;
       color: #999;
       margin-top: 3px;
@@ -333,10 +335,13 @@
     }
 
     function card(g) {
-      const tv = g.tv ? `<span class="tv">${esc(g.tv)}</span>` : "";
+      // Several channels ("Summit League Network, Midco Sports Plus 2, …"): show the first,
+      // the full list on hover.
+      const first = String(g.tv || "").split(",")[0].trim();
+      const tv = first ? `<span class="tv" title="${esc(g.tv)}">${esc(first)}</span>` : "";
       return `<div class="game ${g.big ? "big" : ""}">
         <div class="body">
-          <div class="top"><span class="when">${esc(niceTime(g.tip))} ${tv}</span></div>
+          <div class="top"><span class="when"><span class="nw">${esc(niceTime(g.tip))}</span> ${tv}</span></div>
           <div class="teams"><span class="nw">${esc(g.visitor)}</span>
             <span class="nw"><span class="at">@</span> ${esc(g.home)}</span></div>
           <div class="pred">${esc(g.prediction)}</div>
