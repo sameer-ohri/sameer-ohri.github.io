@@ -27,6 +27,13 @@
 
     .container { max-width: 480px; margin: 0 auto; }
 
+    /* Freeze panes (phone and laptop): the page is exactly one screen tall, so the title,
+       links, search and filter stay put and only the table scrolls, with its header row
+       pinned (th is sticky). dvh follows the phone's address bar; vh is the fallback. */
+    body { height: 100vh; height: 100dvh; overflow: hidden; display: flex; flex-direction: column; }
+    .container { width: 100%; flex: 1; min-height: 0; display: flex; flex-direction: column; }
+    .container > * { flex-shrink: 0; }
+
     .accent-bar {
       height: 5px;
       background: #002868;
@@ -66,8 +73,10 @@
       background: #fff;
     }
 
+    /* Shrinks to fit the screen (a short filtered list keeps its own height). */
+    .container > .table-wrap { flex: 0 1 auto; min-height: 0; }
     .table-wrap {
-      overflow-x: auto;
+      overflow: auto;
       background: #fff;
       border: 1px solid #e3e6eb;
       border-radius: 10px;
@@ -97,6 +106,9 @@
     th.active.desc::after { content: " \25BC"; }
 
     td.team, th.team { position: sticky; left: 0; background: #fff; }
+    /* Header row above the pinned Team column when the table scrolls under it */
+    td.team { z-index: 1; }
+    th { z-index: 2; }
     th.team { background: #f2f4f7; }
     td.rk { color: #666; }
     tr:hover td { background: #f7fafd; }
@@ -114,7 +126,12 @@
     /* Phone: bigger text (15px), narrower page edges and cells, so all four columns fit
        without sideways scrolling; the few longest team names wrap on the narrowest phones. */
     @media (max-width: 480px) {
-      body { padding-left: 10px; padding-right: 10px; }
+      /* Tighter top so more rows fit below the frozen part */
+      body { padding: 12px 10px 10px; }
+      .accent-bar { margin-bottom: 12px; }
+      .subtitle, .crosslink { margin-bottom: 10px; }
+      .search { margin-bottom: 8px; padding: 6px 12px; }
+      .note { margin-top: 8px; }
       th, td { font-size: 15px; padding: 10px 5px; }
       td.rec { padding-left: 4px; padding-right: 4px; }
       td.team { white-space: normal; }
