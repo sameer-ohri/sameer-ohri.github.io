@@ -441,11 +441,8 @@
         DATA = data;
         for (const g of data.games) g.tip = tipMinutes(g.time);
         const n = data.games.length;
-        // When the table was made, e.g. "Pulled 7 a.m." (data.updated is "YYYY-MM-DD HH:MM")
-        const [h, m] = String(data.updated || "").split(" ")[1]?.split(":").map(Number) || [];
-        const pulled = h == null ? "" : ` · Pulled ${niceTime(h * 60 + m)}`;
         document.getElementById("subtitle").textContent =
-          `${longDate(data.date)} · ${n} game${n === 1 ? "" : "s"}${pulled}`;
+          `${longDate(data.date)} · ${n} game${n === 1 ? "" : "s"}`;
 
         if (data.date !== easternNow(data.date).date) {
           const el = document.getElementById("stale");
