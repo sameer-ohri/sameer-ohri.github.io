@@ -299,7 +299,7 @@
           <span class="qual" style="${qualStyle(g.qual)}">${qualText(g.qual)}</span>
         </div>
         <div class="teams">${esc(g.visitor)} <span class="at">@</span> ${esc(g.home)}</div>
-        <div class="pred">${esc(g.short || g.prediction)}</div>
+        <div class="pred">${esc(g.prediction)}</div>
       </div>`;
     }
 
@@ -307,9 +307,8 @@
 
     function show(mode) {
       const games = DATA.games;
-      const big = games.filter(g => g.big)
-        // Same order as the email: UConn first, then best game first
-        .sort((a, b) => (b.uconn - a.uconn) || ((b.qual ?? -1) - (a.qual ?? -1)));
+      // Big games: best game first. All games: the file's order (tip-off, then QualScore).
+      const big = games.filter(g => g.big).sort((a, b) => (b.qual ?? -1) - (a.qual ?? -1));
       const list = mode === "big" ? big : games;
 
       document.getElementById("btn-big").textContent = `Big games (${big.length})`;
