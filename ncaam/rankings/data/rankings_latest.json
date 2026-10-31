@@ -1,0 +1,1467 @@
+{
+ "date": "2026-10-30",
+ "updated": "2026-10-31 02:15",
+ "source_date": "2026-10-30",
+ "teams": [
+  {
+   "rk": 1,
+   "team": "Duke"
+  },
+  {
+   "rk": 2,
+   "team": "Florida"
+  },
+  {
+   "rk": 3,
+   "team": "Arizona"
+  },
+  {
+   "rk": 4,
+   "team": "Illinois"
+  },
+  {
+   "rk": 5,
+   "team": "Houston"
+  },
+  {
+   "rk": 6,
+   "team": "Connecticut"
+  },
+  {
+   "rk": 7,
+   "team": "Michigan St."
+  },
+  {
+   "rk": 8,
+   "team": "Iowa St."
+  },
+  {
+   "rk": 9,
+   "team": "Michigan"
+  },
+  {
+   "rk": 10,
+   "team": "St. John's"
+  },
+  {
+   "rk": 11,
+   "team": "Gonzaga"
+  },
+  {
+   "rk": 12,
+   "team": "Kansas"
+  },
+  {
+   "rk": 13,
+   "team": "Tennessee"
+  },
+  {
+   "rk": 14,
+   "team": "Alabama"
+  },
+  {
+   "rk": 15,
+   "team": "Virginia"
+  },
+  {
+   "rk": 16,
+   "team": "Arkansas"
+  },
+  {
+   "rk": 17,
+   "team": "Texas Tech"
+  },
+  {
+   "rk": 18,
+   "team": "Purdue"
+  },
+  {
+   "rk": 19,
+   "team": "Louisville"
+  },
+  {
+   "rk": 20,
+   "team": "Texas"
+  },
+  {
+   "rk": 21,
+   "team": "Vanderbilt"
+  },
+  {
+   "rk": 22,
+   "team": "Nebraska"
+  },
+  {
+   "rk": 23,
+   "team": "Miami FL"
+  },
+  {
+   "rk": 24,
+   "team": "UCLA"
+  },
+  {
+   "rk": 25,
+   "team": "Kentucky"
+  },
+  {
+   "rk": 26,
+   "team": "Ohio St."
+  },
+  {
+   "rk": 27,
+   "team": "BYU"
+  },
+  {
+   "rk": 28,
+   "team": "Auburn"
+  },
+  {
+   "rk": 29,
+   "team": "Texas A&M"
+  },
+  {
+   "rk": 30,
+   "team": "Villanova"
+  },
+  {
+   "rk": 31,
+   "team": "Iowa"
+  },
+  {
+   "rk": 32,
+   "team": "North Carolina"
+  },
+  {
+   "rk": 33,
+   "team": "Oklahoma"
+  },
+  {
+   "rk": 34,
+   "team": "Wisconsin"
+  },
+  {
+   "rk": 35,
+   "team": "Cincinnati"
+  },
+  {
+   "rk": 36,
+   "team": "Missouri"
+  },
+  {
+   "rk": 37,
+   "team": "Georgia"
+  },
+  {
+   "rk": 38,
+   "team": "TCU"
+  },
+  {
+   "rk": 39,
+   "team": "Indiana"
+  },
+  {
+   "rk": 40,
+   "team": "Baylor"
+  },
+  {
+   "rk": 41,
+   "team": "VCU"
+  },
+  {
+   "rk": 42,
+   "team": "Utah St."
+  },
+  {
+   "rk": 43,
+   "team": "West Virginia"
+  },
+  {
+   "rk": 44,
+   "team": "Clemson"
+  },
+  {
+   "rk": 45,
+   "team": "Marquette"
+  },
+  {
+   "rk": 46,
+   "team": "Saint Louis"
+  },
+  {
+   "rk": 47,
+   "team": "Creighton"
+  },
+  {
+   "rk": 48,
+   "team": "N.C. State"
+  },
+  {
+   "rk": 49,
+   "team": "USC"
+  },
+  {
+   "rk": 50,
+   "team": "Grand Canyon"
+  },
+  {
+   "rk": 51,
+   "team": "UCF"
+  },
+  {
+   "rk": 52,
+   "team": "Saint Mary's"
+  },
+  {
+   "rk": 53,
+   "team": "Providence"
+  },
+  {
+   "rk": 54,
+   "team": "Florida St."
+  },
+  {
+   "rk": 55,
+   "team": "Mississippi"
+  },
+  {
+   "rk": 56,
+   "team": "New Mexico"
+  },
+  {
+   "rk": 57,
+   "team": "Virginia Tech"
+  },
+  {
+   "rk": 58,
+   "team": "San Diego St."
+  },
+  {
+   "rk": 59,
+   "team": "Seton Hall"
+  },
+  {
+   "rk": 60,
+   "team": "Oklahoma St."
+  },
+  {
+   "rk": 61,
+   "team": "SMU"
+  },
+  {
+   "rk": 62,
+   "team": "High Point"
+  },
+  {
+   "rk": 63,
+   "team": "Santa Clara"
+  },
+  {
+   "rk": 64,
+   "team": "Arizona St."
+  },
+  {
+   "rk": 65,
+   "team": "Dayton"
+  },
+  {
+   "rk": 66,
+   "team": "Maryland"
+  },
+  {
+   "rk": 67,
+   "team": "Stanford"
+  },
+  {
+   "rk": 68,
+   "team": "South Florida"
+  },
+  {
+   "rk": 69,
+   "team": "LSU"
+  },
+  {
+   "rk": 70,
+   "team": "Xavier"
+  },
+  {
+   "rk": 71,
+   "team": "Wichita St."
+  },
+  {
+   "rk": 72,
+   "team": "Boise St."
+  },
+  {
+   "rk": 73,
+   "team": "Minnesota"
+  },
+  {
+   "rk": 74,
+   "team": "Washington"
+  },
+  {
+   "rk": 75,
+   "team": "Northwestern"
+  },
+  {
+   "rk": 76,
+   "team": "Oregon"
+  },
+  {
+   "rk": 77,
+   "team": "Nevada"
+  },
+  {
+   "rk": 78,
+   "team": "Georgetown"
+  },
+  {
+   "rk": 79,
+   "team": "McNeese"
+  },
+  {
+   "rk": 80,
+   "team": "Colorado St."
+  },
+  {
+   "rk": 81,
+   "team": "Wake Forest"
+  },
+  {
+   "rk": 82,
+   "team": "Tulsa"
+  },
+  {
+   "rk": 83,
+   "team": "Pittsburgh"
+  },
+  {
+   "rk": 84,
+   "team": "Colorado"
+  },
+  {
+   "rk": 85,
+   "team": "California"
+  },
+  {
+   "rk": 86,
+   "team": "DePaul"
+  },
+  {
+   "rk": 87,
+   "team": "Akron"
+  },
+  {
+   "rk": 88,
+   "team": "Mississippi St."
+  },
+  {
+   "rk": 89,
+   "team": "Butler"
+  },
+  {
+   "rk": 90,
+   "team": "UNLV"
+  },
+  {
+   "rk": 91,
+   "team": "Syracuse"
+  },
+  {
+   "rk": 92,
+   "team": "Rutgers"
+  },
+  {
+   "rk": 93,
+   "team": "Kansas St."
+  },
+  {
+   "rk": 94,
+   "team": "Miami OH"
+  },
+  {
+   "rk": 95,
+   "team": "George Washington"
+  },
+  {
+   "rk": 96,
+   "team": "Notre Dame"
+  },
+  {
+   "rk": 97,
+   "team": "South Carolina"
+  },
+  {
+   "rk": 98,
+   "team": "Belmont"
+  },
+  {
+   "rk": 99,
+   "team": "Illinois St."
+  },
+  {
+   "rk": 100,
+   "team": "UC Irvine"
+  },
+  {
+   "rk": 101,
+   "team": "George Mason"
+  },
+  {
+   "rk": 102,
+   "team": "Saint Joseph's"
+  },
+  {
+   "rk": 103,
+   "team": "Utah Valley"
+  },
+  {
+   "rk": 104,
+   "team": "UC San Diego"
+  },
+  {
+   "rk": 105,
+   "team": "North Texas"
+  },
+  {
+   "rk": 106,
+   "team": "Utah"
+  },
+  {
+   "rk": 107,
+   "team": "Wyoming"
+  },
+  {
+   "rk": 108,
+   "team": "Northern Iowa"
+  },
+  {
+   "rk": 109,
+   "team": "UAB"
+  },
+  {
+   "rk": 110,
+   "team": "Penn St."
+  },
+  {
+   "rk": 111,
+   "team": "UNC Wilmington"
+  },
+  {
+   "rk": 112,
+   "team": "Memphis"
+  },
+  {
+   "rk": 113,
+   "team": "Illinois Chicago"
+  },
+  {
+   "rk": 114,
+   "team": "Florida Atlantic"
+  },
+  {
+   "rk": 115,
+   "team": "Liberty"
+  },
+  {
+   "rk": 116,
+   "team": "Oregon St."
+  },
+  {
+   "rk": 117,
+   "team": "Stephen F. Austin"
+  },
+  {
+   "rk": 118,
+   "team": "Hofstra"
+  },
+  {
+   "rk": 119,
+   "team": "Davidson"
+  },
+  {
+   "rk": 120,
+   "team": "Murray St."
+  },
+  {
+   "rk": 121,
+   "team": "Hawaii"
+  },
+  {
+   "rk": 122,
+   "team": "Seattle"
+  },
+  {
+   "rk": 123,
+   "team": "Boston College"
+  },
+  {
+   "rk": 124,
+   "team": "Yale"
+  },
+  {
+   "rk": 125,
+   "team": "Western Kentucky"
+  },
+  {
+   "rk": 126,
+   "team": "Duquesne"
+  },
+  {
+   "rk": 127,
+   "team": "Kent St."
+  },
+  {
+   "rk": 128,
+   "team": "Kennesaw St."
+  },
+  {
+   "rk": 129,
+   "team": "Georgia Tech"
+  },
+  {
+   "rk": 130,
+   "team": "Penn"
+  },
+  {
+   "rk": 131,
+   "team": "Charleston"
+  },
+  {
+   "rk": 132,
+   "team": "Wright St."
+  },
+  {
+   "rk": 133,
+   "team": "UC Santa Barbara"
+  },
+  {
+   "rk": 134,
+   "team": "San Francisco"
+  },
+  {
+   "rk": 135,
+   "team": "Furman"
+  },
+  {
+   "rk": 136,
+   "team": "Bradley"
+  },
+  {
+   "rk": 137,
+   "team": "Charlotte"
+  },
+  {
+   "rk": 138,
+   "team": "Fordham"
+  },
+  {
+   "rk": 139,
+   "team": "Harvard"
+  },
+  {
+   "rk": 140,
+   "team": "North Dakota St."
+  },
+  {
+   "rk": 141,
+   "team": "Toledo"
+  },
+  {
+   "rk": 142,
+   "team": "Rhode Island"
+  },
+  {
+   "rk": 143,
+   "team": "Temple"
+  },
+  {
+   "rk": 144,
+   "team": "Sam Houston St."
+  },
+  {
+   "rk": 145,
+   "team": "Troy"
+  },
+  {
+   "rk": 146,
+   "team": "St. Bonaventure"
+  },
+  {
+   "rk": 147,
+   "team": "Arkansas St."
+  },
+  {
+   "rk": 148,
+   "team": "Robert Morris"
+  },
+  {
+   "rk": 149,
+   "team": "Valparaiso"
+  },
+  {
+   "rk": 150,
+   "team": "Drake"
+  },
+  {
+   "rk": 151,
+   "team": "Richmond"
+  },
+  {
+   "rk": 152,
+   "team": "Texas St."
+  },
+  {
+   "rk": 153,
+   "team": "Cal Baptist"
+  },
+  {
+   "rk": 154,
+   "team": "Pacific"
+  },
+  {
+   "rk": 155,
+   "team": "New Mexico St."
+  },
+  {
+   "rk": 156,
+   "team": "East Tennessee St."
+  },
+  {
+   "rk": 157,
+   "team": "Washington St."
+  },
+  {
+   "rk": 158,
+   "team": "St. Thomas"
+  },
+  {
+   "rk": 159,
+   "team": "Loyola Marymount"
+  },
+  {
+   "rk": 160,
+   "team": "Montana St."
+  },
+  {
+   "rk": 161,
+   "team": "Southern Illinois"
+  },
+  {
+   "rk": 162,
+   "team": "Tulane"
+  },
+  {
+   "rk": 163,
+   "team": "Merrimack"
+  },
+  {
+   "rk": 164,
+   "team": "James Madison"
+  },
+  {
+   "rk": 165,
+   "team": "Towson"
+  },
+  {
+   "rk": 166,
+   "team": "Middle Tennessee"
+  },
+  {
+   "rk": 167,
+   "team": "Fresno St."
+  },
+  {
+   "rk": 168,
+   "team": "Tennessee St."
+  },
+  {
+   "rk": 169,
+   "team": "Winthrop"
+  },
+  {
+   "rk": 170,
+   "team": "Central Arkansas"
+  },
+  {
+   "rk": 171,
+   "team": "Northern Colorado"
+  },
+  {
+   "rk": 172,
+   "team": "Samford"
+  },
+  {
+   "rk": 173,
+   "team": "Loyola Chicago"
+  },
+  {
+   "rk": 174,
+   "team": "Howard"
+  },
+  {
+   "rk": 175,
+   "team": "Queens"
+  },
+  {
+   "rk": 176,
+   "team": "Massachusetts"
+  },
+  {
+   "rk": 177,
+   "team": "Austin Peay"
+  },
+  {
+   "rk": 178,
+   "team": "Eastern Washington"
+  },
+  {
+   "rk": 179,
+   "team": "Cornell"
+  },
+  {
+   "rk": 180,
+   "team": "UC Davis"
+  },
+  {
+   "rk": 181,
+   "team": "Bowling Green"
+  },
+  {
+   "rk": 182,
+   "team": "FIU"
+  },
+  {
+   "rk": 183,
+   "team": "CSUN"
+  },
+  {
+   "rk": 184,
+   "team": "Monmouth"
+  },
+  {
+   "rk": 185,
+   "team": "Lipscomb"
+  },
+  {
+   "rk": 186,
+   "team": "Ohio"
+  },
+  {
+   "rk": 187,
+   "team": "Texas A&M Corpus Chris"
+  },
+  {
+   "rk": 188,
+   "team": "UT Arlington"
+  },
+  {
+   "rk": 189,
+   "team": "Northern Kentucky"
+  },
+  {
+   "rk": 190,
+   "team": "Oakland"
+  },
+  {
+   "rk": 191,
+   "team": "Siena"
+  },
+  {
+   "rk": 192,
+   "team": "San Jose St."
+  },
+  {
+   "rk": 193,
+   "team": "Cal Poly"
+  },
+  {
+   "rk": 194,
+   "team": "Princeton"
+  },
+  {
+   "rk": 195,
+   "team": "UT Rio Grande Valley"
+  },
+  {
+   "rk": 196,
+   "team": "East Carolina"
+  },
+  {
+   "rk": 197,
+   "team": "Portland St."
+  },
+  {
+   "rk": 198,
+   "team": "Mercer"
+  },
+  {
+   "rk": 199,
+   "team": "Western Carolina"
+  },
+  {
+   "rk": 200,
+   "team": "Cal St. Fullerton"
+  },
+  {
+   "rk": 201,
+   "team": "Vermont"
+  },
+  {
+   "rk": 202,
+   "team": "Indiana St."
+  },
+  {
+   "rk": 203,
+   "team": "La Salle"
+  },
+  {
+   "rk": 204,
+   "team": "Quinnipiac"
+  },
+  {
+   "rk": 205,
+   "team": "Pepperdine"
+  },
+  {
+   "rk": 206,
+   "team": "UTEP"
+  },
+  {
+   "rk": 207,
+   "team": "Appalachian St."
+  },
+  {
+   "rk": 208,
+   "team": "Louisiana Tech"
+  },
+  {
+   "rk": 209,
+   "team": "Green Bay"
+  },
+  {
+   "rk": 210,
+   "team": "William & Mary"
+  },
+  {
+   "rk": 211,
+   "team": "San Diego"
+  },
+  {
+   "rk": 212,
+   "team": "Fairfield"
+  },
+  {
+   "rk": 213,
+   "team": "Marist"
+  },
+  {
+   "rk": 214,
+   "team": "Idaho"
+  },
+  {
+   "rk": 215,
+   "team": "Jacksonville St."
+  },
+  {
+   "rk": 216,
+   "team": "Portland"
+  },
+  {
+   "rk": 217,
+   "team": "Southern Miss"
+  },
+  {
+   "rk": 218,
+   "team": "Marshall"
+  },
+  {
+   "rk": 219,
+   "team": "Rice"
+  },
+  {
+   "rk": 220,
+   "team": "Iona"
+  },
+  {
+   "rk": 221,
+   "team": "South Alabama"
+  },
+  {
+   "rk": 222,
+   "team": "Tarleton St."
+  },
+  {
+   "rk": 223,
+   "team": "Montana"
+  },
+  {
+   "rk": 224,
+   "team": "Missouri St."
+  },
+  {
+   "rk": 225,
+   "team": "Columbia"
+  },
+  {
+   "rk": 226,
+   "team": "Buffalo"
+  },
+  {
+   "rk": 227,
+   "team": "Utah Tech"
+  },
+  {
+   "rk": 228,
+   "team": "Campbell"
+  },
+  {
+   "rk": 229,
+   "team": "American"
+  },
+  {
+   "rk": 230,
+   "team": "Navy"
+  },
+  {
+   "rk": 231,
+   "team": "Drexel"
+  },
+  {
+   "rk": 232,
+   "team": "Colgate"
+  },
+  {
+   "rk": 233,
+   "team": "LIU"
+  },
+  {
+   "rk": 234,
+   "team": "UMBC"
+  },
+  {
+   "rk": 235,
+   "team": "Eastern Michigan"
+  },
+  {
+   "rk": 236,
+   "team": "South Dakota St."
+  },
+  {
+   "rk": 237,
+   "team": "Western Michigan"
+  },
+  {
+   "rk": 238,
+   "team": "Longwood"
+  },
+  {
+   "rk": 239,
+   "team": "Detroit Mercy"
+  },
+  {
+   "rk": 240,
+   "team": "Wofford"
+  },
+  {
+   "rk": 241,
+   "team": "Stony Brook"
+  },
+  {
+   "rk": 242,
+   "team": "Coastal Carolina"
+  },
+  {
+   "rk": 243,
+   "team": "Bethune Cookman"
+  },
+  {
+   "rk": 244,
+   "team": "Ball St."
+  },
+  {
+   "rk": 245,
+   "team": "Presbyterian"
+  },
+  {
+   "rk": 246,
+   "team": "Saint Peter's"
+  },
+  {
+   "rk": 247,
+   "team": "Youngstown St."
+  },
+  {
+   "rk": 248,
+   "team": "Old Dominion"
+  },
+  {
+   "rk": 249,
+   "team": "LSU New Orleans"
+  },
+  {
+   "rk": 250,
+   "team": "Abilene Christian"
+  },
+  {
+   "rk": 251,
+   "team": "Southeast Missouri"
+  },
+  {
+   "rk": 252,
+   "team": "Purdue Fort Wayne"
+  },
+  {
+   "rk": 253,
+   "team": "Milwaukee"
+  },
+  {
+   "rk": 254,
+   "team": "Elon"
+  },
+  {
+   "rk": 255,
+   "team": "Chattanooga"
+  },
+  {
+   "rk": 256,
+   "team": "Louisiana"
+  },
+  {
+   "rk": 257,
+   "team": "Radford"
+  },
+  {
+   "rk": 258,
+   "team": "Lamar"
+  },
+  {
+   "rk": 259,
+   "team": "UNC Asheville"
+  },
+  {
+   "rk": 260,
+   "team": "Brown"
+  },
+  {
+   "rk": 261,
+   "team": "Sacramento St."
+  },
+  {
+   "rk": 262,
+   "team": "UNC Greensboro"
+  },
+  {
+   "rk": 263,
+   "team": "UC Riverside"
+  },
+  {
+   "rk": 264,
+   "team": "SIUE"
+  },
+  {
+   "rk": 265,
+   "team": "Hampton"
+  },
+  {
+   "rk": 266,
+   "team": "Delaware"
+  },
+  {
+   "rk": 267,
+   "team": "Tennessee Martin"
+  },
+  {
+   "rk": 268,
+   "team": "Florida Gulf Coast"
+  },
+  {
+   "rk": 269,
+   "team": "Southern Utah"
+  },
+  {
+   "rk": 270,
+   "team": "Denver"
+  },
+  {
+   "rk": 271,
+   "team": "Mount St. Mary's"
+  },
+  {
+   "rk": 272,
+   "team": "Long Beach St."
+  },
+  {
+   "rk": 273,
+   "team": "Lehigh"
+  },
+  {
+   "rk": 274,
+   "team": "Weber St."
+  },
+  {
+   "rk": 275,
+   "team": "Nicholls"
+  },
+  {
+   "rk": 276,
+   "team": "Georgia Southern"
+  },
+  {
+   "rk": 277,
+   "team": "Nebraska Omaha"
+  },
+  {
+   "rk": 278,
+   "team": "Tennessee Tech"
+  },
+  {
+   "rk": 279,
+   "team": "Georgia St."
+  },
+  {
+   "rk": 280,
+   "team": "Central Michigan"
+  },
+  {
+   "rk": 281,
+   "team": "Jacksonville"
+  },
+  {
+   "rk": 282,
+   "team": "Little Rock"
+  },
+  {
+   "rk": 283,
+   "team": "Morehead St."
+  },
+  {
+   "rk": 284,
+   "team": "UTSA"
+  },
+  {
+   "rk": 285,
+   "team": "Northeastern"
+  },
+  {
+   "rk": 286,
+   "team": "Sacred Heart"
+  },
+  {
+   "rk": 287,
+   "team": "Boston University"
+  },
+  {
+   "rk": 288,
+   "team": "Southeastern Louisiana"
+  },
+  {
+   "rk": 289,
+   "team": "Incarnate Word"
+  },
+  {
+   "rk": 290,
+   "team": "Charleston Southern"
+  },
+  {
+   "rk": 291,
+   "team": "UMass Lowell"
+  },
+  {
+   "rk": 292,
+   "team": "Evansville"
+  },
+  {
+   "rk": 293,
+   "team": "Houston Christian"
+  },
+  {
+   "rk": 294,
+   "team": "Southern"
+  },
+  {
+   "rk": 295,
+   "team": "South Dakota"
+  },
+  {
+   "rk": 296,
+   "team": "Eastern Kentucky"
+  },
+  {
+   "rk": 297,
+   "team": "Bellarmine"
+  },
+  {
+   "rk": 298,
+   "team": "Oral Roberts"
+  },
+  {
+   "rk": 299,
+   "team": "Northwestern St."
+  },
+  {
+   "rk": 300,
+   "team": "Stetson"
+  },
+  {
+   "rk": 301,
+   "team": "Lindenwood"
+  },
+  {
+   "rk": 302,
+   "team": "Dartmouth"
+  },
+  {
+   "rk": 303,
+   "team": "Prairie View A&M"
+  },
+  {
+   "rk": 304,
+   "team": "North Dakota"
+  },
+  {
+   "rk": 305,
+   "team": "Northern Illinois"
+  },
+  {
+   "rk": 306,
+   "team": "Central Connecticut"
+  },
+  {
+   "rk": 307,
+   "team": "Cleveland St."
+  },
+  {
+   "rk": 308,
+   "team": "Mercyhurst"
+  },
+  {
+   "rk": 309,
+   "team": "Idaho St."
+  },
+  {
+   "rk": 310,
+   "team": "Air Force"
+  },
+  {
+   "rk": 311,
+   "team": "Norfolk St."
+  },
+  {
+   "rk": 312,
+   "team": "West Georgia"
+  },
+  {
+   "rk": 313,
+   "team": "North Carolina A&T"
+  },
+  {
+   "rk": 314,
+   "team": "Manhattan"
+  },
+  {
+   "rk": 315,
+   "team": "Northern Arizona"
+  },
+  {
+   "rk": 316,
+   "team": "Florida A&M"
+  },
+  {
+   "rk": 317,
+   "team": "Alabama St."
+  },
+  {
+   "rk": 318,
+   "team": "Niagara"
+  },
+  {
+   "rk": 319,
+   "team": "Alabama A&M"
+  },
+  {
+   "rk": 320,
+   "team": "Cal St. Bakersfield"
+  },
+  {
+   "rk": 321,
+   "team": "Le Moyne"
+  },
+  {
+   "rk": 322,
+   "team": "Wagner"
+  },
+  {
+   "rk": 323,
+   "team": "USC Upstate"
+  },
+  {
+   "rk": 324,
+   "team": "East Texas A&M"
+  },
+  {
+   "rk": 325,
+   "team": "Albany"
+  },
+  {
+   "rk": 326,
+   "team": "North Alabama"
+  },
+  {
+   "rk": 327,
+   "team": "Jackson St."
+  },
+  {
+   "rk": 328,
+   "team": "IU Indy"
+  },
+  {
+   "rk": 329,
+   "team": "North Florida"
+  },
+  {
+   "rk": 330,
+   "team": "Grambling St."
+  },
+  {
+   "rk": 331,
+   "team": "Texas Southern"
+  },
+  {
+   "rk": 332,
+   "team": "Loyola MD"
+  },
+  {
+   "rk": 333,
+   "team": "The Citadel"
+  },
+  {
+   "rk": 334,
+   "team": "Canisius"
+  },
+  {
+   "rk": 335,
+   "team": "Kansas City"
+  },
+  {
+   "rk": 336,
+   "team": "Bryant"
+  },
+  {
+   "rk": 337,
+   "team": "West Florida"
+  },
+  {
+   "rk": 338,
+   "team": "Lafayette"
+  },
+  {
+   "rk": 339,
+   "team": "Fairleigh Dickinson"
+  },
+  {
+   "rk": 340,
+   "team": "Eastern Illinois"
+  },
+  {
+   "rk": 341,
+   "team": "NJIT"
+  },
+  {
+   "rk": 342,
+   "team": "Southern Indiana"
+  },
+  {
+   "rk": 343,
+   "team": "Bucknell"
+  },
+  {
+   "rk": 344,
+   "team": "New Haven"
+  },
+  {
+   "rk": 345,
+   "team": "Maine"
+  },
+  {
+   "rk": 346,
+   "team": "Army"
+  },
+  {
+   "rk": 347,
+   "team": "Stonehill"
+  },
+  {
+   "rk": 348,
+   "team": "Chicago St."
+  },
+  {
+   "rk": 349,
+   "team": "Rider"
+  },
+  {
+   "rk": 350,
+   "team": "New Hampshire"
+  },
+  {
+   "rk": 351,
+   "team": "Morgan St."
+  },
+  {
+   "rk": 352,
+   "team": "VMI"
+  },
+  {
+   "rk": 353,
+   "team": "Holy Cross"
+  },
+  {
+   "rk": 354,
+   "team": "Alcorn St."
+  },
+  {
+   "rk": 355,
+   "team": "Arkansas Pine Bluff"
+  },
+  {
+   "rk": 356,
+   "team": "Louisiana Monroe"
+  },
+  {
+   "rk": 357,
+   "team": "North Carolina Central"
+  },
+  {
+   "rk": 358,
+   "team": "South Carolina St."
+  },
+  {
+   "rk": 359,
+   "team": "Gardner Webb"
+  },
+  {
+   "rk": 360,
+   "team": "Binghamton"
+  },
+  {
+   "rk": 361,
+   "team": "Coppin St."
+  },
+  {
+   "rk": 362,
+   "team": "Maryland Eastern Shore"
+  },
+  {
+   "rk": 363,
+   "team": "Delaware St."
+  },
+  {
+   "rk": 364,
+   "team": "Western Illinois"
+  },
+  {
+   "rk": 365,
+   "team": "Mississippi Valley St."
+  }
+ ]
+}
