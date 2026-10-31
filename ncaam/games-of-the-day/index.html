@@ -51,13 +51,19 @@
       margin: -8px 0 20px;
     }
 
-    /* Big games / All games switch */
+    /* Switches: Big games / All games, and Best first / By time */
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
     .toggle {
       display: inline-flex;
       background: #e9ecf0;
       border-radius: 9px;
       padding: 3px;
-      margin-bottom: 10px;
     }
 
     .toggle button {
@@ -67,7 +73,7 @@
       border: 0;
       background: transparent;
       color: #555;
-      padding: 7px 14px;
+      padding: 7px 12px;
       border-radius: 7px;
       cursor: pointer;
     }
@@ -81,103 +87,127 @@
     .note {
       font-size: 12px;
       color: #888;
-      margin: 0 0 14px;
+      margin: 0 0 18px;
     }
 
-    .card {
-      background: #fff;
-      border-radius: 14px;
-      border: 1px solid #e2e6ea;
-      overflow: hidden;
-      margin-bottom: 24px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 13px;
-    }
-
-    thead th {
-      padding: 10px 8px;
-      text-align: left;
-      font-size: 10px;
+    /* Sections: On now / Up next / Earlier today */
+    h2 {
+      font-size: 14px;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.4px;
-      color: #888;
-      border-bottom: 1px solid #e8eaed;
-    }
-
-    tbody td {
-      padding: 9px 8px;
-      text-align: left;
-      border-bottom: 1px solid #f0f2f5;
-      vertical-align: top;
-    }
-
-    tbody tr:last-child td {
-      border-bottom: none;
-    }
-
-    th.num, td.num {
-      text-align: center;
-    }
-
-    td.time {
-      white-space: nowrap;
+      letter-spacing: 0.6px;
       color: #444;
+      margin: 22px 0 10px;
     }
 
-    td.small {
-      font-size: 11px;
-      color: #888;
+    h2 .count {
+      color: #999;
+      font-weight: 500;
     }
 
-    .qual {
+    h2.live::before {
+      content: "";
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #d93025;
+      margin-right: 7px;
+      vertical-align: 1px;
+    }
+
+    h3 {
+      font-size: 13px;
       font-weight: 600;
-      border-radius: 6px;
+      color: #002868;
+      margin: 14px 0 8px;
     }
 
-    /* In the All games view, big games (and UConn) are bold */
-    .all tr.big td.team, .all tr.big td.pred, .all .game.big .teams {
-      font-weight: 700;
+    .empty-line {
+      font-size: 13px;
+      color: #777;
+      margin: 0 0 6px;
     }
 
-    /* Phone cards (shown instead of the table below 600px) */
-    .cards { display: none; }
+    details summary {
+      cursor: pointer;
+      list-style: none;
+    }
+
+    details summary::-webkit-details-marker { display: none; }
+
+    details summary h2::after {
+      content: " ▸";
+      color: #999;
+    }
+
+    details[open] summary h2::after { content: " ▾"; }
+
+    /* Game cards: one column on phones, two on wider screens */
+    .list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    @media (min-width: 700px) {
+      .list { grid-template-columns: 1fr 1fr; }
+    }
 
     .game {
+      background: #fff;
+      border: 1px solid #e2e6ea;
+      border-radius: 12px;
       padding: 11px 14px;
-      border-bottom: 1px solid #f0f2f5;
     }
-
-    .game:last-child { border-bottom: none; }
 
     .game .top {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 12px;
-      color: #888;
-      margin-bottom: 3px;
+      gap: 8px;
+      margin-bottom: 4px;
     }
 
-    .game .top .qual {
+    .game .when {
       font-size: 13px;
+      color: #555;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      min-width: 0;
+    }
+
+    .tv {
+      font-size: 11px;
+      font-weight: 600;
+      color: #002868;
+      background: #e8edf6;
+      border-radius: 5px;
+      padding: 2px 6px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .qual {
+      font-size: 13px;
+      font-weight: 600;
       color: #111;
+      border-radius: 6px;
       padding: 2px 8px;
       min-width: 44px;
       text-align: center;
+      flex: none;
     }
 
     .game .teams {
       font-size: 15px;
-      font-weight: 600;
+      font-weight: 400;
       line-height: 1.3;
     }
 
-    .all .game .teams { font-weight: 400; }
+    .game.big .teams { font-weight: 700; }
 
     .game .at {
       color: #999;
@@ -190,6 +220,16 @@
       margin-top: 2px;
     }
 
+    .game .venue {
+      font-size: 11px;
+      color: #999;
+      margin-top: 3px;
+    }
+
+    @media (max-width: 599px) {
+      .game .venue { display: none; }
+    }
+
     #empty, #error {
       font-size: 14px;
       margin: 40px 0;
@@ -198,11 +238,6 @@
     }
 
     #error { color: #c0392b; }
-
-    @media (max-width: 599px) {
-      .table-view { display: none; }
-      .cards { display: block; }
-    }
   </style>
 </head>
 <body>
@@ -214,31 +249,19 @@
     <div class="stale" id="stale" style="display:none"></div>
 
     <div id="main" style="display:none">
-      <div class="toggle">
-        <button id="btn-big" type="button">Big games</button>
-        <button id="btn-all" type="button">All games</button>
-      </div>
-      <p class="note" id="note"></p>
-
-      <div class="card" id="card">
-        <div class="table-view">
-          <table>
-            <thead>
-              <tr>
-                <th>Time</th>
-                <th>TV</th>
-                <th>Visitor</th>
-                <th>Home</th>
-                <th>Venue</th>
-                <th>Prediction</th>
-                <th class="num">QualScore</th>
-              </tr>
-            </thead>
-            <tbody id="games-body"></tbody>
-          </table>
+      <div class="controls">
+        <div class="toggle">
+          <button id="btn-big" type="button">Big games</button>
+          <button id="btn-all" type="button">All games</button>
         </div>
-        <div class="cards" id="cards"></div>
+        <div class="toggle">
+          <button id="btn-best" type="button">Best first</button>
+          <button id="btn-time" type="button">By time</button>
+        </div>
       </div>
+      <p class="note">Times are Eastern. Big = QualScore above 65, or UConn. A game counts as
+        on for about 2 hours after tip-off.</p>
+      <div id="sections"></div>
     </div>
 
     <div id="empty" style="display:none"></div>
@@ -248,6 +271,7 @@
 
   <script>
     const DATA_URL = "data/games_latest.json";
+    const GAME_MINUTES = 120;  // how long a game counts as "on" after tip-off
 
     function esc(s) {
       return String(s ?? "").replace(/[&<>"']/g, c =>
@@ -260,10 +284,38 @@
         { weekday: "long", month: "long", day: "numeric" });
     }
 
-    function todayIso() {
-      const t = new Date();
-      const p = n => String(n).padStart(2, "0");
-      return `${t.getFullYear()}-${p(t.getMonth() + 1)}-${p(t.getDate())}`;
+    // Today's date and the minutes since midnight, in Eastern time.
+    // ?now=15:00 pretends it's 3 p.m. on the table's own date (for previews).
+    function easternNow(dataDate) {
+      const forced = new URLSearchParams(location.search).get("now");
+      if (forced && /^\d{1,2}:\d{2}$/.test(forced)) {
+        const [h, m] = forced.split(":").map(Number);
+        return { date: dataDate, min: h * 60 + m };
+      }
+      const parts = Object.fromEntries(new Intl.DateTimeFormat("en-CA", {
+        timeZone: "America/New_York", year: "numeric", month: "2-digit", day: "2-digit",
+        hour: "2-digit", minute: "2-digit", hourCycle: "h23",
+      }).formatToParts(new Date()).map(p => [p.type, p.value]));
+      return { date: `${parts.year}-${parts.month}-${parts.day}`, min: +parts.hour * 60 + +parts.minute };
+    }
+
+    // "7:30 PM" -> minutes since midnight (null if there's no time, e.g. TBA)
+    function tipMinutes(t) {
+      const m = /^(\d{1,2}):(\d{2})\s*([AP]M)$/i.exec(String(t || "").trim());
+      if (!m) return null;
+      let h = +m[1] % 12;
+      if (m[3].toUpperCase() === "PM") h += 12;
+      return h * 60 + +m[2];
+    }
+
+    // Newspaper style: Noon, Midnight, 4 p.m., 7:30 p.m.
+    function niceTime(min) {
+      if (min == null) return "Time TBA";
+      if (min === 12 * 60) return "Noon";
+      if (min === 0) return "Midnight";
+      const h = Math.floor(min / 60), m = min % 60;
+      const h12 = h % 12 === 0 ? 12 : h % 12;
+      return `${h12}${m ? ":" + String(m).padStart(2, "0") : ""} ${h < 12 ? "a.m." : "p.m."}`;
     }
 
     // Same colors as the Excel attachment: red (low) → yellow (median) → green (high),
@@ -277,52 +329,92 @@
       const c = p < 0.5 ? mix(RED, YELLOW, p / 0.5) : mix(YELLOW, GREEN, (p - 0.5) / 0.5);
       return `background: rgb(${c.join(",")})`;
     }
-    function qualText(q) { return q == null ? "" : q.toFixed(1); }
-
-    function tableRow(g) {
-      return `<tr class="${g.big ? "big" : ""}">
-        <td class="time">${esc(g.time)}</td>
-        <td class="small">${esc(g.tv)}</td>
-        <td class="team">${esc(g.visitor)}</td>
-        <td class="team">${esc(g.home)}</td>
-        <td class="small">${esc(g.venue)}</td>
-        <td class="pred">${esc(g.prediction)}</td>
-        <td class="num qual" style="${qualStyle(g.qual)}">${qualText(g.qual)}</td>
-      </tr>`;
-    }
 
     function card(g) {
-      const when = [g.time, g.tv].filter(Boolean).map(esc).join(" · ");
+      const tv = g.tv ? `<span class="tv">${esc(g.tv)}</span>` : "";
       return `<div class="game ${g.big ? "big" : ""}">
         <div class="top">
-          <span>${when}</span>
-          <span class="qual" style="${qualStyle(g.qual)}">${qualText(g.qual)}</span>
+          <span class="when">${esc(niceTime(g.tip))} ${tv}</span>
+          <span class="qual" style="${qualStyle(g.qual)}">${g.qual == null ? "" : g.qual.toFixed(1)}</span>
         </div>
         <div class="teams">${esc(g.visitor)} <span class="at">@</span> ${esc(g.home)}</div>
         <div class="pred">${esc(g.prediction)}</div>
+        ${g.venue ? `<div class="venue">${esc(g.venue)}</div>` : ""}
       </div>`;
     }
 
+    const byBest = (a, b) => (b.qual ?? -1) - (a.qual ?? -1);
+    const byTime = (a, b) => ((a.tip ?? 9999) - (b.tip ?? 9999)) || byBest(a, b);
+
+    function list(games) {
+      return `<div class="list">${games.map(card).join("")}</div>`;
+    }
+
+    // By time: a header per start time ("7 p.m."), best game first under each.
+    function grouped(games) {
+      const groups = new Map();
+      for (const g of games.slice().sort(byTime)) {
+        const k = niceTime(g.tip);
+        if (!groups.has(k)) groups.set(k, []);
+        groups.get(k).push(g);
+      }
+      return [...groups].map(([k, gs]) => `<h3>${esc(k)}</h3>${list(gs)}`).join("");
+    }
+
+    function section(title, games, sort, opts = {}) {
+      const head = `<h2 class="${opts.live ? "live" : ""}">${title}
+        <span class="count">${games.length}</span></h2>`;
+      const body = sort === "time" && opts.groups ? grouped(games)
+        : list(games.slice().sort(sort === "time" ? byTime : byBest));
+      if (opts.collapsible) {
+        return `<details ${opts.open ? "open" : ""}><summary>${head}</summary>${body}</details>`;
+      }
+      return head + body;
+    }
+
     let DATA = null;
+    const STATE = { filter: "big", sort: "best" };
 
-    function show(mode) {
-      const games = DATA.games;
-      // Big games: best game first. All games: the file's order (tip-off, then QualScore).
-      const big = games.filter(g => g.big).sort((a, b) => (b.qual ?? -1) - (a.qual ?? -1));
-      const list = mode === "big" ? big : games;
+    function render() {
+      const now = easternNow(DATA.date);
+      const games = DATA.games.filter(g => STATE.filter === "all" || g.big);
 
-      document.getElementById("btn-big").textContent = `Big games (${big.length})`;
-      document.getElementById("btn-all").textContent = `All games (${games.length})`;
-      document.getElementById("btn-big").classList.toggle("on", mode === "big");
-      document.getElementById("btn-all").classList.toggle("on", mode === "all");
-      document.getElementById("card").className = `card ${mode}`;
+      const on = [], next = [], done = [];
+      for (const g of games) {
+        let status;
+        if (now.date > DATA.date) status = "done";          // yesterday's table
+        else if (now.date < DATA.date || g.tip == null) status = "next";
+        else if (now.min >= g.tip + GAME_MINUTES) status = "done";
+        else if (now.min >= g.tip) status = "on";
+        else status = "next";
+        ({ on, next, done })[status].push(g);
+      }
 
-      document.getElementById("note").textContent = mode === "big"
-        ? "QualScore above 65, plus any UConn game. Best game first."
-        : "In tip-off order. Bold = big game or UConn.";
+      let html = "";
+      if (on.length) {
+        html += section("On now", on, STATE.sort, { live: true });
+      } else if (next.length) {
+        const first = Math.min(...next.map(g => g.tip ?? 9999));
+        html += `<h2>On now</h2><p class="empty-line">Nothing on right now. Next tip-off:
+          ${esc(niceTime(first === 9999 ? null : first))}.</p>`;
+      }
+      if (next.length) html += section("Up next", next, STATE.sort, { groups: true });
+      if (done.length) {
+        html += section("Earlier today", done, STATE.sort,
+          { groups: true, collapsible: true, open: !on.length && !next.length });
+      }
+      if (!games.length) {
+        html = `<p class="empty-line">No big games today. Tap All games to see the full slate.</p>`;
+      }
+      document.getElementById("sections").innerHTML = html;
 
-      document.getElementById("games-body").innerHTML = list.map(tableRow).join("");
-      document.getElementById("cards").innerHTML = list.map(card).join("");
+      const nBig = DATA.games.filter(g => g.big).length;
+      document.getElementById("btn-big").textContent = `Big games (${nBig})`;
+      document.getElementById("btn-all").textContent = `All games (${DATA.games.length})`;
+      document.getElementById("btn-big").classList.toggle("on", STATE.filter === "big");
+      document.getElementById("btn-all").classList.toggle("on", STATE.filter === "all");
+      document.getElementById("btn-best").classList.toggle("on", STATE.sort === "best");
+      document.getElementById("btn-time").classList.toggle("on", STATE.sort === "time");
     }
 
     fetch(DATA_URL, { cache: "no-store" })
@@ -332,12 +424,12 @@
       })
       .then(data => {
         DATA = data;
+        for (const g of data.games) g.tip = tipMinutes(g.time);
         const n = data.games.length;
         document.getElementById("subtitle").textContent =
-          `${longDate(data.date)} · ${n} game${n === 1 ? "" : "s"}` +
-          " · Numbers are the KenPom + Torvik average";
+          `${longDate(data.date)} · ${n} game${n === 1 ? "" : "s"}`;
 
-        if (data.date !== todayIso()) {
+        if (data.date !== easternNow(data.date).date) {
           const el = document.getElementById("stale");
           el.style.display = "block";
           el.textContent = `This is the table for ${longDate(data.date)}. ` +
@@ -352,11 +444,16 @@
         }
 
         SORTED = data.games.map(g => g.qual).filter(q => q != null).sort((a, b) => a - b);
-        document.getElementById("btn-big").onclick = () => show("big");
-        document.getElementById("btn-all").onclick = () => show("all");
         // Start on big games; a day with none starts on all games instead.
-        show(data.games.some(g => g.big) ? "big" : "all");
+        if (!data.games.some(g => g.big)) STATE.filter = "all";
+        document.getElementById("btn-big").onclick = () => { STATE.filter = "big"; render(); };
+        document.getElementById("btn-all").onclick = () => { STATE.filter = "all"; render(); };
+        document.getElementById("btn-best").onclick = () => { STATE.sort = "best"; render(); };
+        document.getElementById("btn-time").onclick = () => { STATE.sort = "time"; render(); };
+        render();
         document.getElementById("main").style.display = "block";
+        // Move games along as the day goes on without a reload.
+        setInterval(render, 60 * 1000);
       })
       .catch(err => {
         document.getElementById("subtitle").textContent = "";
