@@ -457,7 +457,10 @@
         if (n === 0) {
           const el = document.getElementById("empty");
           el.style.display = "block";
-          el.textContent = "No games table for this day.";
+          // A past day (?date=, or a table not yet replaced) names the date instead of "today".
+          el.textContent = data.date === easternNow(data.date).date
+            ? "No games today."
+            : `No games on ${longDate(data.date)}.`;
           return;
         }
 
