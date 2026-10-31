@@ -34,7 +34,10 @@
       margin-bottom: 20px;
     }
 
-    h1 { font-size: 22px; font-weight: 600; margin: 0 0 4px; letter-spacing: -0.3px; text-align: center; text-wrap: balance; }
+    /* Shrinks on narrow phones so the title stays on one line (full 22px from about 405px wide);
+       if a screen is narrower still, it wraps into two even lines. */
+    h1 { font-size: clamp(16px, calc(6.2vw - 3px), 22px); font-weight: 600; margin: 0 0 4px;
+      letter-spacing: -0.3px; text-align: center; text-wrap: balance; }
 
     .subtitle { font-size: 13px; color: #666; margin: 0 0 16px; text-align: center; }
 
