@@ -86,7 +86,15 @@
     tr:hover td { background: #f7fafd; }
     tr:hover td.team { background: #f7fafd; }
 
+    td.conf { color: #666; }
+
     .empty-line { color: #666; padding: 16px; margin: 0; text-align: center; }
+
+    /* Phone: tighter cells so all three columns fit without sideways scrolling */
+    @media (max-width: 480px) {
+      th, td { padding: 9px 10px; }
+      td.conf, th.conf { white-space: normal; }
+    }
   </style>
 </head>
 <body>
@@ -97,6 +105,9 @@
     <div id="stale"></div>
 
     <input class="search" id="search" type="search" placeholder="Find a team" aria-label="Find a team" />
+    <select class="search" id="conf-filter" aria-label="Show one conference">
+      <option value="">All conferences</option>
+    </select>
 
     <div class="table-wrap">
       <table>
@@ -121,12 +132,13 @@
         { weekday: "long", month: "long", day: "numeric" });
     }
 
-    // Columns: Rk, Team. Click a header to sort; default is Rk.
-    const STATE = { key: "rk", desc: false, query: "" };
+    // Columns: Rk, Team, Conference. Click a header to sort; default is Rk.
+    const STATE = { key: "rk", desc: false, query: "", conf: "" };
     let DATA = null;
 
+    // A blank conference (unknown) counts as missing, so it sorts last.
     function value(t, key) {
-      return t[key];
+      return t[key] || null;
     }
 
     function sortedTeams() {
@@ -142,9 +154,9 @@
     }
 
     function renderHead() {
-      const cols = [["rk", "Rk"], ["team", "Team"]];
+      const cols = [["rk", "Rk"], ["team", "Team"], ["conf", "Conference"]];
       document.getElementById("head").innerHTML = "<tr>" + cols.map(([key, label]) => {
-        const cls = [key === "team" ? "team" : "", STATE.key === key ? "active" : "", STATE.key === key && STATE.desc ? "desc" : ""]
+        const cls = [key === "team" ? "team" : key === "conf" ? "conf" : "", STATE.key === key ? "active" : "", STATE.key === key && STATE.desc ? "desc" : ""]
           .filter(Boolean).join(" ");
         return `<th class="${cls}" data-key="${esc(key)}">${esc(label)}</th>`;
       }).join("") + "</tr>";
@@ -152,11 +164,13 @@
 
     function renderBody() {
       const q = STATE.query.trim().toLowerCase();
-      const teams = sortedTeams().filter(t => !q || t.team.toLowerCase().includes(q));
+      const teams = sortedTeams().filter(t =>
+        (!q || t.team.toLowerCase().includes(q)) && (!STATE.conf || t.conf === STATE.conf));
       const body = document.getElementById("body");
       body.innerHTML = teams.map(t => `<tr>
           <td class="rk">${t.rk}</td>
           <td class="team">${esc(t.team)}</td>
+          <td class="conf">${esc(t.conf)}</td>
         </tr>`).join("");
       document.getElementById("empty").hidden = teams.length > 0;
     }
@@ -181,6 +195,18 @@
       renderBody();
     });
 
+    document.getElementById("conf-filter").addEventListener("change", e => {
+      STATE.conf = e.target.value;
+      renderBody();
+    });
+
+    // One dropdown entry per conference in the data, A to Z.
+    function fillConferences() {
+      const names = [...new Set(DATA.teams.map(t => t.conf).filter(Boolean))].sort();
+      document.getElementById("conf-filter").insertAdjacentHTML("beforeend",
+        names.map(n => `<option value="${esc(n)}">${esc(n)}</option>`).join(""));
+    }
+
     fetch(DATA_URL, { cache: "no-cache" })
       .then(r => r.json())
       .then(d => {
@@ -197,6 +223,7 @@
           document.getElementById("empty").hidden = false;
           return;
         }
+        fillConferences();
         render();
       })
       .catch(() => {
