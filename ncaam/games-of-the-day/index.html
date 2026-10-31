@@ -339,7 +339,8 @@
       </div>`;
     }
 
-    const byBest = (a, b) => (b.qual ?? -1) - (a.qual ?? -1);
+    // UConn always comes first when they play, then the best game.
+    const byBest = (a, b) => (!!b.uconn - !!a.uconn) || ((b.qual ?? -1) - (a.qual ?? -1));
     const byTime = (a, b) => ((a.tip ?? 9999) - (b.tip ?? 9999)) || byBest(a, b);
 
     function list(games) {
