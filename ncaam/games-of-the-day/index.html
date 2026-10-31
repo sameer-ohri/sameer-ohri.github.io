@@ -223,6 +223,7 @@
 
     @media (max-width: 599px) {
       .game .venue { display: none; }
+      .toggle button { padding: 7px 9px; }  /* three filter buttons fit small phones */
     }
 
     #empty, #error {
@@ -246,8 +247,9 @@
     <div id="main" style="display:none">
       <div class="controls">
         <div class="toggle">
-          <button id="btn-big" type="button">Big games</button>
-          <button id="btn-all" type="button">All games</button>
+          <button id="btn-big" type="button">Big Games</button>
+          <button id="btn-be" type="button">Big East</button>
+          <button id="btn-all" type="button">All Games</button>
         </div>
         <div class="toggle">
           <button id="btn-day" type="button">All Day</button>
@@ -364,17 +366,22 @@
         list(games.slice().sort(sort === "time" ? byTime : byBest));
     }
 
+    // Big East = any game with a Big East team in it (conference or not)
+    const isBigEast = g => g.visitor_conf === "BE" || g.home_conf === "BE";
+    const FILTERS = { big: g => g.big, be: isBigEast, all: () => true };
+
     let DATA = null;
     const STATE = { filter: "big", view: "day" };
 
     function render() {
       const now = easternNow(DATA.date);
-      const games = DATA.games.filter(g => STATE.filter === "all" || g.big);
+      const games = DATA.games.filter(FILTERS[STATE.filter]);
       SORTED = games.map(g => g.qual).filter(q => q != null).sort((a, b) => a - b);
 
       const out = document.getElementById("sections");
       if (!games.length) {
-        out.innerHTML = `<p class="empty-line">No big games. Tap All Games to see the full slate.</p>`;
+        const what = STATE.filter === "be" ? "Big East" : "big";
+        out.innerHTML = `<p class="empty-line">No ${what} games. Tap All Games to see the full slate.</p>`;
         return updateButtons();
       }
 
@@ -416,9 +423,11 @@
     function updateButtons() {
       const nBig = DATA.games.filter(g => g.big).length;
       document.getElementById("btn-big").textContent = `Big Games (${nBig})`;
+      document.getElementById("btn-be").textContent = `Big East (${DATA.games.filter(isBigEast).length})`;
       document.getElementById("btn-all").textContent = `All Games (${DATA.games.length})`;
-      document.getElementById("btn-big").classList.toggle("on", STATE.filter === "big");
-      document.getElementById("btn-all").classList.toggle("on", STATE.filter === "all");
+      for (const f of ["big", "be", "all"]) {
+        document.getElementById(`btn-${f}`).classList.toggle("on", STATE.filter === f);
+      }
       document.getElementById("btn-day").classList.toggle("on", STATE.view === "day");
       document.getElementById("btn-rest").classList.toggle("on", STATE.view === "rest");
     }
@@ -452,6 +461,7 @@
         // Start on big games; a day with none starts on all games instead.
         if (!data.games.some(g => g.big)) STATE.filter = "all";
         document.getElementById("btn-big").onclick = () => { STATE.filter = "big"; render(); };
+        document.getElementById("btn-be").onclick = () => { STATE.filter = "be"; render(); };
         document.getElementById("btn-all").onclick = () => { STATE.filter = "all"; render(); };
         document.getElementById("btn-day").onclick = () => { STATE.view = "day"; render(); };
         document.getElementById("btn-rest").onclick = () => { STATE.view = "rest"; render(); };
