@@ -84,7 +84,7 @@
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
     }
 
-    /* Sections: On now / Up next / Earlier today */
+    /* Rest of Day: the On Now header */
     h2 {
       font-size: 14px;
       font-weight: 600;
@@ -122,20 +122,6 @@
       color: #777;
       margin: 0 0 6px;
     }
-
-    details summary {
-      cursor: pointer;
-      list-style: none;
-    }
-
-    details summary::-webkit-details-marker { display: none; }
-
-    details summary h2::after {
-      content: " ▸";
-      color: #999;
-    }
-
-    details[open] summary h2::after { content: " ▾"; }
 
     /* Game cards: one column on phones, two on wider screens */
     .list {
@@ -264,8 +250,8 @@
           <button id="btn-all" type="button">All games</button>
         </div>
         <div class="toggle">
-          <button id="btn-best" type="button">Best first</button>
-          <button id="btn-time" type="button">By time</button>
+          <button id="btn-day" type="button">All Day</button>
+          <button id="btn-rest" type="button">Rest of Day</button>
         </div>
       </div>
       <div id="sections"></div>
@@ -372,57 +358,55 @@
     }
 
     function section(title, games, sort, opts = {}) {
-      const head = `<h2 class="${opts.live ? "live" : ""}">${title}
-        <span class="count">${games.length}</span></h2>`;
-      const body = sort === "time" && opts.groups ? grouped(games)
-        : list(games.slice().sort(sort === "time" ? byTime : byBest));
-      if (opts.collapsible) {
-        return `<details ${opts.open ? "open" : ""}><summary>${head}</summary>${body}</details>`;
-      }
-      return head + body;
+      return `<h2 class="${opts.live ? "live" : ""}">${title}
+        <span class="count">${games.length}</span></h2>` +
+        list(games.slice().sort(sort === "time" ? byTime : byBest));
     }
 
     let DATA = null;
-    const STATE = { filter: "big", sort: "best" };
+    const STATE = { filter: "big", view: "day" };
 
     function render() {
       const now = easternNow(DATA.date);
       const games = DATA.games.filter(g => STATE.filter === "all" || g.big);
       SORTED = games.map(g => g.qual).filter(q => q != null).sort((a, b) => a - b);
 
-      if (now.date !== DATA.date) {
-        document.getElementById("sections").innerHTML = games.length
-          ? (STATE.sort === "time" ? grouped(games) : list(games.slice().sort(byBest)))
-          : `<p class="empty-line">No big games that day. Tap All games to see the full slate.</p>`;
-        updateButtons();
-        return;
+      const out = document.getElementById("sections");
+      if (!games.length) {
+        out.innerHTML = `<p class="empty-line">No big games. Tap All Games to see the full slate.</p>`;
+        return updateButtons();
       }
 
-      const on = [], next = [], done = [];
+      // All Day: every game, best rating first.
+      if (STATE.view === "day") {
+        out.innerHTML = list(games.slice().sort(byBest));
+        return updateButtons();
+      }
+
+      // Rest of Day on another day's table (e.g. yesterday's before 7 AM): the day by tip-off.
+      if (now.date !== DATA.date) {
+        out.innerHTML = grouped(games);
+        return updateButtons();
+      }
+
+      // Rest of Day: finished games drop off. On Now first, then what's left by tip-off time.
+      const on = [], next = [];
       for (const g of games) {
-        let status;
-        if (g.tip == null) status = "next";
-        else if (now.min >= g.tip + GAME_MINUTES) status = "done";
-        else if (now.min >= g.tip) status = "on";
-        else status = "next";
-        ({ on, next, done })[status].push(g);
+        if (g.tip == null || now.min < g.tip) next.push(g);
+        else if (now.min < g.tip + GAME_MINUTES) on.push(g);
       }
 
       let html = "";
       if (on.length) {
-        html += section("On now", on, STATE.sort, { live: true });
+        html += section("On Now", on, "best", { live: true });
       } else if (next.length) {
         const first = Math.min(...next.map(g => g.tip ?? 9999));
-        html += `<h2>On now</h2><p class="empty-line">Nothing on right now. Next tip-off:
+        html += `<h2>On Now</h2><p class="empty-line">Nothing on right now. Next tip-off:
           ${esc(niceTime(first === 9999 ? null : first))}.</p>`;
       }
-      if (next.length) html += section("Up next", next, STATE.sort, { groups: true });
-      if (done.length) {
-        html += section("Earlier today", done, STATE.sort,
-          { groups: true, collapsible: true, open: !on.length && !next.length });
-      }
-      if (!games.length) {
-        html = `<p class="empty-line">No big games today. Tap All games to see the full slate.</p>`;
+      html += grouped(next);
+      if (!on.length && !next.length) {
+        html = `<p class="empty-line">No more games today.</p>`;
       }
       document.getElementById("sections").innerHTML = html;
       updateButtons();
@@ -430,12 +414,12 @@
 
     function updateButtons() {
       const nBig = DATA.games.filter(g => g.big).length;
-      document.getElementById("btn-big").textContent = `Big games (${nBig})`;
-      document.getElementById("btn-all").textContent = `All games (${DATA.games.length})`;
+      document.getElementById("btn-big").textContent = `Big Games (${nBig})`;
+      document.getElementById("btn-all").textContent = `All Games (${DATA.games.length})`;
       document.getElementById("btn-big").classList.toggle("on", STATE.filter === "big");
       document.getElementById("btn-all").classList.toggle("on", STATE.filter === "all");
-      document.getElementById("btn-best").classList.toggle("on", STATE.sort === "best");
-      document.getElementById("btn-time").classList.toggle("on", STATE.sort === "time");
+      document.getElementById("btn-day").classList.toggle("on", STATE.view === "day");
+      document.getElementById("btn-rest").classList.toggle("on", STATE.view === "rest");
     }
 
     fetch(DATA_URL, { cache: "no-store" })
@@ -468,8 +452,8 @@
         if (!data.games.some(g => g.big)) STATE.filter = "all";
         document.getElementById("btn-big").onclick = () => { STATE.filter = "big"; render(); };
         document.getElementById("btn-all").onclick = () => { STATE.filter = "all"; render(); };
-        document.getElementById("btn-best").onclick = () => { STATE.sort = "best"; render(); };
-        document.getElementById("btn-time").onclick = () => { STATE.sort = "time"; render(); };
+        document.getElementById("btn-day").onclick = () => { STATE.view = "day"; render(); };
+        document.getElementById("btn-rest").onclick = () => { STATE.view = "rest"; render(); };
         render();
         document.getElementById("main").style.display = "block";
         // Move games along as the day goes on without a reload.
