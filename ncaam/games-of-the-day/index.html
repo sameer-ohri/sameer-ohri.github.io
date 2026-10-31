@@ -140,7 +140,7 @@
     /* Game cards: one column on phones, two on wider screens */
     .list {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: minmax(0, 1fr);
       gap: 8px;
     }
 
@@ -149,6 +149,7 @@
     }
 
     .game {
+      min-width: 0;
       background: #fff;
       border: 1px solid #e2e6ea;
       border-radius: 12px;
@@ -213,7 +214,8 @@
     .game.big .teams { font-weight: 700; }
 
     /* One line if the matchup fits; otherwise it breaks only before the "@" */
-    .game .nw { white-space: nowrap; }
+    .game .teams .nw { display: inline-block; max-width: 100%; }
+    .game .when .nw { white-space: nowrap; }
 
     .game .at {
       color: #999;
