@@ -38,7 +38,7 @@
     .subtitle {
       font-size: 13px;
       color: #666;
-      margin: 0 0 24px;
+      margin: 0 0 20px;
     }
 
     .stale {
@@ -48,7 +48,40 @@
       border: 1px solid #f0dca0;
       border-radius: 8px;
       padding: 8px 12px;
-      margin: -12px 0 20px;
+      margin: -8px 0 20px;
+    }
+
+    /* Big games / All games switch */
+    .toggle {
+      display: inline-flex;
+      background: #e9ecf0;
+      border-radius: 9px;
+      padding: 3px;
+      margin-bottom: 10px;
+    }
+
+    .toggle button {
+      font: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      border: 0;
+      background: transparent;
+      color: #555;
+      padding: 7px 14px;
+      border-radius: 7px;
+      cursor: pointer;
+    }
+
+    .toggle button.on {
+      background: #fff;
+      color: #002868;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+    }
+
+    .note {
+      font-size: 12px;
+      color: #888;
+      margin: 0 0 14px;
     }
 
     .card {
@@ -101,20 +134,60 @@
       color: #888;
     }
 
-    td.qual {
+    .qual {
       font-weight: 600;
       border-radius: 6px;
     }
 
-    /* Big games (QualScore above the email's threshold) and UConn games */
-    tr.big td.team, tr.big td.pred {
+    /* In the All games view, big games (and UConn) are bold */
+    .all tr.big td.team, .all tr.big td.pred, .all .game.big .teams {
       font-weight: 700;
     }
 
-    .note {
+    /* Phone cards (shown instead of the table below 600px) */
+    .cards { display: none; }
+
+    .game {
+      padding: 11px 14px;
+      border-bottom: 1px solid #f0f2f5;
+    }
+
+    .game:last-child { border-bottom: none; }
+
+    .game .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       font-size: 12px;
       color: #888;
-      margin: -12px 0 24px;
+      margin-bottom: 3px;
+    }
+
+    .game .top .qual {
+      font-size: 13px;
+      color: #111;
+      padding: 2px 8px;
+      min-width: 44px;
+      text-align: center;
+    }
+
+    .game .teams {
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .all .game .teams { font-weight: 400; }
+
+    .game .at {
+      color: #999;
+      font-weight: 400;
+    }
+
+    .game .pred {
+      font-size: 13px;
+      color: #555;
+      margin-top: 2px;
     }
 
     #empty, #error {
@@ -126,16 +199,9 @@
 
     #error { color: #c0392b; }
 
-    .show-mobile { display: none; }
-    .table-wrap { overflow-x: auto; }
-
-    /* Phones: drop TV and Venue so the table fits */
     @media (max-width: 599px) {
-      .hide-mobile { display: none; }
-      .show-mobile { display: inline; }
-      table { font-size: 12px; }
-      tbody td, thead th { padding: 8px 3px; }
-      td.time { white-space: normal; width: 52px; }
+      .table-view { display: none; }
+      .cards { display: block; }
     }
   </style>
 </head>
@@ -147,28 +213,33 @@
     <p class="subtitle" id="subtitle">Loading…</p>
     <div class="stale" id="stale" style="display:none"></div>
 
-    <div class="card" id="card" style="display:none">
-      <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Time</th>
-            <th class="hide-mobile">TV</th>
-            <th>Visitor</th>
-            <th>Home</th>
-            <th class="hide-mobile">Venue</th>
-            <th>Prediction</th>
-            <th class="num"><span class="hide-mobile">QualScore</span><span class="show-mobile">Qual</span></th>
-          </tr>
-        </thead>
-        <tbody id="games-body"></tbody>
-      </table>
+    <div id="main" style="display:none">
+      <div class="toggle">
+        <button id="btn-big" type="button">Big games</button>
+        <button id="btn-all" type="button">All games</button>
+      </div>
+      <p class="note" id="note"></p>
+
+      <div class="card" id="card">
+        <div class="table-view">
+          <table>
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>TV</th>
+                <th>Visitor</th>
+                <th>Home</th>
+                <th>Venue</th>
+                <th>Prediction</th>
+                <th class="num">QualScore</th>
+              </tr>
+            </thead>
+            <tbody id="games-body"></tbody>
+          </table>
+        </div>
+        <div class="cards" id="cards"></div>
       </div>
     </div>
-    <p class="note" id="note" style="display:none">
-      Team numbers are the average KenPom + Torvik rank. Prediction and QualScore
-      (game quality, 0–100) average KenPom and Torvik. Bold = big game or UConn.
-    </p>
 
     <div id="empty" style="display:none"></div>
     <div id="error" style="display:none"></div>
@@ -196,26 +267,63 @@
     }
 
     // Same colors as the Excel attachment: red (low) → yellow (median) → green (high),
-    // by each game's percentile among today's games.
+    // by each game's percentile among ALL of the day's games.
     const RED = [248, 105, 107], YELLOW = [255, 235, 132], GREEN = [99, 190, 123];
     function mix(a, b, t) { return a.map((v, i) => Math.round(v + (b[i] - v) * t)); }
-    function qualColor(q, sorted) {
-      if (q == null || sorted.length < 2) return "";
-      const p = sorted.indexOf(q) / (sorted.length - 1);
+    let SORTED = [];
+    function qualStyle(q) {
+      if (q == null || SORTED.length < 2) return "";
+      const p = SORTED.indexOf(q) / (SORTED.length - 1);
       const c = p < 0.5 ? mix(RED, YELLOW, p / 0.5) : mix(YELLOW, GREEN, (p - 0.5) / 0.5);
       return `background: rgb(${c.join(",")})`;
     }
+    function qualText(q) { return q == null ? "" : q.toFixed(1); }
 
-    function row(g, sorted) {
+    function tableRow(g) {
       return `<tr class="${g.big ? "big" : ""}">
         <td class="time">${esc(g.time)}</td>
-        <td class="small hide-mobile">${esc(g.tv)}</td>
+        <td class="small">${esc(g.tv)}</td>
         <td class="team">${esc(g.visitor)}</td>
         <td class="team">${esc(g.home)}</td>
-        <td class="small hide-mobile">${esc(g.venue)}</td>
+        <td class="small">${esc(g.venue)}</td>
         <td class="pred">${esc(g.prediction)}</td>
-        <td class="num qual" style="${qualColor(g.qual, sorted)}">${g.qual == null ? "" : g.qual.toFixed(1)}</td>
+        <td class="num qual" style="${qualStyle(g.qual)}">${qualText(g.qual)}</td>
       </tr>`;
+    }
+
+    function card(g) {
+      const when = [g.time, g.tv].filter(Boolean).map(esc).join(" · ");
+      return `<div class="game ${g.big ? "big" : ""}">
+        <div class="top">
+          <span>${when}</span>
+          <span class="qual" style="${qualStyle(g.qual)}">${qualText(g.qual)}</span>
+        </div>
+        <div class="teams">${esc(g.visitor)} <span class="at">@</span> ${esc(g.home)}</div>
+        <div class="pred">${esc(g.short || g.prediction)}</div>
+      </div>`;
+    }
+
+    let DATA = null;
+
+    function show(mode) {
+      const games = DATA.games;
+      const big = games.filter(g => g.big)
+        // Same order as the email: UConn first, then best game first
+        .sort((a, b) => (b.uconn - a.uconn) || ((b.qual ?? -1) - (a.qual ?? -1)));
+      const list = mode === "big" ? big : games;
+
+      document.getElementById("btn-big").textContent = `Big games (${big.length})`;
+      document.getElementById("btn-all").textContent = `All games (${games.length})`;
+      document.getElementById("btn-big").classList.toggle("on", mode === "big");
+      document.getElementById("btn-all").classList.toggle("on", mode === "all");
+      document.getElementById("card").className = `card ${mode}`;
+
+      document.getElementById("note").textContent = mode === "big"
+        ? "QualScore above 65, plus any UConn game. Best game first."
+        : "In tip-off order. Bold = big game or UConn.";
+
+      document.getElementById("games-body").innerHTML = list.map(tableRow).join("");
+      document.getElementById("cards").innerHTML = list.map(card).join("");
     }
 
     fetch(DATA_URL, { cache: "no-store" })
@@ -224,9 +332,11 @@
         return r.json();
       })
       .then(data => {
+        DATA = data;
         const n = data.games.length;
         document.getElementById("subtitle").textContent =
-          `${longDate(data.date)} · ${n} game${n === 1 ? "" : "s"}`;
+          `${longDate(data.date)} · ${n} game${n === 1 ? "" : "s"}` +
+          " · Numbers are the KenPom + Torvik average";
 
         if (data.date !== todayIso()) {
           const el = document.getElementById("stale");
@@ -242,11 +352,12 @@
           return;
         }
 
-        const sorted = data.games.map(g => g.qual).filter(q => q != null).sort((a, b) => a - b);
-        document.getElementById("games-body").innerHTML =
-          data.games.map(g => row(g, sorted)).join("");
-        document.getElementById("card").style.display = "block";
-        document.getElementById("note").style.display = "block";
+        SORTED = data.games.map(g => g.qual).filter(q => q != null).sort((a, b) => a - b);
+        document.getElementById("btn-big").onclick = () => show("big");
+        document.getElementById("btn-all").onclick = () => show("all");
+        // Start on big games; a day with none starts on all games instead.
+        show(data.games.some(g => g.big) ? "big" : "all");
+        document.getElementById("main").style.display = "block";
       })
       .catch(err => {
         document.getElementById("subtitle").textContent = "";
