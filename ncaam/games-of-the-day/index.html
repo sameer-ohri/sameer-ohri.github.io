@@ -322,14 +322,14 @@
       return `${h12}${m ? ":" + String(m).padStart(2, "0") : ""} ${h < 12 ? "a.m." : "p.m."}`;
     }
 
-    // One color, pale blue (lowest) → navy (highest), by each game's percentile among
-    // the games being shown (so Big games still range from light to dark).
-    const LIGHT = [226, 233, 245], DARK = [0, 40, 104];
+    // One color, pale blue → navy, on a fixed QualScore scale that's the same every day
+    // (and the same as the email): 20 or less palest, 90 or more navy. Last season's middle
+    // 98% of games ran 11-89.
+    const LIGHT = [226, 233, 245], DARK = [0, 40, 104], Q_LOW = 20, Q_HIGH = 90;
     function mix(a, b, t) { return a.map((v, i) => Math.round(v + (b[i] - v) * t)); }
-    let SORTED = [];
     function qualStyle(q) {
       if (q == null) return "";
-      const p = SORTED.length < 2 ? 1 : SORTED.indexOf(q) / (SORTED.length - 1);
+      const p = Math.min(Math.max((q - Q_LOW) / (Q_HIGH - Q_LOW), 0), 1);
       return `background: rgb(${mix(LIGHT, DARK, p).join(",")}); color: ${p > 0.45 ? "#fff" : "#002868"}`;
     }
 
@@ -385,7 +385,6 @@
     function render() {
       const now = easternNow(DATA.date);
       const games = DATA.games.filter(FILTERS[STATE.filter]);
-      SORTED = games.map(g => g.qual).filter(q => q != null).sort((a, b) => a - b);
 
       const out = document.getElementById("sections");
       if (!games.length) {
