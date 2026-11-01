@@ -474,7 +474,11 @@
         }
 
         // Start on big games; a day with none starts on all games instead.
-        if (!data.games.some(g => g.big)) STATE.filter = "all";
+        // ?show=all|big|be picks the starting list (the email's "All N games" button sends
+        // ?show=all); otherwise Big Games, or All Games on a day with none.
+        const show = new URLSearchParams(location.search).get("show");
+        if (["all", "big", "be"].includes(show)) STATE.filter = show;
+        else if (!data.games.some(g => g.big)) STATE.filter = "all";
         document.getElementById("btn-big").onclick = () => { STATE.filter = "big"; render(); };
         document.getElementById("btn-be").onclick = () => { STATE.filter = "be"; render(); };
         document.getElementById("btn-all").onclick = () => { STATE.filter = "all"; render(); };
