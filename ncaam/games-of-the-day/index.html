@@ -323,9 +323,9 @@
     }
 
     // One color, pale blue → navy, on a fixed QualScore scale that's the same every day
-    // (and the same as the email), for every game card: 10 or less palest, 90 or more navy.
+    // (and the same as the email), for every game card: 25 or less palest, 85 or more navy.
     // Last season's middle 98% of games ran 11-89.
-    const LIGHT = [226, 233, 245], DARK = [0, 40, 104], Q_LOW = 10, Q_HIGH = 90;
+    const LIGHT = [226, 233, 245], DARK = [0, 40, 104], Q_LOW = 25, Q_HIGH = 85;
     function mix(a, b, t) { return a.map((v, i) => Math.round(v + (b[i] - v) * t)); }
     function qualStyle(q) {
       if (q == null) return "";
