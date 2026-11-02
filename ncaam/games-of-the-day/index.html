@@ -384,7 +384,7 @@
     const FILTERS = { big: g => g.big, be: isBigEast, all: () => true };
 
     let DATA = null;
-    const STATE = { filter: "big", view: "day" };
+    const STATE = { filter: "big", view: "rest" };
 
     function render() {
       const now = easternNow(DATA.date);
@@ -422,11 +422,12 @@
       } else if (next.length) {
         const first = Math.min(...next.map(g => g.tip ?? 9999));
         html += `<h2>On Now</h2><p class="empty-line">Nothing on right now. Next tip-off:
-          ${esc(niceTime(first === 9999 ? null : first))}.</p>`;
+          ${esc(niceTime(first === 9999 ? null : first)).replace(/\.?$/, ".")}</p>`;
       }
       html += grouped(next);
       if (!on.length && !next.length) {
-        html = `<p class="empty-line">No more games today.</p>`;
+        const left = { big: "Big Games", be: "Big East games", all: "games" }[STATE.filter];
+        html = `<p class="empty-line">No more ${left} today.</p>`;
       }
       document.getElementById("sections").innerHTML = html;
       updateButtons();
