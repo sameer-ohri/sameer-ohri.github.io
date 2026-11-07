@@ -179,6 +179,8 @@
       min-width: 0;
     }
 
+    .tv-link { text-decoration: none; min-width: 0; }
+    .tv-link:hover .tv { text-decoration: underline; }
     .tv {
       font-size: 11px;
       font-weight: 600;
@@ -341,7 +343,10 @@
       // Several channels ("Summit League Network, Midco Sports Plus 2, …"): show the first,
       // the full list on hover.
       const first = String(g.tv || "").split(",")[0].trim();
-      const tv = first ? `<span class="tv" title="${esc(g.tv)}">${esc(first)}</span>` : "";
+      const tvBadge = `<span class="tv" title="${esc(g.tv)}">${esc(first)}</span>`;
+      const tv = !first ? "" : g.tv_url
+        ? `<a class="tv-link" href="${esc(g.tv_url)}" target="_blank" rel="noopener">${tvBadge}</a>`
+        : tvBadge;
       return `<div class="game ${g.big ? "big" : ""}">
         <div class="body">
           <div class="top"><span class="when"><span class="nw">${esc(niceTime(g.tip))}</span> ${tv}</span></div>
