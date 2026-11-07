@@ -88,6 +88,12 @@
     td.conf { color: #222; }
     td.conf a { color: #002868; }
 
+    /* Desktop: bigger table text and a little more room in each row (phone rules are below) */
+    @media (min-width: 768px) {
+      table { font-size: 15px; }
+      th, td { padding: 11px 22px; }
+    }
+
     .empty-line { color: #666; padding: 16px; margin: 0; text-align: center; }
 
     /* Phone: tighter cells so all four columns fit without sideways scrolling */

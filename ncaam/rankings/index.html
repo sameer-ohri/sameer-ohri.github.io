@@ -118,6 +118,12 @@
     td.team .short { display: none; }
     td.rec { color: #444; }
 
+    /* Desktop: bigger table text and a little more room in each row (phone rules are below) */
+    @media (min-width: 768px) {
+      table { font-size: 15px; }
+      th, td { padding: 11px 12px; }
+    }
+
     .note { font-size: 12px; color: #666; text-align: center; margin: 12px 0 0; }
 
     .empty-line { color: #666; padding: 16px; margin: 0; text-align: center; }
