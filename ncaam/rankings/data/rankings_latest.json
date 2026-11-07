@@ -1,6 +1,6 @@
 {
  "date": "2026-11-06",
- "updated": "2026-11-06 19:47",
+ "updated": "2026-11-06 19:49",
  "source_date": "2026-11-06",
  "teams": [
   {
@@ -2192,7 +2192,7 @@
   {
    "rk": 312,
    "team": "North Carolina A&T",
-   "short": "N.C. A&T",
+   "short": "NC A&T",
    "conf": "Coastal Athletic",
    "w": 0,
    "l": 0
@@ -2528,7 +2528,7 @@
   {
    "rk": 359,
    "team": "Maryland Eastern Shore",
-   "short": "Md Eastern Shore",
+   "short": "Md. Eastern Shore",
    "conf": "MEAC",
    "w": 0,
    "l": 2
