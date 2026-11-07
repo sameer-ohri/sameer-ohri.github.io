@@ -136,6 +136,22 @@
         { weekday: "long", month: "long", day: "numeric" });
     }
 
+    // Same wording as the rankings page: "Updated Friday, Nov. 6 · 7:49 p.m. ET".
+    function updatedLine(stamp, fallbackIso) {
+      const [day, hm] = String(stamp || "").split(" ");
+      const [y, mo, d] = (day || fallbackIso).split("-").map(Number);
+      const MONTHS = ["Jan.", "Feb.", "March", "April", "May", "June", "July", "Aug.",
+        "Sept.", "Oct.", "Nov.", "Dec."];
+      const weekday = new Date(y, mo - 1, d).toLocaleDateString("en-US", { weekday: "long" });
+      let line = `Updated ${weekday}, ${MONTHS[mo - 1]} ${d}`;
+      const [h, m] = (hm || "").split(":").map(Number);
+      if (Number.isFinite(h) && Number.isFinite(m)) {
+        const h12 = h % 12 === 0 ? 12 : h % 12;
+        line += ` · ${h12}:${String(m).padStart(2, "0")} ${h < 12 ? "a.m." : "p.m."} ET`;
+      }
+      return line;
+    }
+
     // One row per conference, worked out from the team rankings in the browser.
     // Average place = mean of the place numbers of its teams (lowest is best).
     function conferenceRows(teams) {
@@ -206,7 +222,7 @@
       .then(r => r.json())
       .then(d => {
         const sub = document.getElementById("subtitle");
-        sub.textContent = longDate(d.date);
+        sub.textContent = updatedLine(d.updated, d.date);
         if (d.source_date && d.source_date !== d.date) {
           document.getElementById("stale").innerHTML =
             `<p class="stale">These rankings are from ${esc(longDate(d.source_date))}. Today's are not in yet.</p>`;
