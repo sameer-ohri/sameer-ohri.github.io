@@ -90,10 +90,9 @@
 
     /* Phone: tighter cells so all four columns fit without sideways scrolling */
     @media (max-width: 480px) {
-      table { width: 100%; font-size: 15px; }
+      table { font-size: 15px; }
       th, td { padding: 9px 10px; }
-      th.conf, td.conf { white-space: nowrap; }
-      th.avg, td.avg { white-space: normal; }
+      th.avg, td.avg, th.conf, td.conf { white-space: normal; }
     }
   </style>
 </head>
@@ -151,7 +150,7 @@
     const STATE = { key: "rk", desc: false };
     let ROWS = [];
 
-    const COLS = [["rk", "Rank", ""], ["conf", "Conference", "conf"], ["avg", "Avg. Rk", "avg"], ["teams", "Teams", ""]];
+    const COLS = [["rk", "Rank", ""], ["conf", "Conference", "conf"], ["avg", "Average place", "avg"], ["teams", "Teams", ""]];
 
     function sortedRows() {
       const k = STATE.key, dir = STATE.desc ? -1 : 1;
