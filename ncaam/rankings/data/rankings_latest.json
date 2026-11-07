@@ -1,6 +1,6 @@
 {
  "date": "2026-11-06",
- "updated": "2026-11-06 11:03",
+ "updated": "2026-11-06 19:47",
  "source_date": "2026-11-06",
  "teams": [
   {
@@ -608,6 +608,7 @@
   {
    "rk": 87,
    "team": "George Washington",
+   "short": "George Wash.",
    "conf": "Atlantic 10",
    "w": 1,
    "l": 0
@@ -874,6 +875,7 @@
   {
    "rk": 125,
    "team": "Stephen F. Austin",
+   "short": "Steph. F. Austin",
    "conf": "Southland",
    "w": 0,
    "l": 0
@@ -1175,6 +1177,7 @@
   {
    "rk": 168,
    "team": "East Tennessee St.",
+   "short": "E. Tenn. St.",
    "conf": "Southern",
    "w": 0,
    "l": 1
@@ -1238,6 +1241,7 @@
   {
    "rk": 177,
    "team": "Eastern Washington",
+   "short": "E. Washington",
    "conf": "Big Sky",
    "w": 0,
    "l": 1
@@ -1561,6 +1565,7 @@
   {
    "rk": 223,
    "team": "Florida Gulf Coast",
+   "short": "Fla. Gulf Coast",
    "conf": "ASUN",
    "w": 0,
    "l": 1
@@ -1596,6 +1601,7 @@
   {
    "rk": 228,
    "team": "Southeast Missouri",
+   "short": "SE Missouri",
    "conf": "Ohio Valley",
    "w": 1,
    "l": 0
@@ -2073,6 +2079,7 @@
   {
    "rk": 296,
    "team": "Charleston Southern",
+   "short": "Charleston So.",
    "conf": "Big South",
    "w": 0,
    "l": 1
@@ -2185,6 +2192,7 @@
   {
    "rk": 312,
    "team": "North Carolina A&T",
+   "short": "N.C. A&T",
    "conf": "Coastal Athletic",
    "w": 0,
    "l": 0
@@ -2297,6 +2305,7 @@
   {
    "rk": 328,
    "team": "Cal St. Bakersfield",
+   "short": "CS Bakersfield",
    "conf": "Big West",
    "w": 0,
    "l": 0
@@ -2353,6 +2362,7 @@
   {
    "rk": 336,
    "team": "Central Connecticut",
+   "short": "Central Conn.",
    "conf": "Northeast",
    "w": 0,
    "l": 2
@@ -2459,6 +2469,7 @@
   {
    "rk": 351,
    "team": "Arkansas Pine Bluff",
+   "short": "Ark. Pine Bluff",
    "conf": "SWAC",
    "w": 0,
    "l": 1
@@ -2480,6 +2491,7 @@
   {
    "rk": 354,
    "team": "South Carolina St.",
+   "short": "So. Carolina St.",
    "conf": "MEAC",
    "w": 0,
    "l": 0
@@ -2487,6 +2499,7 @@
   {
    "rk": 355,
    "team": "Fairleigh Dickinson",
+   "short": "Fair. Dickinson",
    "conf": "Northeast",
    "w": 0,
    "l": 2
