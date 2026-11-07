@@ -218,7 +218,10 @@
       "Ohio Valley": "OVC", "Patriot League": "Patriot", "Southern": "SoCon",
       "Summit League": "Summit", "United Athletic": "UAC", "West Coast": "WCC",
     };
-    const confShort = name => CONF_SHORT[name] || name;
+    // Short conference names on phones only; desktop shows the full name.
+    const PHONE = window.matchMedia("(max-width: 480px)");
+    const confShort = name => (PHONE.matches ? CONF_SHORT[name] || name : name);
+    PHONE.addEventListener("change", () => render());
 
     // Columns: Rk, Team, Conference, D1 Record. Click a header to sort; default is Rk.
     const STATE = { key: "rk", desc: false, query: "", conf: "" };
