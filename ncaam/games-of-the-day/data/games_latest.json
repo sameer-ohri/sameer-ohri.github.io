@@ -1,6 +1,6 @@
 {
  "date": "2026-11-08",
- "updated": "2026-11-08 06:50",
+ "updated": "2026-11-08 12:01",
  "games": [
   {
    "time": "12:00 PM",
@@ -19,7 +19,7 @@
   {
    "time": "1:00 PM",
    "tv": "ESPN",
-   "tv_url": "",
+   "tv_url": "https://www.espn.com/watch",
    "visitor": "19 Arkansas",
    "home": "17 Virginia",
    "venue": "Capital One Arena (Washington, DC)",
@@ -117,7 +117,7 @@
   {
    "time": "2:00 PM",
    "tv": "USA Net",
-   "tv_url": "",
+   "tv_url": "https://www.usanetwork.com/live",
    "visitor": "82 Butler",
    "home": "77 Boise St.",
    "venue": "ExtraMile Arena (Boise, ID)",
@@ -369,7 +369,7 @@
   {
    "time": "8:30 PM",
    "tv": "CW",
-   "tv_url": "",
+   "tv_url": "https://www.cwtv.com/thecw/the-cw-app/",
    "visitor": "4 Houston",
    "home": "92 California",
    "venue": "Tahoe Blue Event Center (Stateline, NV)",
@@ -383,7 +383,7 @@
   {
    "time": "11:00 PM",
    "tv": "CW",
-   "tv_url": "",
+   "tv_url": "https://www.cwtv.com/thecw/the-cw-app/",
    "visitor": "76 Wichita St.",
    "home": "47 USC",
    "venue": "Tahoe Blue Event Center (Stateline, NV)",
