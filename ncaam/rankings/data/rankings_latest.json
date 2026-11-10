@@ -1,7 +1,7 @@
 {
- "date": "2026-11-09",
- "updated": "2026-11-09 06:49",
- "source_date": "2026-11-09",
+ "date": "2026-11-10",
+ "updated": "2026-11-10 06:49",
+ "source_date": "2026-11-10",
  "teams": [
   {
    "rk": 1,
@@ -35,55 +35,55 @@
    "rk": 5,
    "team": "Connecticut",
    "conf": "Big East",
-   "w": 2,
+   "w": 3,
    "l": 0
   },
   {
    "rk": 6,
-   "team": "Arizona",
-   "conf": "Big 12",
-   "w": 1,
-   "l": 1
-  },
-  {
-   "rk": 7,
    "team": "Michigan St.",
    "conf": "Big Ten",
    "w": 2,
    "l": 0
   },
   {
-   "rk": 8,
+   "rk": 7,
    "team": "Kansas",
    "conf": "Big 12",
    "w": 2,
    "l": 0
   },
   {
-   "rk": 9,
+   "rk": 8,
    "team": "Gonzaga",
    "conf": "Pac-12",
    "w": 2,
    "l": 0
   },
   {
+   "rk": 9,
+   "team": "St. John's",
+   "conf": "Big East",
+   "w": 2,
+   "l": 0
+  },
+  {
    "rk": 10,
-   "team": "Michigan",
-   "conf": "Big Ten",
+   "team": "Virginia",
+   "conf": "ACC",
+   "w": 3,
+   "l": 0
+  },
+  {
+   "rk": 11,
+   "team": "Arizona",
+   "conf": "Big 12",
    "w": 1,
    "l": 1
   },
   {
-   "rk": 11,
-   "team": "Tennessee",
-   "conf": "SEC",
-   "w": 1,
-   "l": 0
-  },
-  {
    "rk": 12,
-   "team": "Virginia",
-   "conf": "ACC",
+   "team": "Texas",
+   "conf": "SEC",
    "w": 3,
    "l": 0
   },
@@ -96,9 +96,9 @@
   },
   {
    "rk": 14,
-   "team": "St. John's",
-   "conf": "Big East",
-   "w": 2,
+   "team": "Alabama",
+   "conf": "SEC",
+   "w": 3,
    "l": 0
   },
   {
@@ -110,36 +110,36 @@
   },
   {
    "rk": 16,
-   "team": "Alabama",
-   "conf": "SEC",
+   "team": "Nebraska",
+   "conf": "Big Ten",
    "w": 2,
    "l": 0
   },
   {
    "rk": 17,
-   "team": "Texas",
+   "team": "Tennessee",
    "conf": "SEC",
    "w": 2,
    "l": 0
   },
   {
    "rk": 18,
-   "team": "Iowa St.",
-   "conf": "Big 12",
-   "w": 1,
-   "l": 1
-  },
-  {
-   "rk": 19,
    "team": "Louisville",
    "conf": "ACC",
    "w": 2,
    "l": 0
   },
   {
-   "rk": 20,
-   "team": "Nebraska",
+   "rk": 19,
+   "team": "Michigan",
    "conf": "Big Ten",
+   "w": 1,
+   "l": 1
+  },
+  {
+   "rk": 20,
+   "team": "BYU",
+   "conf": "Big 12",
    "w": 2,
    "l": 0
   },
@@ -152,30 +152,30 @@
   },
   {
    "rk": 22,
-   "team": "BYU",
+   "team": "Iowa St.",
    "conf": "Big 12",
-   "w": 2,
-   "l": 0
-  },
-  {
-   "rk": 23,
-   "team": "Arkansas",
-   "conf": "SEC",
    "w": 1,
    "l": 1
   },
   {
-   "rk": 24,
-   "team": "Kentucky",
+   "rk": 23,
+   "team": "Auburn",
    "conf": "SEC",
    "w": 2,
    "l": 0
   },
   {
-   "rk": 25,
-   "team": "Auburn",
+   "rk": 24,
+   "team": "Texas A&M",
    "conf": "SEC",
-   "w": 1,
+   "w": 3,
+   "l": 0
+  },
+  {
+   "rk": 25,
+   "team": "TCU",
+   "conf": "Big 12",
+   "w": 2,
    "l": 0
   },
   {
@@ -187,36 +187,36 @@
   },
   {
    "rk": 27,
-   "team": "Miami FL",
-   "conf": "ACC",
+   "team": "Arkansas",
+   "conf": "SEC",
    "w": 1,
    "l": 1
   },
   {
    "rk": 28,
-   "team": "Texas A&M",
-   "conf": "SEC",
+   "team": "Miami FL",
+   "conf": "ACC",
    "w": 2,
-   "l": 0
+   "l": 1
   },
   {
    "rk": 29,
-   "team": "TCU",
-   "conf": "Big 12",
+   "team": "Marquette",
+   "conf": "Big East",
    "w": 2,
    "l": 0
   },
   {
    "rk": 30,
-   "team": "North Carolina",
-   "conf": "ACC",
+   "team": "Kentucky",
+   "conf": "SEC",
    "w": 2,
    "l": 0
   },
   {
    "rk": 31,
-   "team": "Cincinnati",
-   "conf": "Big 12",
+   "team": "North Carolina",
+   "conf": "ACC",
    "w": 2,
    "l": 0
   },
@@ -224,22 +224,22 @@
    "rk": 32,
    "team": "Ohio St.",
    "conf": "Big Ten",
-   "w": 1,
+   "w": 2,
    "l": 1
   },
   {
    "rk": 33,
-   "team": "Marquette",
-   "conf": "Big East",
-   "w": 2,
-   "l": 0
+   "team": "Purdue",
+   "conf": "Big Ten",
+   "w": 1,
+   "l": 2
   },
   {
    "rk": 34,
-   "team": "Purdue",
-   "conf": "Big Ten",
-   "w": 0,
-   "l": 2
+   "team": "West Virginia",
+   "conf": "Big 12",
+   "w": 2,
+   "l": 0
   },
   {
    "rk": 35,
@@ -250,38 +250,38 @@
   },
   {
    "rk": 36,
-   "team": "West Virginia",
-   "conf": "Big 12",
+   "team": "Missouri",
+   "conf": "SEC",
    "w": 2,
-   "l": 0
+   "l": 1
   },
   {
    "rk": 37,
-   "team": "Utah St.",
-   "conf": "Pac-12",
+   "team": "Cincinnati",
+   "conf": "Big 12",
    "w": 2,
-   "l": 0
+   "l": 1
   },
   {
    "rk": 38,
    "team": "Indiana",
    "conf": "Big Ten",
-   "w": 2,
+   "w": 3,
    "l": 0
   },
   {
    "rk": 39,
-   "team": "Wisconsin",
-   "conf": "Big Ten",
-   "w": 2,
+   "team": "LSU",
+   "conf": "SEC",
+   "w": 3,
    "l": 0
   },
   {
    "rk": 40,
-   "team": "Missouri",
-   "conf": "SEC",
-   "w": 1,
-   "l": 1
+   "team": "Utah St.",
+   "conf": "Pac-12",
+   "w": 2,
+   "l": 0
   },
   {
    "rk": 41,
@@ -292,129 +292,129 @@
   },
   {
    "rk": 42,
-   "team": "Saint Louis",
-   "conf": "Atlantic 10",
-   "w": 2,
-   "l": 0
-  },
-  {
-   "rk": 43,
-   "team": "Saint Mary's",
-   "conf": "West Coast",
-   "w": 2,
-   "l": 1
-  },
-  {
-   "rk": 44,
-   "team": "Oklahoma St.",
-   "conf": "Big 12",
-   "w": 2,
-   "l": 0
-  },
-  {
-   "rk": 45,
    "team": "USC",
    "conf": "Big Ten",
    "w": 2,
    "l": 0
   },
   {
+   "rk": 43,
+   "team": "Saint Louis",
+   "conf": "Atlantic 10",
+   "w": 2,
+   "l": 0
+  },
+  {
+   "rk": 44,
+   "team": "Wisconsin",
+   "conf": "Big Ten",
+   "w": 2,
+   "l": 0
+  },
+  {
+   "rk": 45,
+   "team": "Oklahoma St.",
+   "conf": "Big 12",
+   "w": 2,
+   "l": 0
+  },
+  {
    "rk": 46,
-   "team": "Florida St.",
-   "conf": "ACC",
-   "w": 2,
-   "l": 0
-  },
-  {
-   "rk": 47,
-   "team": "N.C. State",
-   "conf": "ACC",
-   "w": 2,
-   "l": 0
-  },
-  {
-   "rk": 48,
-   "team": "Clemson",
-   "conf": "ACC",
-   "w": 2,
-   "l": 0
-  },
-  {
-   "rk": 49,
-   "team": "Georgia",
-   "conf": "SEC",
-   "w": 2,
-   "l": 0
-  },
-  {
-   "rk": 50,
-   "team": "Villanova",
-   "conf": "Big East",
-   "w": 1,
-   "l": 1
-  },
-  {
-   "rk": 51,
-   "team": "San Diego St.",
-   "conf": "Pac-12",
-   "w": 2,
-   "l": 0
-  },
-  {
-   "rk": 52,
    "team": "Virginia Tech",
    "conf": "ACC",
    "w": 2,
    "l": 0
   },
   {
-   "rk": 53,
+   "rk": 47,
    "team": "New Mexico",
    "conf": "Mountain West",
    "w": 2,
    "l": 0
   },
   {
-   "rk": 54,
-   "team": "LSU",
-   "conf": "SEC",
+   "rk": 48,
+   "team": "Florida St.",
+   "conf": "ACC",
    "w": 2,
    "l": 0
   },
   {
-   "rk": 55,
+   "rk": 49,
+   "team": "Saint Mary's",
+   "conf": "West Coast",
+   "w": 2,
+   "l": 1
+  },
+  {
+   "rk": 50,
+   "team": "San Diego St.",
+   "conf": "Pac-12",
+   "w": 2,
+   "l": 0
+  },
+  {
+   "rk": 51,
+   "team": "Villanova",
+   "conf": "Big East",
+   "w": 1,
+   "l": 1
+  },
+  {
+   "rk": 52,
+   "team": "N.C. State",
+   "conf": "ACC",
+   "w": 2,
+   "l": 0
+  },
+  {
+   "rk": 53,
    "team": "Xavier",
    "conf": "Big East",
    "w": 2,
    "l": 0
   },
   {
+   "rk": 54,
+   "team": "Georgia",
+   "conf": "SEC",
+   "w": 3,
+   "l": 0
+  },
+  {
+   "rk": 55,
+   "team": "Minnesota",
+   "conf": "Big Ten",
+   "w": 3,
+   "l": 0
+  },
+  {
    "rk": 56,
+   "team": "Clemson",
+   "conf": "ACC",
+   "w": 3,
+   "l": 0
+  },
+  {
+   "rk": 57,
+   "team": "Nevada",
+   "conf": "Mountain West",
+   "w": 2,
+   "l": 0
+  },
+  {
+   "rk": 58,
    "team": "Creighton",
    "conf": "Big East",
    "w": 2,
    "l": 0
   },
   {
-   "rk": 57,
-   "team": "Oklahoma",
-   "conf": "SEC",
-   "w": 1,
-   "l": 1
-  },
-  {
-   "rk": 58,
-   "team": "Santa Clara",
-   "conf": "West Coast",
-   "w": 3,
-   "l": 0
-  },
-  {
    "rk": 59,
-   "team": "VCU",
-   "conf": "Atlantic 10",
+   "team": "Boise St.",
+   "conf": "Pac-12",
    "w": 1,
-   "l": 1
+   "l": 0
   },
   {
    "rk": 60,
@@ -425,15 +425,15 @@
   },
   {
    "rk": 61,
-   "team": "Arizona St.",
-   "conf": "Big 12",
-   "w": 2,
+   "team": "Santa Clara",
+   "conf": "West Coast",
+   "w": 3,
    "l": 0
   },
   {
    "rk": 62,
-   "team": "Minnesota",
-   "conf": "Big Ten",
+   "team": "Arizona St.",
+   "conf": "Big 12",
    "w": 2,
    "l": 0
   },
@@ -446,9 +446,9 @@
   },
   {
    "rk": 64,
-   "team": "Nevada",
-   "conf": "Mountain West",
-   "w": 2,
+   "team": "Mississippi St.",
+   "conf": "SEC",
+   "w": 3,
    "l": 0
   },
   {
@@ -460,73 +460,73 @@
   },
   {
    "rk": 66,
-   "team": "UCF",
-   "conf": "Big 12",
+   "team": "Oklahoma",
+   "conf": "SEC",
    "w": 2,
-   "l": 0
+   "l": 1
   },
   {
    "rk": 67,
-   "team": "Boise St.",
-   "conf": "Pac-12",
-   "w": 1,
+   "team": "Northwestern",
+   "conf": "Big Ten",
+   "w": 3,
    "l": 0
   },
   {
    "rk": 68,
-   "team": "SMU",
-   "conf": "ACC",
-   "w": 2,
-   "l": 0
+   "team": "VCU",
+   "conf": "Atlantic 10",
+   "w": 1,
+   "l": 1
   },
   {
    "rk": 69,
-   "team": "Seton Hall",
-   "conf": "Big East",
-   "w": 2,
+   "team": "Pittsburgh",
+   "conf": "ACC",
+   "w": 3,
    "l": 0
   },
   {
    "rk": 70,
-   "team": "Northwestern",
-   "conf": "Big Ten",
-   "w": 2,
-   "l": 0
-  },
-  {
-   "rk": 71,
    "team": "Georgetown",
    "conf": "Big East",
    "w": 2,
    "l": 0
   },
   {
-   "rk": 72,
-   "team": "Stanford",
+   "rk": 71,
+   "team": "SMU",
    "conf": "ACC",
    "w": 2,
+   "l": 0
+  },
+  {
+   "rk": 72,
+   "team": "Seton Hall",
+   "conf": "Big East",
+   "w": 3,
    "l": 0
   },
   {
    "rk": 73,
-   "team": "Washington",
-   "conf": "Big Ten",
-   "w": 1,
-   "l": 0
-  },
-  {
-   "rk": 74,
-   "team": "Mississippi St.",
-   "conf": "SEC",
+   "team": "UCF",
+   "conf": "Big 12",
    "w": 2,
    "l": 0
   },
   {
-   "rk": 75,
-   "team": "Pittsburgh",
+   "rk": 74,
+   "team": "Stanford",
    "conf": "ACC",
    "w": 3,
    "l": 0
+  },
+  {
+   "rk": 75,
+   "team": "Syracuse",
+   "conf": "ACC",
+   "w": 2,
+   "l": 1
   },
   {
    "rk": 76,
@@ -544,48 +544,27 @@
   },
   {
    "rk": 78,
-   "team": "Maryland",
-   "conf": "Big Ten",
-   "w": 1,
-   "l": 1
-  },
-  {
-   "rk": 79,
-   "team": "Syracuse",
-   "conf": "ACC",
-   "w": 2,
-   "l": 0
-  },
-  {
-   "rk": 80,
-   "team": "Wichita St.",
-   "conf": "American Athletic",
-   "w": 1,
-   "l": 1
-  },
-  {
-   "rk": 81,
    "team": "Colorado",
    "conf": "Big 12",
    "w": 1,
    "l": 1
   },
   {
-   "rk": 82,
+   "rk": 79,
    "team": "Notre Dame",
    "conf": "ACC",
-   "w": 2,
+   "w": 3,
    "l": 0
   },
   {
-   "rk": 83,
-   "team": "Colorado St.",
-   "conf": "Pac-12",
-   "w": 2,
-   "l": 0
+   "rk": 80,
+   "team": "Maryland",
+   "conf": "Big Ten",
+   "w": 1,
+   "l": 1
   },
   {
-   "rk": 84,
+   "rk": 81,
    "team": "George Washington",
    "short": "George Wash.",
    "conf": "Atlantic 10",
@@ -593,74 +572,95 @@
    "l": 0
   },
   {
-   "rk": 85,
-   "team": "Tulsa",
-   "conf": "American Athletic",
-   "w": 1,
+   "rk": 82,
+   "team": "DePaul",
+   "conf": "Big East",
+   "w": 3,
    "l": 0
   },
   {
-   "rk": 86,
-   "team": "DePaul",
-   "conf": "Big East",
+   "rk": 83,
+   "team": "Washington",
+   "conf": "Big Ten",
    "w": 2,
    "l": 0
   },
   {
-   "rk": 87,
+   "rk": 84,
+   "team": "Colorado St.",
+   "conf": "Pac-12",
+   "w": 2,
+   "l": 0
+  },
+  {
+   "rk": 85,
    "team": "Butler",
    "conf": "Big East",
    "w": 2,
    "l": 1
   },
   {
-   "rk": 88,
-   "team": "Memphis",
+   "rk": 86,
+   "team": "Tulsa",
    "conf": "American Athletic",
-   "w": 2,
+   "w": 1,
    "l": 0
   },
   {
-   "rk": 89,
+   "rk": 87,
+   "team": "Wichita St.",
+   "conf": "American Athletic",
+   "w": 1,
+   "l": 1
+  },
+  {
+   "rk": 88,
    "team": "McNeese",
    "conf": "Southland",
    "w": 1,
    "l": 1
   },
   {
-   "rk": 90,
-   "team": "Akron",
-   "conf": "Mid-American",
-   "w": 1,
+   "rk": 89,
+   "team": "Oregon St.",
+   "conf": "Pac-12",
+   "w": 3,
    "l": 0
   },
   {
-   "rk": 91,
-   "team": "Wake Forest",
-   "conf": "ACC",
-   "w": 1,
-   "l": 1
-  },
-  {
-   "rk": 92,
+   "rk": 90,
    "team": "Rutgers",
    "conf": "Big Ten",
    "w": 1,
    "l": 0
   },
   {
-   "rk": 93,
-   "team": "California",
-   "conf": "ACC",
+   "rk": 91,
+   "team": "Memphis",
+   "conf": "American Athletic",
+   "w": 2,
+   "l": 0
+  },
+  {
+   "rk": 92,
+   "team": "Akron",
+   "conf": "Mid-American",
    "w": 1,
-   "l": 1
+   "l": 0
+  },
+  {
+   "rk": 93,
+   "team": "South Carolina",
+   "conf": "SEC",
+   "w": 2,
+   "l": 0
   },
   {
    "rk": 94,
-   "team": "Oregon St.",
-   "conf": "Pac-12",
-   "w": 2,
-   "l": 0
+   "team": "Wake Forest",
+   "conf": "ACC",
+   "w": 1,
+   "l": 1
   },
   {
    "rk": 95,
@@ -671,154 +671,154 @@
   },
   {
    "rk": 96,
-   "team": "South Carolina",
-   "conf": "SEC",
-   "w": 2,
-   "l": 0
-  },
-  {
-   "rk": 97,
    "team": "George Mason",
    "conf": "Atlantic 10",
    "w": 2,
    "l": 0
   },
   {
-   "rk": 98,
+   "rk": 97,
    "team": "UNLV",
    "conf": "Mountain West",
    "w": 2,
    "l": 0
   },
   {
-   "rk": 99,
-   "team": "Miami OH",
-   "conf": "Mid-American",
-   "w": 2,
-   "l": 0
-  },
-  {
-   "rk": 100,
+   "rk": 98,
    "team": "North Texas",
    "conf": "American Athletic",
    "w": 1,
    "l": 0
   },
   {
-   "rk": 101,
+   "rk": 99,
    "team": "Murray St.",
    "conf": "Missouri Valley",
    "w": 2,
    "l": 0
   },
   {
-   "rk": 102,
+   "rk": 100,
+   "team": "California",
+   "conf": "ACC",
+   "w": 1,
+   "l": 1
+  },
+  {
+   "rk": 101,
    "team": "Boston College",
    "conf": "ACC",
    "w": 2,
    "l": 0
   },
   {
-   "rk": 103,
-   "team": "Kansas St.",
-   "conf": "Big 12",
-   "w": 1,
-   "l": 1
-  },
-  {
-   "rk": 104,
-   "team": "Davidson",
-   "conf": "Atlantic 10",
+   "rk": 102,
+   "team": "Miami OH",
+   "conf": "Mid-American",
    "w": 2,
    "l": 0
   },
   {
-   "rk": 105,
+   "rk": 103,
    "team": "Penn St.",
    "conf": "Big Ten",
    "w": 2,
    "l": 1
   },
   {
-   "rk": 106,
-   "team": "Utah",
-   "conf": "Big 12",
-   "w": 2,
-   "l": 0
-  },
-  {
-   "rk": 107,
-   "team": "Wyoming",
-   "conf": "Mountain West",
-   "w": 1,
-   "l": 0
-  },
-  {
-   "rk": 108,
-   "team": "Illinois St.",
-   "conf": "Missouri Valley",
-   "w": 0,
-   "l": 1
-  },
-  {
-   "rk": 109,
-   "team": "UC Irvine",
-   "conf": "Big West",
-   "w": 1,
-   "l": 0
-  },
-  {
-   "rk": 110,
-   "team": "Illinois Chicago",
-   "conf": "Missouri Valley",
-   "w": 1,
-   "l": 0
-  },
-  {
-   "rk": 111,
-   "team": "Belmont",
-   "conf": "Missouri Valley",
-   "w": 1,
-   "l": 0
-  },
-  {
-   "rk": 112,
+   "rk": 104,
    "team": "Wright St.",
    "conf": "Horizon League",
    "w": 2,
    "l": 0
   },
   {
-   "rk": 113,
-   "team": "Saint Joseph's",
+   "rk": 105,
+   "team": "Davidson",
    "conf": "Atlantic 10",
    "w": 2,
    "l": 0
   },
   {
-   "rk": 114,
+   "rk": 106,
+   "team": "Wyoming",
+   "conf": "Mountain West",
+   "w": 1,
+   "l": 0
+  },
+  {
+   "rk": 107,
+   "team": "Illinois Chicago",
+   "conf": "Missouri Valley",
+   "w": 2,
+   "l": 0
+  },
+  {
+   "rk": 108,
+   "team": "Kansas St.",
+   "conf": "Big 12",
+   "w": 1,
+   "l": 1
+  },
+  {
+   "rk": 109,
+   "team": "Utah",
+   "conf": "Big 12",
+   "w": 2,
+   "l": 0
+  },
+  {
+   "rk": 110,
+   "team": "Richmond",
+   "conf": "Atlantic 10",
+   "w": 2,
+   "l": 0
+  },
+  {
+   "rk": 111,
+   "team": "Rhode Island",
+   "conf": "Atlantic 10",
+   "w": 2,
+   "l": 0
+  },
+  {
+   "rk": 112,
    "team": "Georgia Tech",
    "conf": "ACC",
    "w": 2,
    "l": 0
   },
   {
-   "rk": 115,
+   "rk": 113,
+   "team": "Belmont",
+   "conf": "Missouri Valley",
+   "w": 1,
+   "l": 0
+  },
+  {
+   "rk": 114,
    "team": "Seattle",
    "conf": "West Coast",
    "w": 1,
    "l": 1
   },
   {
-   "rk": 116,
-   "team": "San Francisco",
-   "conf": "West Coast",
-   "w": 2,
+   "rk": 115,
+   "team": "UC Irvine",
+   "conf": "Big West",
+   "w": 1,
    "l": 0
   },
   {
+   "rk": 116,
+   "team": "Illinois St.",
+   "conf": "Missouri Valley",
+   "w": 0,
+   "l": 2
+  },
+  {
    "rk": 117,
-   "team": "Rhode Island",
+   "team": "Saint Joseph's",
    "conf": "Atlantic 10",
    "w": 2,
    "l": 0
@@ -828,59 +828,38 @@
    "team": "Hawaii",
    "conf": "Mountain West",
    "w": 2,
-   "l": 0
-  },
-  {
-   "rk": 119,
-   "team": "Utah Valley",
-   "conf": "Big West",
-   "w": 1,
-   "l": 0
-  },
-  {
-   "rk": 120,
-   "team": "UNC Wilmington",
-   "conf": "Coastal Athletic",
-   "w": 1,
-   "l": 0
-  },
-  {
-   "rk": 121,
-   "team": "Yale",
-   "conf": "Ivy League",
-   "w": 1,
    "l": 1
   },
   {
-   "rk": 122,
-   "team": "Richmond",
-   "conf": "Atlantic 10",
-   "w": 2,
-   "l": 0
-  },
-  {
-   "rk": 123,
+   "rk": 119,
    "team": "Furman",
    "conf": "Southern",
    "w": 2,
    "l": 0
   },
   {
-   "rk": 124,
-   "team": "UC San Diego",
-   "conf": "Big West",
-   "w": 1,
+   "rk": 120,
+   "team": "San Francisco",
+   "conf": "West Coast",
+   "w": 2,
    "l": 0
   },
   {
-   "rk": 125,
+   "rk": 121,
    "team": "Valparaiso",
    "conf": "Missouri Valley",
    "w": 2,
    "l": 0
   },
   {
-   "rk": 126,
+   "rk": 122,
+   "team": "UNC Wilmington",
+   "conf": "Coastal Athletic",
+   "w": 1,
+   "l": 0
+  },
+  {
+   "rk": 123,
    "team": "Stephen F. Austin",
    "short": "Steph. F. Austin",
    "conf": "Southland",
@@ -888,39 +867,60 @@
    "l": 0
   },
   {
-   "rk": 127,
-   "team": "UC Santa Barbara",
-   "conf": "Big West",
-   "w": 1,
-   "l": 0
-  },
-  {
-   "rk": 128,
-   "team": "Northern Iowa",
-   "conf": "Missouri Valley",
-   "w": 0,
-   "l": 1
-  },
-  {
-   "rk": 129,
+   "rk": 124,
    "team": "Pacific",
    "conf": "West Coast",
    "w": 1,
    "l": 0
   },
   {
-   "rk": 130,
+   "rk": 125,
+   "team": "Yale",
+   "conf": "Ivy League",
+   "w": 1,
+   "l": 1
+  },
+  {
+   "rk": 126,
+   "team": "Utah Valley",
+   "conf": "Big West",
+   "w": 1,
+   "l": 0
+  },
+  {
+   "rk": 127,
+   "team": "Kennesaw St.",
+   "conf": "Conference USA",
+   "w": 1,
+   "l": 0
+  },
+  {
+   "rk": 128,
    "team": "Charlotte",
    "conf": "American Athletic",
    "w": 2,
+   "l": 1
+  },
+  {
+   "rk": 129,
+   "team": "UC San Diego",
+   "conf": "Big West",
+   "w": 1,
+   "l": 0
+  },
+  {
+   "rk": 130,
+   "team": "UC Santa Barbara",
+   "conf": "Big West",
+   "w": 1,
    "l": 0
   },
   {
    "rk": 131,
-   "team": "Florida Atlantic",
-   "conf": "American Athletic",
-   "w": 1,
-   "l": 1
+   "team": "Charleston",
+   "conf": "Coastal Athletic",
+   "w": 0,
+   "l": 0
   },
   {
    "rk": 132,
@@ -931,106 +931,106 @@
   },
   {
    "rk": 133,
+   "team": "UAB",
+   "conf": "American Athletic",
+   "w": 2,
+   "l": 1
+  },
+  {
+   "rk": 134,
+   "team": "Northern Iowa",
+   "conf": "Missouri Valley",
+   "w": 0,
+   "l": 1
+  },
+  {
+   "rk": 135,
    "team": "Hofstra",
    "conf": "Coastal Athletic",
    "w": 0,
    "l": 1
   },
   {
-   "rk": 134,
-   "team": "Western Kentucky",
-   "conf": "Conference USA",
-   "w": 1,
-   "l": 1
-  },
-  {
-   "rk": 135,
-   "team": "Kennesaw St.",
-   "conf": "Conference USA",
-   "w": 1,
-   "l": 0
-  },
-  {
    "rk": 136,
-   "team": "Duquesne",
-   "conf": "Atlantic 10",
-   "w": 1,
-   "l": 0
-  },
-  {
-   "rk": 137,
-   "team": "UAB",
+   "team": "Florida Atlantic",
    "conf": "American Athletic",
    "w": 1,
    "l": 1
   },
   {
-   "rk": 138,
-   "team": "Charleston",
-   "conf": "Coastal Athletic",
-   "w": 0,
-   "l": 0
-  },
-  {
-   "rk": 139,
-   "team": "Arkansas St.",
-   "conf": "Sun Belt",
-   "w": 1,
-   "l": 1
-  },
-  {
-   "rk": 140,
-   "team": "Toledo",
-   "conf": "Mid-American",
-   "w": 1,
-   "l": 2
-  },
-  {
-   "rk": 141,
-   "team": "Fordham",
-   "conf": "Atlantic 10",
-   "w": 1,
-   "l": 1
-  },
-  {
-   "rk": 142,
-   "team": "St. Bonaventure",
-   "conf": "Atlantic 10",
-   "w": 1,
-   "l": 1
-  },
-  {
-   "rk": 143,
+   "rk": 137,
    "team": "Texas St.",
    "conf": "Pac-12",
    "w": 1,
    "l": 0
   },
   {
-   "rk": 144,
-   "team": "Drake",
-   "conf": "Missouri Valley",
-   "w": 1,
-   "l": 0
-  },
-  {
-   "rk": 145,
+   "rk": 138,
    "team": "Loyola Chicago",
    "conf": "Atlantic 10",
    "w": 2,
    "l": 0
   },
   {
-   "rk": 146,
-   "team": "Kent St.",
+   "rk": 139,
+   "team": "Drake",
+   "conf": "Missouri Valley",
+   "w": 1,
+   "l": 0
+  },
+  {
+   "rk": 140,
+   "team": "Western Kentucky",
+   "conf": "Conference USA",
+   "w": 1,
+   "l": 1
+  },
+  {
+   "rk": 141,
+   "team": "St. Bonaventure",
+   "conf": "Atlantic 10",
+   "w": 1,
+   "l": 1
+  },
+  {
+   "rk": 142,
+   "team": "Arkansas St.",
+   "conf": "Sun Belt",
+   "w": 1,
+   "l": 1
+  },
+  {
+   "rk": 143,
+   "team": "Duquesne",
+   "conf": "Atlantic 10",
+   "w": 1,
+   "l": 0
+  },
+  {
+   "rk": 144,
+   "team": "Toledo",
    "conf": "Mid-American",
-   "w": 0,
+   "w": 1,
+   "l": 2
+  },
+  {
+   "rk": 145,
+   "team": "Fordham",
+   "conf": "Atlantic 10",
+   "w": 1,
+   "l": 1
+  },
+  {
+   "rk": 146,
+   "team": "Penn",
+   "conf": "Ivy League",
+   "w": 1,
    "l": 1
   },
   {
    "rk": 147,
-   "team": "Penn",
-   "conf": "Ivy League",
+   "team": "Kent St.",
+   "conf": "Mid-American",
    "w": 0,
    "l": 1
   },
@@ -1050,62 +1050,90 @@
   },
   {
    "rk": 150,
-   "team": "St. Thomas",
-   "conf": "Summit League",
-   "w": 1,
-   "l": 2
-  },
-  {
-   "rk": 151,
-   "team": "Temple",
-   "conf": "American Athletic",
-   "w": 1,
-   "l": 1
-  },
-  {
-   "rk": 152,
    "team": "Bradley",
    "conf": "Missouri Valley",
    "w": 0,
    "l": 1
   },
   {
-   "rk": 153,
-   "team": "Harvard",
-   "conf": "Ivy League",
-   "w": 0,
-   "l": 0
-  },
-  {
-   "rk": 154,
+   "rk": 151,
    "team": "Ohio",
    "conf": "Mid-American",
    "w": 2,
    "l": 0
   },
   {
-   "rk": 155,
-   "team": "James Madison",
-   "conf": "Sun Belt",
-   "w": 0,
+   "rk": 152,
+   "team": "St. Thomas",
+   "conf": "Summit League",
+   "w": 1,
    "l": 2
   },
   {
-   "rk": 156,
+   "rk": 153,
    "team": "Loyola Marymount",
    "conf": "West Coast",
    "w": 0,
    "l": 1
   },
   {
+   "rk": 154,
+   "team": "Bowling Green",
+   "conf": "Mid-American",
+   "w": 2,
+   "l": 0
+  },
+  {
+   "rk": 155,
+   "team": "Harvard",
+   "conf": "Ivy League",
+   "w": 0,
+   "l": 0
+  },
+  {
+   "rk": 156,
+   "team": "Appalachian St.",
+   "conf": "Sun Belt",
+   "w": 1,
+   "l": 1
+  },
+  {
    "rk": 157,
+   "team": "James Madison",
+   "conf": "Sun Belt",
+   "w": 0,
+   "l": 2
+  },
+  {
+   "rk": 158,
+   "team": "Towson",
+   "conf": "Coastal Athletic",
+   "w": 1,
+   "l": 2
+  },
+  {
+   "rk": 159,
+   "team": "Central Arkansas",
+   "conf": "United Athletic",
+   "w": 1,
+   "l": 1
+  },
+  {
+   "rk": 160,
+   "team": "Temple",
+   "conf": "American Athletic",
+   "w": 1,
+   "l": 1
+  },
+  {
+   "rk": 161,
    "team": "Massachusetts",
    "conf": "Mid-American",
    "w": 1,
    "l": 1
   },
   {
-   "rk": 158,
+   "rk": 162,
    "team": "East Tennessee St.",
    "short": "E. Tenn. St.",
    "conf": "Southern",
@@ -1113,60 +1141,32 @@
    "l": 2
   },
   {
-   "rk": 159,
-   "team": "Appalachian St.",
-   "conf": "Sun Belt",
-   "w": 1,
-   "l": 0
-  },
-  {
-   "rk": 160,
-   "team": "Bowling Green",
-   "conf": "Mid-American",
-   "w": 1,
-   "l": 0
-  },
-  {
-   "rk": 161,
-   "team": "New Mexico St.",
-   "conf": "Conference USA",
-   "w": 0,
-   "l": 1
-  },
-  {
-   "rk": 162,
-   "team": "Central Arkansas",
-   "conf": "United Athletic",
-   "w": 1,
-   "l": 1
-  },
-  {
    "rk": 163,
+   "team": "FIU",
+   "conf": "Conference USA",
+   "w": 1,
+   "l": 0
+  },
+  {
+   "rk": 164,
    "team": "Washington St.",
    "conf": "Pac-12",
    "w": 0,
    "l": 2
   },
   {
-   "rk": 164,
-   "team": "Towson",
-   "conf": "Coastal Athletic",
-   "w": 0,
-   "l": 2
-  },
-  {
    "rk": 165,
-   "team": "Southern Illinois",
-   "conf": "Missouri Valley",
-   "w": 0,
+   "team": "Western Carolina",
+   "conf": "Southern",
+   "w": 1,
    "l": 1
   },
   {
    "rk": 166,
-   "team": "Louisiana Tech",
+   "team": "Marshall",
    "conf": "Sun Belt",
    "w": 1,
-   "l": 0
+   "l": 2
   },
   {
    "rk": 167,
@@ -1177,66 +1177,66 @@
   },
   {
    "rk": 168,
-   "team": "Western Carolina",
-   "conf": "Southern",
-   "w": 1,
-   "l": 1
-  },
-  {
-   "rk": 169,
    "team": "Northern Kentucky",
    "conf": "Horizon League",
    "w": 2,
    "l": 1
   },
   {
+   "rk": 169,
+   "team": "Southern Illinois",
+   "conf": "Missouri Valley",
+   "w": 0,
+   "l": 1
+  },
+  {
    "rk": 170,
-   "team": "Middle Tennessee",
-   "conf": "Conference USA",
-   "w": 0,
-   "l": 1
-  },
-  {
-   "rk": 171,
-   "team": "Troy",
-   "conf": "Sun Belt",
-   "w": 0,
-   "l": 2
-  },
-  {
-   "rk": 172,
-   "team": "FIU",
-   "conf": "Conference USA",
-   "w": 1,
-   "l": 0
-  },
-  {
-   "rk": 173,
-   "team": "Queens",
-   "conf": "ASUN",
-   "w": 2,
-   "l": 1
-  },
-  {
-   "rk": 174,
-   "team": "Marshall",
-   "conf": "Sun Belt",
-   "w": 1,
-   "l": 1
-  },
-  {
-   "rk": 175,
    "team": "Austin Peay",
    "conf": "United Athletic",
    "w": 0,
    "l": 1
   },
   {
-   "rk": 176,
-   "team": "Northern Colorado",
-   "conf": "Big Sky",
+   "rk": 171,
+   "team": "Green Bay",
+   "conf": "Horizon League",
+   "w": 1,
+   "l": 1
+  },
+  {
+   "rk": 172,
+   "team": "New Mexico St.",
+   "conf": "Conference USA",
    "w": 0,
    "l": 1
+  },
+  {
+   "rk": 173,
+   "team": "Louisiana Tech",
+   "conf": "Sun Belt",
+   "w": 1,
+   "l": 1
+  },
+  {
+   "rk": 174,
+   "team": "William & Mary",
+   "conf": "Coastal Athletic",
+   "w": 1,
+   "l": 0
+  },
+  {
+   "rk": 175,
+   "team": "Old Dominion",
+   "conf": "Sun Belt",
+   "w": 2,
+   "l": 0
+  },
+  {
+   "rk": 176,
+   "team": "Elon",
+   "conf": "Coastal Athletic",
+   "w": 2,
+   "l": 0
   },
   {
    "rk": 177,
@@ -1247,50 +1247,50 @@
   },
   {
    "rk": 178,
-   "team": "Samford",
-   "conf": "Southern",
+   "team": "Middle Tennessee",
+   "conf": "Conference USA",
    "w": 0,
    "l": 1
   },
   {
    "rk": 179,
-   "team": "William & Mary",
-   "conf": "Coastal Athletic",
-   "w": 1,
-   "l": 0
+   "team": "Northern Colorado",
+   "conf": "Big Sky",
+   "w": 0,
+   "l": 1
   },
   {
    "rk": 180,
-   "team": "Howard",
-   "conf": "MEAC",
-   "w": 1,
+   "team": "Queens",
+   "conf": "ASUN",
+   "w": 2,
    "l": 1
   },
   {
    "rk": 181,
-   "team": "Tulane",
-   "conf": "American Athletic",
+   "team": "Portland",
+   "conf": "West Coast",
    "w": 1,
    "l": 1
   },
   {
    "rk": 182,
-   "team": "Old Dominion",
+   "team": "Troy",
    "conf": "Sun Belt",
-   "w": 2,
-   "l": 0
+   "w": 0,
+   "l": 2
   },
   {
    "rk": 183,
-   "team": "Cal Poly",
-   "conf": "Big West",
+   "team": "Pepperdine",
+   "conf": "West Coast",
    "w": 0,
    "l": 1
   },
   {
    "rk": 184,
-   "team": "Fresno St.",
-   "conf": "Pac-12",
+   "team": "Samford",
+   "conf": "Southern",
    "w": 0,
    "l": 1
   },
@@ -1304,284 +1304,284 @@
   },
   {
    "rk": 186,
-   "team": "Princeton",
-   "conf": "Ivy League",
-   "w": 1,
-   "l": 1
-  },
-  {
-   "rk": 187,
-   "team": "Cornell",
-   "conf": "Ivy League",
-   "w": 1,
-   "l": 1
-  },
-  {
-   "rk": 188,
-   "team": "UT Rio Grande Valley",
-   "conf": "Southland",
-   "w": 1,
-   "l": 0
-  },
-  {
-   "rk": 189,
-   "team": "South Dakota St.",
-   "conf": "Summit League",
-   "w": 1,
-   "l": 0
-  },
-  {
-   "rk": 190,
-   "team": "North Dakota St.",
-   "conf": "Summit League",
-   "w": 0,
-   "l": 3
-  },
-  {
-   "rk": 191,
-   "team": "San Diego",
-   "conf": "West Coast",
-   "w": 1,
-   "l": 0
-  },
-  {
-   "rk": 192,
-   "team": "Elon",
-   "conf": "Coastal Athletic",
-   "w": 2,
-   "l": 0
-  },
-  {
-   "rk": 193,
-   "team": "Eastern Washington",
-   "short": "E. Washington",
-   "conf": "Big Sky",
-   "w": 0,
-   "l": 2
-  },
-  {
-   "rk": 194,
-   "team": "Green Bay",
-   "conf": "Horizon League",
-   "w": 1,
-   "l": 1
-  },
-  {
-   "rk": 195,
    "team": "East Carolina",
    "conf": "American Athletic",
    "w": 1,
    "l": 1
   },
   {
-   "rk": 196,
-   "team": "Pepperdine",
-   "conf": "West Coast",
-   "w": 0,
-   "l": 1
-  },
-  {
-   "rk": 197,
-   "team": "Cal Baptist",
-   "conf": "Big West",
-   "w": 0,
-   "l": 2
-  },
-  {
-   "rk": 198,
+   "rk": 187,
    "team": "Monmouth",
    "conf": "Coastal Athletic",
    "w": 0,
    "l": 2
   },
   {
-   "rk": 199,
+   "rk": 188,
+   "team": "Cornell",
+   "conf": "Ivy League",
+   "w": 1,
+   "l": 1
+  },
+  {
+   "rk": 189,
+   "team": "Tulane",
+   "conf": "American Athletic",
+   "w": 1,
+   "l": 1
+  },
+  {
+   "rk": 190,
    "team": "Vermont",
    "conf": "America East",
    "w": 1,
    "l": 2
   },
   {
-   "rk": 200,
-   "team": "La Salle",
-   "conf": "Atlantic 10",
+   "rk": 191,
+   "team": "South Dakota St.",
+   "conf": "Summit League",
    "w": 1,
-   "l": 1
+   "l": 0
   },
   {
-   "rk": 201,
-   "team": "Indiana St.",
-   "conf": "Missouri Valley",
+   "rk": 192,
+   "team": "UT Rio Grande Valley",
+   "conf": "Southland",
    "w": 1,
-   "l": 1
+   "l": 0
   },
   {
-   "rk": 202,
-   "team": "CSUN",
+   "rk": 193,
+   "team": "Cal Poly",
    "conf": "Big West",
    "w": 0,
-   "l": 2
+   "l": 1
   },
   {
-   "rk": 203,
-   "team": "Idaho",
+   "rk": 194,
+   "team": "San Diego",
+   "conf": "West Coast",
+   "w": 1,
+   "l": 0
+  },
+  {
+   "rk": 195,
+   "team": "Eastern Washington",
+   "short": "E. Washington",
    "conf": "Big Sky",
    "w": 0,
-   "l": 1
+   "l": 3
   },
   {
-   "rk": 204,
-   "team": "Cal St. Fullerton",
-   "conf": "Big West",
-   "w": 1,
-   "l": 1
-  },
-  {
-   "rk": 205,
-   "team": "Youngstown St.",
-   "conf": "Horizon League",
-   "w": 1,
-   "l": 1
-  },
-  {
-   "rk": 206,
+   "rk": 196,
    "team": "Tennessee St.",
    "conf": "Ohio Valley",
    "w": 0,
    "l": 1
   },
   {
-   "rk": 207,
-   "team": "Lipscomb",
-   "conf": "ASUN",
+   "rk": 197,
+   "team": "Fresno St.",
+   "conf": "Pac-12",
+   "w": 0,
+   "l": 1
+  },
+  {
+   "rk": 198,
+   "team": "Princeton",
+   "conf": "Ivy League",
    "w": 1,
-   "l": 2
-  },
-  {
-   "rk": 208,
-   "team": "Portland",
-   "conf": "West Coast",
-   "w": 0,
    "l": 1
   },
   {
-   "rk": 209,
-   "team": "Portland St.",
-   "conf": "Big Sky",
-   "w": 0,
-   "l": 1
-  },
-  {
-   "rk": 210,
+   "rk": 199,
    "team": "Jacksonville St.",
    "conf": "Conference USA",
    "w": 0,
    "l": 1
   },
   {
-   "rk": 211,
-   "team": "Southern Miss",
-   "conf": "Sun Belt",
+   "rk": 200,
+   "team": "Howard",
+   "conf": "MEAC",
+   "w": 1,
+   "l": 2
+  },
+  {
+   "rk": 201,
+   "team": "Idaho",
+   "conf": "Big Sky",
    "w": 0,
    "l": 1
   },
   {
-   "rk": 212,
-   "team": "Robert Morris",
-   "conf": "Horizon League",
+   "rk": 202,
+   "team": "Cal Baptist",
+   "conf": "Big West",
    "w": 0,
    "l": 2
   },
   {
-   "rk": 213,
-   "team": "Iona",
-   "conf": "Metro Atlantic",
-   "w": 2,
-   "l": 1
-  },
-  {
-   "rk": 214,
-   "team": "Drexel",
-   "conf": "Coastal Athletic",
+   "rk": 203,
+   "team": "Youngstown St.",
+   "conf": "Horizon League",
    "w": 1,
    "l": 1
   },
   {
-   "rk": 215,
-   "team": "Oakland",
-   "conf": "Horizon League",
-   "w": 0,
-   "l": 3
+   "rk": 204,
+   "team": "Indiana St.",
+   "conf": "Missouri Valley",
+   "w": 1,
+   "l": 1
   },
   {
-   "rk": 216,
+   "rk": 205,
+   "team": "Portland St.",
+   "conf": "Big Sky",
+   "w": 0,
+   "l": 1
+  },
+  {
+   "rk": 206,
+   "team": "CSUN",
+   "conf": "Big West",
+   "w": 0,
+   "l": 2
+  },
+  {
+   "rk": 207,
    "team": "Montana",
    "conf": "Big Sky",
    "w": 0,
    "l": 1
   },
   {
-   "rk": 217,
+   "rk": 208,
+   "team": "La Salle",
+   "conf": "Atlantic 10",
+   "w": 1,
+   "l": 1
+  },
+  {
+   "rk": 209,
+   "team": "Cal St. Fullerton",
+   "conf": "Big West",
+   "w": 1,
+   "l": 1
+  },
+  {
+   "rk": 210,
    "team": "Siena",
    "conf": "Metro Atlantic",
    "w": 1,
    "l": 1
   },
   {
-   "rk": 218,
-   "team": "Quinnipiac",
-   "conf": "Metro Atlantic",
-   "w": 2,
-   "l": 1
-  },
-  {
-   "rk": 219,
-   "team": "Eastern Michigan",
-   "conf": "Mid-American",
+   "rk": 211,
+   "team": "Lipscomb",
+   "conf": "ASUN",
    "w": 1,
-   "l": 1
+   "l": 2
   },
   {
-   "rk": 220,
+   "rk": 212,
    "team": "UTEP",
    "conf": "Mountain West",
    "w": 1,
    "l": 1
   },
   {
-   "rk": 221,
-   "team": "UC Davis",
-   "conf": "Mountain West",
+   "rk": 213,
+   "team": "Southern Miss",
+   "conf": "Sun Belt",
    "w": 0,
    "l": 1
   },
   {
-   "rk": 222,
-   "team": "Missouri St.",
-   "conf": "Conference USA",
-   "w": 0,
-   "l": 0
+   "rk": 214,
+   "team": "Quinnipiac",
+   "conf": "Metro Atlantic",
+   "w": 2,
+   "l": 1
   },
   {
-   "rk": 223,
-   "team": "Mercer",
-   "conf": "Southern",
+   "rk": 215,
+   "team": "Drexel",
+   "conf": "Coastal Athletic",
+   "w": 1,
+   "l": 1
+  },
+  {
+   "rk": 216,
+   "team": "North Dakota St.",
+   "conf": "Summit League",
+   "w": 0,
+   "l": 3
+  },
+  {
+   "rk": 217,
+   "team": "Robert Morris",
+   "conf": "Horizon League",
    "w": 0,
    "l": 2
   },
   {
-   "rk": 224,
+   "rk": 218,
+   "team": "Iona",
+   "conf": "Metro Atlantic",
+   "w": 2,
+   "l": 1
+  },
+  {
+   "rk": 219,
+   "team": "Western Michigan",
+   "conf": "Mid-American",
+   "w": 1,
+   "l": 1
+  },
+  {
+   "rk": 220,
    "team": "South Alabama",
    "conf": "Sun Belt",
    "w": 1,
    "l": 1
   },
   {
-   "rk": 225,
-   "team": "American",
-   "conf": "Patriot League",
-   "w": 0,
+   "rk": 221,
+   "team": "Eastern Michigan",
+   "conf": "Mid-American",
+   "w": 1,
+   "l": 1
+  },
+  {
+   "rk": 222,
+   "team": "Merrimack",
+   "conf": "Metro Atlantic",
+   "w": 1,
    "l": 2
+  },
+  {
+   "rk": 223,
+   "team": "Columbia",
+   "conf": "Ivy League",
+   "w": 1,
+   "l": 1
+  },
+  {
+   "rk": 224,
+   "team": "Stony Brook",
+   "conf": "Coastal Athletic",
+   "w": 0,
+   "l": 1
+  },
+  {
+   "rk": 225,
+   "team": "UC Riverside",
+   "conf": "Big West",
+   "w": 1,
+   "l": 0
   },
   {
    "rk": 226,
@@ -1589,17 +1589,38 @@
    "short": "Fla. Gulf Coast",
    "conf": "ASUN",
    "w": 0,
-   "l": 1
+   "l": 2
   },
   {
    "rk": 227,
-   "team": "Rice",
-   "conf": "American Athletic",
+   "team": "Mercer",
+   "conf": "Southern",
+   "w": 0,
+   "l": 2
+  },
+  {
+   "rk": 228,
+   "team": "Southern Utah",
+   "conf": "Big Sky",
+   "w": 0,
+   "l": 0
+  },
+  {
+   "rk": 229,
+   "team": "UC Davis",
+   "conf": "Mountain West",
    "w": 0,
    "l": 1
   },
   {
-   "rk": 228,
+   "rk": 230,
+   "team": "Oakland",
+   "conf": "Horizon League",
+   "w": 0,
+   "l": 4
+  },
+  {
+   "rk": 231,
    "team": "Southeast Missouri",
    "short": "SE Missouri",
    "conf": "Ohio Valley",
@@ -1607,149 +1628,128 @@
    "l": 1
   },
   {
-   "rk": 229,
-   "team": "Stony Brook",
-   "conf": "Coastal Athletic",
-   "w": 0,
-   "l": 1
-  },
-  {
-   "rk": 230,
-   "team": "Tarleton St.",
-   "conf": "United Athletic",
-   "w": 0,
-   "l": 1
-  },
-  {
-   "rk": 231,
-   "team": "Merrimack",
-   "conf": "Metro Atlantic",
-   "w": 1,
-   "l": 2
-  },
-  {
    "rk": 232,
-   "team": "Winthrop",
-   "conf": "Big South",
-   "w": 0,
-   "l": 2
-  },
-  {
-   "rk": 233,
-   "team": "Western Michigan",
-   "conf": "Mid-American",
-   "w": 1,
-   "l": 1
-  },
-  {
-   "rk": 234,
-   "team": "Chattanooga",
-   "conf": "Southern",
-   "w": 0,
-   "l": 2
-  },
-  {
-   "rk": 235,
    "team": "Longwood",
    "conf": "Big South",
    "w": 1,
    "l": 1
   },
   {
+   "rk": 233,
+   "team": "Rice",
+   "conf": "American Athletic",
+   "w": 0,
+   "l": 2
+  },
+  {
+   "rk": 234,
+   "team": "American",
+   "conf": "Patriot League",
+   "w": 0,
+   "l": 2
+  },
+  {
+   "rk": 235,
+   "team": "Missouri St.",
+   "conf": "Conference USA",
+   "w": 0,
+   "l": 0
+  },
+  {
    "rk": 236,
+   "team": "Chattanooga",
+   "conf": "Southern",
+   "w": 0,
+   "l": 2
+  },
+  {
+   "rk": 237,
    "team": "Georgia Southern",
    "conf": "Sun Belt",
    "w": 1,
    "l": 1
   },
   {
-   "rk": 237,
-   "team": "Campbell",
-   "conf": "Coastal Athletic",
-   "w": 0,
-   "l": 2
-  },
-  {
    "rk": 238,
-   "team": "UC Riverside",
-   "conf": "Big West",
-   "w": 1,
-   "l": 0
-  },
-  {
-   "rk": 239,
-   "team": "Colgate",
-   "conf": "Patriot League",
-   "w": 0,
-   "l": 2
-  },
-  {
-   "rk": 240,
-   "team": "Bethune Cookman",
-   "conf": "SWAC",
-   "w": 0,
-   "l": 3
-  },
-  {
-   "rk": 241,
-   "team": "Sacramento St.",
-   "conf": "Big West",
-   "w": 0,
-   "l": 1
-  },
-  {
-   "rk": 242,
-   "team": "Columbia",
-   "conf": "Ivy League",
-   "w": 0,
-   "l": 1
-  },
-  {
-   "rk": 243,
-   "team": "Delaware",
-   "conf": "Conference USA",
-   "w": 0,
-   "l": 1
-  },
-  {
-   "rk": 244,
-   "team": "Boston University",
-   "conf": "Patriot League",
-   "w": 2,
-   "l": 0
-  },
-  {
-   "rk": 245,
-   "team": "Southern Utah",
-   "conf": "Big Sky",
-   "w": 0,
-   "l": 0
-  },
-  {
-   "rk": 246,
-   "team": "Utah Tech",
-   "conf": "Big Sky",
-   "w": 0,
-   "l": 1
-  },
-  {
-   "rk": 247,
    "team": "UMass Lowell",
    "conf": "America East",
    "w": 2,
    "l": 0
   },
   {
-   "rk": 248,
+   "rk": 239,
+   "team": "Delaware",
+   "conf": "Conference USA",
+   "w": 0,
+   "l": 1
+  },
+  {
+   "rk": 240,
+   "team": "Winthrop",
+   "conf": "Big South",
+   "w": 0,
+   "l": 2
+  },
+  {
+   "rk": 241,
+   "team": "Tarleton St.",
+   "conf": "United Athletic",
+   "w": 0,
+   "l": 1
+  },
+  {
+   "rk": 242,
+   "team": "Jacksonville",
+   "conf": "ASUN",
+   "w": 1,
+   "l": 1
+  },
+  {
+   "rk": 243,
+   "team": "Boston University",
+   "conf": "Patriot League",
+   "w": 2,
+   "l": 1
+  },
+  {
+   "rk": 244,
+   "team": "Bethune Cookman",
+   "conf": "SWAC",
+   "w": 0,
+   "l": 3
+  },
+  {
+   "rk": 245,
+   "team": "Colgate",
+   "conf": "Patriot League",
+   "w": 0,
+   "l": 2
+  },
+  {
+   "rk": 246,
    "team": "Denver",
    "conf": "West Coast",
    "w": 0,
    "l": 2
   },
   {
+   "rk": 247,
+   "team": "Tennessee Tech",
+   "conf": "Southern",
+   "w": 1,
+   "l": 1
+  },
+  {
+   "rk": 248,
+   "team": "Utah Tech",
+   "conf": "Big Sky",
+   "w": 0,
+   "l": 1
+  },
+  {
    "rk": 249,
-   "team": "Purdue Fort Wayne",
-   "conf": "Horizon League",
+   "team": "Sacramento St.",
+   "conf": "Big West",
    "w": 0,
    "l": 1
   },
@@ -1762,171 +1762,171 @@
   },
   {
    "rk": 251,
-   "team": "Marist",
-   "conf": "Metro Atlantic",
-   "w": 1,
-   "l": 2
-  },
-  {
-   "rk": 252,
    "team": "East Texas A&M",
    "conf": "Southland",
    "w": 2,
    "l": 0
   },
   {
-   "rk": 253,
-   "team": "LIU",
-   "conf": "Northeast",
-   "w": 0,
-   "l": 3
+   "rk": 252,
+   "team": "Marist",
+   "conf": "Metro Atlantic",
+   "w": 1,
+   "l": 2
   },
   {
-   "rk": 254,
-   "team": "Jacksonville",
-   "conf": "ASUN",
+   "rk": 253,
+   "team": "Purdue Fort Wayne",
+   "conf": "Horizon League",
    "w": 0,
    "l": 1
   },
   {
-   "rk": 255,
+   "rk": 254,
    "team": "Central Michigan",
    "conf": "Mid-American",
    "w": 1,
    "l": 0
   },
   {
-   "rk": 256,
+   "rk": 255,
    "team": "Nicholls",
    "conf": "Southland",
    "w": 0,
    "l": 1
   },
   {
-   "rk": 257,
-   "team": "Lehigh",
-   "conf": "Patriot League",
-   "w": 1,
-   "l": 2
-  },
-  {
-   "rk": 258,
-   "team": "Wofford",
-   "conf": "Southern",
+   "rk": 256,
+   "team": "Campbell",
+   "conf": "Coastal Athletic",
    "w": 0,
    "l": 2
   },
   {
-   "rk": 259,
+   "rk": 257,
    "team": "Lamar",
    "conf": "Southland",
    "w": 0,
    "l": 1
   },
   {
-   "rk": 260,
+   "rk": 258,
    "team": "Navy",
    "conf": "Patriot League",
    "w": 1,
    "l": 1
   },
   {
-   "rk": 261,
-   "team": "UMBC",
-   "conf": "America East",
+   "rk": 259,
+   "team": "UNC Greensboro",
+   "conf": "Southern",
    "w": 0,
    "l": 2
   },
   {
-   "rk": 262,
+   "rk": 260,
    "team": "Long Beach St.",
    "conf": "Big West",
    "w": 0,
    "l": 2
   },
   {
-   "rk": 263,
+   "rk": 261,
    "team": "Buffalo",
    "conf": "Mid-American",
    "w": 0,
    "l": 2
   },
   {
-   "rk": 264,
+   "rk": 262,
    "team": "Coastal Carolina",
    "conf": "Sun Belt",
-   "w": 0,
-   "l": 2
-  },
-  {
-   "rk": 265,
-   "team": "Tennessee Tech",
-   "conf": "Southern",
    "w": 1,
-   "l": 1
-  },
-  {
-   "rk": 266,
-   "team": "SIUE",
-   "conf": "Ohio Valley",
-   "w": 0,
-   "l": 1
-  },
-  {
-   "rk": 267,
-   "team": "Milwaukee",
-   "conf": "Horizon League",
-   "w": 0,
    "l": 2
   },
   {
-   "rk": 268,
-   "team": "Presbyterian",
-   "conf": "Big South",
-   "w": 0,
-   "l": 2
-  },
-  {
-   "rk": 269,
-   "team": "Abilene Christian",
-   "conf": "United Athletic",
+   "rk": 263,
+   "team": "Brown",
+   "conf": "Ivy League",
    "w": 1,
-   "l": 1
+   "l": 2
   },
   {
-   "rk": 270,
-   "team": "UNC Greensboro",
-   "conf": "Southern",
-   "w": 0,
-   "l": 1
-  },
-  {
-   "rk": 271,
-   "team": "LSU New Orleans",
-   "conf": "Southland",
-   "w": 0,
-   "l": 1
-  },
-  {
-   "rk": 272,
+   "rk": 264,
    "team": "Georgia St.",
    "conf": "Sun Belt",
    "w": 0,
    "l": 2
   },
   {
+   "rk": 265,
+   "team": "Wofford",
+   "conf": "Southern",
+   "w": 0,
+   "l": 2
+  },
+  {
+   "rk": 266,
+   "team": "Milwaukee",
+   "conf": "Horizon League",
+   "w": 0,
+   "l": 2
+  },
+  {
+   "rk": 267,
+   "team": "Abilene Christian",
+   "conf": "United Athletic",
+   "w": 1,
+   "l": 1
+  },
+  {
+   "rk": 268,
+   "team": "UMBC",
+   "conf": "America East",
+   "w": 0,
+   "l": 2
+  },
+  {
+   "rk": 269,
+   "team": "LSU New Orleans",
+   "conf": "Southland",
+   "w": 0,
+   "l": 1
+  },
+  {
+   "rk": 270,
+   "team": "Houston Christian",
+   "conf": "Southland",
+   "w": 1,
+   "l": 0
+  },
+  {
+   "rk": 271,
+   "team": "Lehigh",
+   "conf": "Patriot League",
+   "w": 1,
+   "l": 2
+  },
+  {
+   "rk": 272,
+   "team": "LIU",
+   "conf": "Northeast",
+   "w": 0,
+   "l": 4
+  },
+  {
    "rk": 273,
-   "team": "Radford",
+   "team": "Presbyterian",
    "conf": "Big South",
    "w": 0,
    "l": 2
   },
   {
    "rk": 274,
-   "team": "Ball St.",
-   "conf": "Mid-American",
+   "team": "Eastern Kentucky",
+   "conf": "United Athletic",
    "w": 0,
-   "l": 2
+   "l": 0
   },
   {
    "rk": 275,
@@ -1937,16 +1937,16 @@
   },
   {
    "rk": 276,
-   "team": "Dartmouth",
-   "conf": "Ivy League",
-   "w": 1,
+   "team": "Lindenwood",
+   "conf": "Ohio Valley",
+   "w": 0,
    "l": 1
   },
   {
    "rk": 277,
-   "team": "Brown",
-   "conf": "Ivy League",
-   "w": 1,
+   "team": "SIUE",
+   "conf": "Ohio Valley",
+   "w": 0,
    "l": 2
   },
   {
@@ -1958,27 +1958,34 @@
   },
   {
    "rk": 279,
-   "team": "Detroit Mercy",
-   "conf": "Horizon League",
+   "team": "Radford",
+   "conf": "Big South",
    "w": 0,
-   "l": 1
+   "l": 3
   },
   {
    "rk": 280,
-   "team": "Louisiana",
-   "conf": "Sun Belt",
+   "team": "Dartmouth",
+   "conf": "Ivy League",
+   "w": 1,
+   "l": 1
+  },
+  {
+   "rk": 281,
+   "team": "Ball St.",
+   "conf": "Mid-American",
    "w": 0,
    "l": 2
   },
   {
-   "rk": 281,
+   "rk": 282,
    "team": "Little Rock",
    "conf": "United Athletic",
    "w": 0,
    "l": 2
   },
   {
-   "rk": 282,
+   "rk": 283,
    "team": "Southeastern Louisiana",
    "short": "SE Louisiana",
    "conf": "Southland",
@@ -1986,25 +1993,18 @@
    "l": 1
   },
   {
-   "rk": 283,
-   "team": "Eastern Kentucky",
-   "conf": "United Athletic",
-   "w": 0,
-   "l": 0
+   "rk": 284,
+   "team": "Sacred Heart",
+   "conf": "Metro Atlantic",
+   "w": 1,
+   "l": 1
   },
   {
-   "rk": 284,
+   "rk": 285,
    "team": "Northeastern",
    "conf": "Coastal Athletic",
    "w": 0,
    "l": 2
-  },
-  {
-   "rk": 285,
-   "team": "Houston Christian",
-   "conf": "Southland",
-   "w": 1,
-   "l": 0
   },
   {
    "rk": 286,
@@ -2015,45 +2015,46 @@
   },
   {
    "rk": 287,
-   "team": "North Dakota",
-   "conf": "Summit League",
-   "w": 1,
+   "team": "Detroit Mercy",
+   "conf": "Horizon League",
+   "w": 0,
    "l": 1
   },
   {
    "rk": 288,
-   "team": "Nebraska Omaha",
-   "conf": "Summit League",
+   "team": "Louisiana",
+   "conf": "Sun Belt",
    "w": 0,
    "l": 2
   },
   {
    "rk": 289,
-   "team": "Mount St. Mary's",
-   "conf": "Metro Atlantic",
-   "w": 1,
-   "l": 1
-  },
-  {
-   "rk": 290,
-   "team": "Lindenwood",
-   "conf": "Ohio Valley",
-   "w": 0,
-   "l": 1
-  },
-  {
-   "rk": 291,
    "team": "UNC Asheville",
    "conf": "Big South",
    "w": 0,
    "l": 2
   },
   {
-   "rk": 292,
-   "team": "Weber St.",
-   "conf": "Big Sky",
-   "w": 0,
+   "rk": 290,
+   "team": "North Dakota",
+   "conf": "Summit League",
+   "w": 1,
    "l": 2
+  },
+  {
+   "rk": 291,
+   "team": "Mount St. Mary's",
+   "conf": "Metro Atlantic",
+   "w": 1,
+   "l": 1
+  },
+  {
+   "rk": 292,
+   "team": "Cal St. Bakersfield",
+   "short": "CS Bakersfield",
+   "conf": "Big West",
+   "w": 1,
+   "l": 0
   },
   {
    "rk": 293,
@@ -2064,22 +2065,22 @@
   },
   {
    "rk": 294,
-   "team": "Southern",
-   "conf": "SWAC",
+   "team": "Nebraska Omaha",
+   "conf": "Summit League",
    "w": 0,
-   "l": 3
+   "l": 2
   },
   {
    "rk": 295,
-   "team": "Sacred Heart",
-   "conf": "Metro Atlantic",
-   "w": 1,
-   "l": 1
+   "team": "South Dakota",
+   "conf": "Summit League",
+   "w": 0,
+   "l": 2
   },
   {
    "rk": 296,
-   "team": "South Dakota",
-   "conf": "Summit League",
+   "team": "Weber St.",
+   "conf": "Big Sky",
    "w": 0,
    "l": 2
   },
@@ -2093,8 +2094,8 @@
   },
   {
    "rk": 298,
-   "team": "Prairie View A&M",
-   "conf": "SWAC",
+   "team": "Oral Roberts",
+   "conf": "Summit League",
    "w": 0,
    "l": 1
   },
@@ -2107,69 +2108,34 @@
   },
   {
    "rk": 300,
-   "team": "Oral Roberts",
-   "conf": "Summit League",
-   "w": 0,
+   "team": "North Alabama",
+   "conf": "United Athletic",
+   "w": 1,
    "l": 1
   },
   {
    "rk": 301,
-   "team": "North Alabama",
-   "conf": "United Athletic",
-   "w": 1,
-   "l": 0
+   "team": "Southern",
+   "conf": "SWAC",
+   "w": 0,
+   "l": 3
   },
   {
    "rk": 302,
-   "team": "Saint Peter's",
-   "conf": "Metro Atlantic",
-   "w": 0,
-   "l": 3
-  },
-  {
-   "rk": 303,
-   "team": "Morehead St.",
-   "conf": "Ohio Valley",
-   "w": 0,
-   "l": 2
-  },
-  {
-   "rk": 304,
-   "team": "UTSA",
-   "conf": "American Athletic",
-   "w": 1,
-   "l": 1
-  },
-  {
-   "rk": 305,
    "team": "Grambling St.",
    "conf": "SWAC",
    "w": 1,
-   "l": 0
-  },
-  {
-   "rk": 306,
-   "team": "North Florida",
-   "conf": "ASUN",
-   "w": 1,
    "l": 1
   },
   {
-   "rk": 307,
-   "team": "Stetson",
-   "conf": "ASUN",
-   "w": 0,
-   "l": 3
-  },
-  {
-   "rk": 308,
-   "team": "Jackson St.",
+   "rk": 303,
+   "team": "Prairie View A&M",
    "conf": "SWAC",
-   "w": 1,
+   "w": 0,
    "l": 1
   },
   {
-   "rk": 309,
+   "rk": 304,
    "team": "North Carolina A&T",
    "short": "NC A&T",
    "conf": "Coastal Athletic",
@@ -2177,103 +2143,138 @@
    "l": 1
   },
   {
-   "rk": 310,
-   "team": "Cal St. Bakersfield",
-   "short": "CS Bakersfield",
-   "conf": "Big West",
-   "w": 1,
-   "l": 0
-  },
-  {
-   "rk": 311,
-   "team": "Alabama A&M",
-   "conf": "SWAC",
-   "w": 0,
-   "l": 0
-  },
-  {
-   "rk": 312,
-   "team": "Kansas City",
-   "conf": "Summit League",
-   "w": 1,
-   "l": 1
-  },
-  {
-   "rk": 313,
-   "team": "West Georgia",
-   "conf": "United Athletic",
-   "w": 0,
-   "l": 2
-  },
-  {
-   "rk": 314,
-   "team": "Northwestern St.",
-   "conf": "Southland",
-   "w": 0,
-   "l": 3
-  },
-  {
-   "rk": 315,
-   "team": "Northern Arizona",
-   "conf": "Big Sky",
-   "w": 0,
-   "l": 2
-  },
-  {
-   "rk": 316,
-   "team": "Alabama St.",
-   "conf": "SWAC",
-   "w": 0,
-   "l": 1
-  },
-  {
-   "rk": 317,
+   "rk": 305,
    "team": "Air Force",
    "conf": "Mountain West",
    "w": 1,
    "l": 1
   },
   {
-   "rk": 318,
+   "rk": 306,
+   "team": "UTSA",
+   "conf": "American Athletic",
+   "w": 1,
+   "l": 1
+  },
+  {
+   "rk": 307,
+   "team": "Morehead St.",
+   "conf": "Ohio Valley",
+   "w": 0,
+   "l": 2
+  },
+  {
+   "rk": 308,
+   "team": "Stetson",
+   "conf": "ASUN",
+   "w": 0,
+   "l": 3
+  },
+  {
+   "rk": 309,
+   "team": "Saint Peter's",
+   "conf": "Metro Atlantic",
+   "w": 0,
+   "l": 3
+  },
+  {
+   "rk": 310,
+   "team": "North Florida",
+   "conf": "ASUN",
+   "w": 1,
+   "l": 2
+  },
+  {
+   "rk": 311,
    "team": "IU Indy",
    "conf": "Horizon League",
    "w": 1,
    "l": 0
   },
   {
-   "rk": 319,
-   "team": "Albany",
-   "conf": "America East",
-   "w": 1,
+   "rk": 312,
+   "team": "West Georgia",
+   "conf": "United Athletic",
+   "w": 0,
+   "l": 2
+  },
+  {
+   "rk": 313,
+   "team": "Army",
+   "conf": "Patriot League",
+   "w": 0,
    "l": 1
   },
   {
-   "rk": 320,
+   "rk": 314,
+   "team": "Alabama A&M",
+   "conf": "SWAC",
+   "w": 0,
+   "l": 1
+  },
+  {
+   "rk": 315,
    "team": "New Hampshire",
    "conf": "America East",
    "w": 2,
    "l": 1
   },
   {
-   "rk": 321,
-   "team": "Mercyhurst",
-   "conf": "Northeast",
+   "rk": 316,
+   "team": "Northwestern St.",
+   "conf": "Southland",
    "w": 0,
+   "l": 3
+  },
+  {
+   "rk": 317,
+   "team": "Jackson St.",
+   "conf": "SWAC",
+   "w": 1,
    "l": 2
   },
   {
-   "rk": 322,
-   "team": "Cleveland St.",
-   "conf": "Horizon League",
+   "rk": 318,
+   "team": "Kansas City",
+   "conf": "Summit League",
+   "w": 1,
+   "l": 2
+  },
+  {
+   "rk": 319,
+   "team": "West Florida",
+   "conf": "ASUN",
    "w": 0,
    "l": 1
   },
   {
-   "rk": 323,
-   "team": "Idaho St.",
+   "rk": 320,
+   "team": "Northern Arizona",
    "conf": "Big Sky",
    "w": 0,
-   "l": 3
+   "l": 2
+  },
+  {
+   "rk": 321,
+   "team": "South Carolina St.",
+   "short": "So. Carolina St.",
+   "conf": "MEAC",
+   "w": 2,
+   "l": 0
+  },
+  {
+   "rk": 322,
+   "team": "Morgan St.",
+   "conf": "MEAC",
+   "w": 1,
+   "l": 0
+  },
+  {
+   "rk": 323,
+   "team": "Mercyhurst",
+   "conf": "Northeast",
+   "w": 0,
+   "l": 2
   },
   {
    "rk": 324,
@@ -2285,80 +2286,80 @@
   },
   {
    "rk": 325,
-   "team": "Norfolk St.",
-   "conf": "MEAC",
-   "w": 0,
-   "l": 1
-  },
-  {
-   "rk": 326,
-   "team": "Morgan St.",
-   "conf": "MEAC",
-   "w": 1,
-   "l": 0
-  },
-  {
-   "rk": 327,
    "team": "Bryant",
    "conf": "America East",
    "w": 1,
    "l": 2
   },
   {
-   "rk": 328,
-   "team": "Wagner",
-   "conf": "Northeast",
-   "w": 0,
-   "l": 2
-  },
-  {
-   "rk": 329,
-   "team": "Incarnate Word",
-   "conf": "Southland",
-   "w": 0,
-   "l": 3
-  },
-  {
-   "rk": 330,
-   "team": "Army",
-   "conf": "Patriot League",
-   "w": 0,
-   "l": 1
-  },
-  {
-   "rk": 331,
-   "team": "Texas Southern",
-   "conf": "SWAC",
-   "w": 0,
-   "l": 2
-  },
-  {
-   "rk": 332,
+   "rk": 326,
    "team": "Southern Indiana",
    "conf": "Ohio Valley",
    "w": 0,
    "l": 2
   },
   {
-   "rk": 333,
-   "team": "West Florida",
-   "conf": "ASUN",
+   "rk": 327,
+   "team": "Le Moyne",
+   "conf": "Northeast",
+   "w": 0,
+   "l": 2
+  },
+  {
+   "rk": 328,
+   "team": "Alabama St.",
+   "conf": "SWAC",
    "w": 0,
    "l": 1
   },
   {
-   "rk": 334,
+   "rk": 329,
+   "team": "Albany",
+   "conf": "America East",
+   "w": 1,
+   "l": 1
+  },
+  {
+   "rk": 330,
+   "team": "Binghamton",
+   "conf": "America East",
+   "w": 2,
+   "l": 1
+  },
+  {
+   "rk": 331,
+   "team": "Idaho St.",
+   "conf": "Big Sky",
+   "w": 0,
+   "l": 3
+  },
+  {
+   "rk": 332,
+   "team": "Cleveland St.",
+   "conf": "Horizon League",
+   "w": 0,
+   "l": 2
+  },
+  {
+   "rk": 333,
    "team": "Manhattan",
    "conf": "Metro Atlantic",
    "w": 1,
    "l": 2
   },
   {
+   "rk": 334,
+   "team": "Texas Southern",
+   "conf": "SWAC",
+   "w": 0,
+   "l": 2
+  },
+  {
    "rk": 335,
-   "team": "Binghamton",
-   "conf": "America East",
-   "w": 2,
-   "l": 1
+   "team": "Wagner",
+   "conf": "Northeast",
+   "w": 0,
+   "l": 3
   },
   {
    "rk": 336,
@@ -2369,49 +2370,41 @@
   },
   {
    "rk": 337,
-   "team": "Le Moyne",
-   "conf": "Northeast",
+   "team": "Incarnate Word",
+   "conf": "Southland",
    "w": 0,
-   "l": 2
+   "l": 3
   },
   {
    "rk": 338,
-   "team": "South Carolina St.",
-   "short": "So. Carolina St.",
-   "conf": "MEAC",
-   "w": 1,
-   "l": 0
-  },
-  {
-   "rk": 339,
-   "team": "Maine",
-   "conf": "America East",
-   "w": 1,
-   "l": 2
-  },
-  {
-   "rk": 340,
-   "team": "Chicago St.",
-   "conf": "Northeast",
-   "w": 1,
-   "l": 1
-  },
-  {
-   "rk": 341,
    "team": "Loyola MD",
    "conf": "Patriot League",
    "w": 0,
    "l": 2
   },
   {
-   "rk": 342,
-   "team": "Florida A&M",
-   "conf": "SWAC",
+   "rk": 339,
+   "team": "Norfolk St.",
+   "conf": "MEAC",
    "w": 0,
    "l": 1
   },
   {
-   "rk": 343,
+   "rk": 340,
+   "team": "Maine",
+   "conf": "America East",
+   "w": 1,
+   "l": 2
+  },
+  {
+   "rk": 341,
+   "team": "The Citadel",
+   "conf": "Southern",
+   "w": 0,
+   "l": 1
+  },
+  {
+   "rk": 342,
    "team": "North Carolina Central",
    "short": "NC Central",
    "conf": "MEAC",
@@ -2419,46 +2412,53 @@
    "l": 2
   },
   {
-   "rk": 344,
-   "team": "The Citadel",
-   "conf": "Southern",
-   "w": 0,
-   "l": 1
-  },
-  {
-   "rk": 345,
-   "team": "Eastern Illinois",
-   "conf": "Ohio Valley",
-   "w": 0,
-   "l": 2
-  },
-  {
-   "rk": 346,
-   "team": "USC Upstate",
-   "conf": "Big South",
-   "w": 0,
-   "l": 2
-  },
-  {
-   "rk": 347,
+   "rk": 343,
    "team": "New Haven",
    "conf": "Northeast",
    "w": 0,
    "l": 2
   },
   {
-   "rk": 348,
+   "rk": 344,
+   "team": "Florida A&M",
+   "conf": "SWAC",
+   "w": 0,
+   "l": 2
+  },
+  {
+   "rk": 345,
+   "team": "Chicago St.",
+   "conf": "Northeast",
+   "w": 1,
+   "l": 2
+  },
+  {
+   "rk": 346,
    "team": "VMI",
    "conf": "Southern",
    "w": 0,
    "l": 2
   },
   {
-   "rk": 349,
-   "team": "Stonehill",
-   "conf": "Northeast",
+   "rk": 347,
+   "team": "USC Upstate",
+   "conf": "Big South",
    "w": 0,
-   "l": 1
+   "l": 3
+  },
+  {
+   "rk": 348,
+   "team": "NJIT",
+   "conf": "America East",
+   "w": 1,
+   "l": 2
+  },
+  {
+   "rk": 349,
+   "team": "Eastern Illinois",
+   "conf": "Ohio Valley",
+   "w": 0,
+   "l": 3
   },
   {
    "rk": 350,
@@ -2469,17 +2469,17 @@
   },
   {
    "rk": 351,
-   "team": "NJIT",
-   "conf": "America East",
-   "w": 1,
+   "team": "Louisiana Monroe",
+   "conf": "Sun Belt",
+   "w": 0,
    "l": 2
   },
   {
    "rk": 352,
-   "team": "Louisiana Monroe",
-   "conf": "Sun Belt",
+   "team": "Stonehill",
+   "conf": "Northeast",
    "w": 0,
-   "l": 1
+   "l": 2
   },
   {
    "rk": 353,
@@ -2520,6 +2520,13 @@
   },
   {
    "rk": 358,
+   "team": "Coppin St.",
+   "conf": "MEAC",
+   "w": 0,
+   "l": 2
+  },
+  {
+   "rk": 359,
    "team": "Maryland Eastern Shore",
    "short": "Md. Eastern Shore",
    "conf": "MEAC",
@@ -2527,46 +2534,39 @@
    "l": 2
   },
   {
-   "rk": 359,
-   "team": "Gardner Webb",
-   "conf": "Big South",
-   "w": 0,
-   "l": 2
-  },
-  {
    "rk": 360,
-   "team": "Coppin St.",
-   "conf": "MEAC",
-   "w": 0,
-   "l": 2
-  },
-  {
-   "rk": 361,
-   "team": "Canisius",
-   "conf": "Metro Atlantic",
-   "w": 0,
-   "l": 2
-  },
-  {
-   "rk": 362,
    "team": "Delaware St.",
    "conf": "MEAC",
    "w": 0,
    "l": 1
   },
   {
-   "rk": 363,
-   "team": "Rider",
-   "conf": "Metro Atlantic",
+   "rk": 361,
+   "team": "Gardner Webb",
+   "conf": "Big South",
    "w": 0,
-   "l": 3
+   "l": 2
   },
   {
-   "rk": 364,
+   "rk": 362,
    "team": "Western Illinois",
    "conf": "Ohio Valley",
    "w": 0,
    "l": 2
+  },
+  {
+   "rk": 363,
+   "team": "Canisius",
+   "conf": "Metro Atlantic",
+   "w": 0,
+   "l": 2
+  },
+  {
+   "rk": 364,
+   "team": "Rider",
+   "conf": "Metro Atlantic",
+   "w": 0,
+   "l": 3
   },
   {
    "rk": 365,
@@ -2574,7 +2574,7 @@
    "short": "Miss. Valley St.",
    "conf": "SWAC",
    "w": 0,
-   "l": 1
+   "l": 2
   }
  ]
 }
