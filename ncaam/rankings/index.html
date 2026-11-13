@@ -74,6 +74,8 @@
     }
     /* Search box and conference dropdown side by side, sharing the width */
     .filters { display: flex; gap: 8px; margin-bottom: 14px; }
+    /* The dropdown's label is longer than the search box's, so it gets more of the row */
+    #conf-filter { flex-grow: 1.6; }
 
     .table-wrap {
       background: #fff;
@@ -173,7 +175,7 @@
     <div class="filters">
     <input class="search" id="search" type="search" placeholder="Find a team" aria-label="Find a team" />
     <select class="search" id="conf-filter" aria-label="Show one conference">
-      <option value="">All conferences</option>
+      <option value="">Select Conference</option>
     </select>
     </div>
     </div>
