@@ -117,6 +117,7 @@
     /* A team with a phone name (data "short") carries both; phones show the short one. */
     td.team .short { display: none; }
     td.rec { color: #444; }
+    td.pr { font-variant-numeric: tabular-nums; font-weight: 600; color: #002868; }
 
     /* Desktop: bigger table text and a little more room in each row (phone rules are below) */
     @media (min-width: 768px) {
@@ -140,10 +141,20 @@
       .note { margin-top: 8px; }
       th, td { font-size: 15px; padding: 10px 5px; }
       td.rec { padding-left: 4px; padding-right: 4px; }
+      td.pr { padding-left: 4px; padding-right: 4px; }
       td.team { white-space: normal; padding-left: 2px; }
       td.conf { padding-right: 8px; }
       td.team .full { display: none; }
       td.team .short { display: inline; }
+    }
+
+    /* Narrowest phones (320px, e.g. iPhone SE): slightly smaller text and tighter cells so
+       all five columns still fit without sideways scrolling. */
+    @media (max-width: 340px) {
+      body { padding-left: 6px; padding-right: 6px; }
+      th, td { font-size: 14px; padding: 9px 3px; }
+      td.team { padding-left: 1px; }
+      td.conf { padding-right: 4px; }
     }
   </style>
 </head>
@@ -235,6 +246,7 @@
         const g = t.w + t.l;
         return (g ? t.w / g : 0) * 1000 + t.w / 1000;
       }
+      if (key === "pr") return t.pr ?? null;
       return t[key] || null;
     }
 
@@ -251,7 +263,7 @@
     }
 
     function renderHead() {
-      const cols = [["rk", "Rk"], ["team", "Team"], ["conf", "Conf"], ["rec", "Rec"]];
+      const cols = [["rk", "Rk"], ["team", "Team"], ["conf", "Conf"], ["rec", "Rec"], ["pr", "Rtg"]];
       document.getElementById("head").innerHTML = "<tr>" + cols.map(([key, label]) => {
         const cls = [key === "team" ? "team" : key === "conf" ? "conf" : "", STATE.key === key ? "active" : "", STATE.key === key && STATE.desc ? "desc" : ""]
           .filter(Boolean).join(" ");
@@ -271,6 +283,7 @@
             : esc(t.team)}</td>
           <td class="conf" title="${esc(t.conf)}">${esc(confShort(t.conf))}</td>
           <td class="rec">${t.w ?? 0}-${t.l ?? 0}</td>
+          <td class="pr">${t.pr == null ? "" : t.pr.toFixed(1)}</td>
         </tr>`).join("");
       document.getElementById("empty").hidden = teams.length > 0;
     }
