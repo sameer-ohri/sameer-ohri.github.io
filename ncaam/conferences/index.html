@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex,nofollow,noarchive" />
   <title>Men&rsquo;s College Basketball Conference Rankings</title>
-  <meta name="description" content="Men&#x27;s college basketball conferences ranked by their teams&#x27; average place, updated daily." />
+  <meta name="description" content="Men&#x27;s college basketball conferences ranked by their teams&#x27; average rating, updated daily." />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Men&rsquo;s College Basketball Conference Rankings" />
-  <meta property="og:description" content="Men&#x27;s college basketball conferences ranked by their teams&#x27; average place, updated daily." />
+  <meta property="og:description" content="Men&#x27;s college basketball conferences ranked by their teams&#x27; average rating, updated daily." />
   <meta property="og:image" content="https://sameerohri.com/ncaam/conferences/preview.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -153,29 +153,29 @@
     }
 
     // One row per conference, worked out from the team rankings in the browser.
-    // Average place = mean of the place numbers of its teams (lowest is best).
+    // Average rating = mean of the points ratings ("pr") of its teams (highest is best).
     function conferenceRows(teams) {
       const groups = new Map();
       for (const t of teams) {
-        if (!t.conf) continue;
+        if (!t.conf || t.pr == null) continue;
         if (!groups.has(t.conf)) groups.set(t.conf, []);
-        groups.get(t.conf).push(t.rk);
+        groups.get(t.conf).push(t.pr);
       }
-      const rows = [...groups].map(([conf, places]) => ({
+      const rows = [...groups].map(([conf, ratings]) => ({
         conf,
-        teams: places.length,
-        avg: places.reduce((sum, p) => sum + p, 0) / places.length,
+        teams: ratings.length,
+        avg: ratings.reduce((sum, p) => sum + p, 0) / ratings.length,
       }));
-      rows.sort((a, b) => a.avg - b.avg || a.conf.localeCompare(b.conf));
+      rows.sort((a, b) => b.avg - a.avg || a.conf.localeCompare(b.conf));
       rows.forEach((r, i) => { r.rk = i + 1; });
       return rows;
     }
 
-    // Columns: Rank, Conference, Average place, Teams. Click a header to sort; default is Rank.
+    // Columns: Rank, Conference, Average rating, Teams. Click a header to sort; default is Rank.
     const STATE = { key: "rk", desc: false };
     let ROWS = [];
 
-    const COLS = [["rk", "Rank", ""], ["conf", "Conference", "conf"], ["avg", "Avg. Rk", "avg"], ["teams", "Teams", ""]];
+    const COLS = [["rk", "Rank", ""], ["conf", "Conference", "conf"], ["avg", "Avg. Rtg", "avg"], ["teams", "Teams", ""]];
 
     function sortedRows() {
       const k = STATE.key, dir = STATE.desc ? -1 : 1;
@@ -212,9 +212,9 @@
       const th = e.target.closest("th");
       if (!th) return;
       const key = th.dataset.key;
-      // Text sorts A to Z; numbers start with the best (lowest) value first.
+      // Text sorts A to Z; numbers start with the best value first (lowest, except Avg. Rtg: highest).
       if (STATE.key === key) STATE.desc = !STATE.desc;
-      else { STATE.key = key; STATE.desc = false; }
+      else { STATE.key = key; STATE.desc = key === "avg"; }
       render();
     });
 
