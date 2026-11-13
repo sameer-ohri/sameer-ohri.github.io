@@ -426,7 +426,8 @@
         html += section("On Now", on, "best", { live: true });
       } else if (next.length) {
         const first = Math.min(...next.map(g => g.tip ?? 9999));
-        html += `<h2>On Now</h2><p class="empty-line">Nothing on right now. Next tip-off:
+        const none = { big: "No big games", be: "No Big East games", all: "No games" }[STATE.filter];
+        html += `<h2>On Now</h2><p class="empty-line">${none} on right now. Next tip-off:
           ${esc(niceTime(first === 9999 ? null : first)).replace(/\.?$/, ".")}</p>`;
       }
       html += grouped(next);
