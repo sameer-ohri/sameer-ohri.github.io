@@ -1,6 +1,6 @@
 {
  "date": "2026-11-13",
- "updated": "2026-11-13 16:48",
+ "updated": "2026-11-13 16:55",
  "source_date": "2026-11-13",
  "teams": [
   {
@@ -1675,6 +1675,7 @@
   {
    "rk": 209,
    "team": "UT Rio Grande Valley",
+   "short": "UTRGV",
    "conf": "Southland",
    "w": 1,
    "l": 1,
