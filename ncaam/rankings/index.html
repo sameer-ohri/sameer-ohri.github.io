@@ -127,13 +127,21 @@
     @media (min-width: 768px) {
       table { font-size: 15px; }
       th, td { padding: 11px 12px; }
+      /* Even column spacing: without this the long Team and Conf columns soak up the extra width */
+      table { table-layout: fixed; }
+      th:nth-child(1) { width: 13%; }
+      th:nth-child(2) { width: 27%; }
+      th:nth-child(3) { width: 23%; }
+      th:nth-child(4) { width: 18.5%; }
+      th:nth-child(5) { width: 18.5%; }
     }
 
     .note { font-size: 12px; color: #666; text-align: center; margin: 12px 0 0; }
     .blurb .mob { display: none; }
     .blurb { font-size: 12px; color: #666; text-align: center; margin: -4px 0 10px; line-height: 1.35; }
     /* Wide screens: the blurb is a touch wider than the table, so it stays on one line */
-    @media (min-width: 600px) { .blurb { white-space: nowrap; margin-left: -40px; margin-right: -40px; } }
+    @media (min-width: 600px) { .blurb { white-space: nowrap; } }
+    @media (min-width: 900px) { .blurb { margin-left: -40px; margin-right: -40px; } }
 
     .empty-line { color: #666; padding: 16px; margin: 0; text-align: center; }
 
