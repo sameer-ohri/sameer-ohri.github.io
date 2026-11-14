@@ -4,10 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex,nofollow,noarchive" />
-  <title>Men&rsquo;s College Basketball Conference Rankings</title>
+  <title>Men&rsquo;s College Basketball Conference Ratings</title>
   <meta name="description" content="Men&#x27;s college basketball conferences ranked by their teams&#x27; average rating, updated daily." />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Men&rsquo;s College Basketball Conference Rankings" />
+  <meta property="og:title" content="Men&rsquo;s College Basketball Conference Ratings" />
   <meta property="og:description" content="Men&#x27;s college basketball conferences ranked by their teams&#x27; average rating, updated daily." />
   <meta property="og:image" content="https://sameerohri.com/ncaam/conferences/preview.png" />
   <meta property="og:image:width" content="1200" />
@@ -108,9 +108,9 @@
 <body>
   <div class="container">
     <div class="accent-bar"></div>
-    <h1>Men&rsquo;s College Basketball<br>Conference Rankings</h1>
+    <h1>Men&rsquo;s College Basketball<br>Conference Ratings</h1>
     <p class="subtitle" id="subtitle"></p>
-    <p class="crosslink"><a href="/ncaam/rankings/">Rankings</a> · <a href="/ncaam/games-of-the-day/">Today&#39;s Games</a> · <a href="/">Home</a></p>
+    <p class="crosslink"><a href="/ncaam/rankings/">Ratings</a> · <a href="/ncaam/games-of-the-day/">Today&#39;s Games</a> · <a href="/">Home</a></p>
     <div id="stale"></div>
 
     <div class="table-wrap">
@@ -225,18 +225,18 @@
         sub.textContent = updatedLine(d.updated, d.date);
         if (d.source_date && d.source_date !== d.date) {
           document.getElementById("stale").innerHTML =
-            `<p class="stale">These rankings are from ${esc(longDate(d.source_date))}. Today's are not in yet.</p>`;
+            `<p class="stale">These ratings are from ${esc(longDate(d.source_date))}. Today's are not in yet.</p>`;
         }
         ROWS = conferenceRows(d.teams);
         if (!ROWS.length) {
-          sub.textContent = "No rankings published yet.";
+          sub.textContent = "No ratings published yet.";
           document.getElementById("empty").hidden = false;
           return;
         }
         render();
       })
       .catch(() => {
-        document.getElementById("subtitle").textContent = "Could not load the rankings.";
+        document.getElementById("subtitle").textContent = "Could not load the ratings.";
       });
   </script>
 </body>

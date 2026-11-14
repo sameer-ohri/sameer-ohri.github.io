@@ -4,11 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex,nofollow,noarchive" />
-  <title>Men&rsquo;s College Basketball Rankings</title>
-  <meta name="description" content="Men's college basketball rankings, updated daily." />
+  <title>Men&rsquo;s College Basketball Ratings</title>
+  <meta name="description" content="Men's college basketball ratings, updated daily." />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Men&rsquo;s College Basketball Rankings" />
-  <meta property="og:description" content="Men's college basketball rankings, updated daily." />
+  <meta property="og:title" content="Men&rsquo;s College Basketball Ratings" />
+  <meta property="og:description" content="Men's college basketball ratings, updated daily." />
   <meta property="og:image" content="https://sameerohri.com/ncaam/rankings/preview.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -181,7 +181,7 @@
   <div class="container">
     <div class="frozen" id="frozen">
     <div class="accent-bar"></div>
-    <h1>Men&rsquo;s College Basketball Rankings</h1>
+    <h1>Men&rsquo;s College Basketball Ratings</h1>
     <p class="subtitle" id="subtitle"></p>
     <p class="crosslink"><a href="/ncaam/conferences/">Conferences</a> · <a href="/ncaam/games-of-the-day/">Today's Games</a> · <a href="/">Home</a></p>
     <div id="stale"></div>
@@ -355,11 +355,11 @@
         sub.textContent = updatedLine(d.updated, d.date);
         if (d.source_date && d.source_date !== d.date) {
           document.getElementById("stale").innerHTML =
-            `<p class="stale">These rankings are from ${esc(longDate(d.source_date))}. Today's are not in yet.</p>`;
+            `<p class="stale">These ratings are from ${esc(longDate(d.source_date))}. Today's are not in yet.</p>`;
         }
         if (!d.teams.length) {
-          sub.textContent = "No rankings published yet.";
-          document.getElementById("empty").textContent = "No rankings published yet.";
+          sub.textContent = "No ratings published yet.";
+          document.getElementById("empty").textContent = "No ratings published yet.";
           document.getElementById("empty").hidden = false;
           return;
         }
@@ -374,7 +374,7 @@
         render();
       })
       .catch(() => {
-        document.getElementById("subtitle").textContent = "Could not load the rankings.";
+        document.getElementById("subtitle").textContent = "Could not load the ratings.";
       });
   </script>
 </body>
