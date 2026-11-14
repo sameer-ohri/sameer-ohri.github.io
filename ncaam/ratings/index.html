@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow,noarchive" />
+  <title>Men&rsquo;s College Basketball Ratings</title>
+  <meta name="description" content="Men's college basketball ratings, updated daily." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Men&rsquo;s College Basketball Ratings" />
+  <meta property="og:description" content="Men's college basketball ratings, updated daily." />
+  <meta property="og:image" content="https://sameerohri.com/ncaam/ratings/preview.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://sameerohri.com/ncaam/ratings/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      margin: 0;
+      padding: 0 16px 24px;
+      background: #f7f8fa;
+      color: #111;
+    }
+
+    .container { max-width: 480px; margin: 0 auto; }
+    @media (min-width: 768px) { .container { max-width: 760px; } }
+
+    /* Freeze panes (phone and laptop): the page scrolls normally (so pull-to-refresh and the
+       phone's hiding address bar still work), while the top block (title, links, search,
+       filter) sticks to the top and the header row sticks just under it. --frozen-h is the
+       top block's height, kept current by the script. */
+    .frozen { position: sticky; top: 0; z-index: 3; background: #f7f8fa; padding-top: 24px; }
+
+    .accent-bar {
+      height: 5px;
+      background: #002868;
+      border-radius: 3px;
+      margin-bottom: 20px;
+    }
+
+    /* Shrinks on narrow phones so the title stays on one line (full 22px from about 405px wide);
+       if a screen is narrower still, it wraps into two even lines. */
+    h1 { font-size: clamp(16px, calc(6.2vw - 3px), 22px); font-weight: 600; margin: 0 0 4px;
+      letter-spacing: -0.3px; text-align: center; text-wrap: balance; }
+
+    .subtitle { font-size: 13px; color: #666; margin: 0 0 16px; text-align: center; }
+
+    .crosslink { font-size: 15px; margin: 0 0 16px; text-align: center; }
+    .crosslink a { color: #002868; }
+
+    .stale {
+      font-size: 13px;
+      color: #8a5a00;
+      background: #fff4d6;
+      border: 1px solid #f0dca0;
+      border-radius: 8px;
+      padding: 8px 12px;
+      margin: 0 0 16px;
+    }
+
+    .search {
+      font: inherit;
+      font-size: 15px;
+      display: block;
+      flex: 1 1 0;
+      min-width: 0;
+      padding: 8px 12px;
+      border: 1px solid #cfd5de;
+      border-radius: 8px;
+      background: #fff;
+    }
+    /* Search box and conference dropdown side by side, sharing the width */
+    .filters { display: flex; gap: 8px; margin-bottom: 14px; }
+    /* The dropdown's label is longer than the search box's, so it gets more of the row */
+    #conf-filter { flex-grow: 1.6; }
+
+    .table-wrap {
+      background: #fff;
+      border: 1px solid #e3e6eb;
+      border-radius: 10px;
+    }
+
+    /* Full width of the box, so the columns sit in the same place whatever the filter. */
+    table { border-collapse: collapse; width: 100%; font-size: 13px; }
+
+    th, td {
+      padding: 9px 12px;
+      text-align: center;
+      white-space: nowrap;
+      border-bottom: 1px solid #eef0f3;
+    }
+
+    th {
+      background: #f2f4f7;
+      font-weight: 600;
+      color: #444;
+      cursor: pointer;
+      user-select: none;
+      position: sticky;
+      top: var(--frozen-h, 0px);
+    }
+    th:first-child { border-top-left-radius: 10px; }
+    th:last-child { border-top-right-radius: 10px; }
+
+    th.active::after { content: " \25B2"; font-size: 10px; }
+    th.active.desc::after { content: " \25BC"; }
+
+    td.team, th.team { position: sticky; left: 0; background: #fff; }
+    /* Header row above the pinned Team column when the table scrolls under it */
+    td.team { z-index: 1; }
+    th { z-index: 2; }
+    th.team { background: #f2f4f7; }
+    td.rk { color: #666; }
+    tr:hover td { background: #f7fafd; }
+    tr:hover td.team { background: #f7fafd; }
+
+    td.conf { color: #666; }
+    /* A team with a phone name (data "short") carries both; phones show the short one. */
+    td.team .short { display: none; }
+    td.rec { color: #444; }
+    td.pr { font-variant-numeric: tabular-nums; font-weight: 600; color: #002868; }
+
+    /* Desktop: bigger table text and a little more room in each row (phone rules are below) */
+    @media (min-width: 768px) {
+      table { font-size: 15px; }
+      th, td { padding: 11px 12px; }
+      /* Even column spacing: without this the long Team and Conf columns soak up the extra width */
+      table { table-layout: fixed; }
+      th:nth-child(1) { width: 13%; }
+      th:nth-child(2) { width: 27%; }
+      th:nth-child(3) { width: 23%; }
+      th:nth-child(4) { width: 18.5%; }
+      th:nth-child(5) { width: 18.5%; }
+    }
+
+    .note { font-size: 12px; color: #666; text-align: center; margin: 12px 0 0; }
+    .blurb .mob { display: none; }
+    .blurb { font-size: 12px; color: #666; text-align: center; margin: -4px 0 10px; line-height: 1.35; }
+    /* Wide screens: the blurb is a touch wider than the table, so it stays on one line */
+    @media (min-width: 600px) { .blurb { white-space: nowrap; } }
+    @media (min-width: 900px) { .blurb { margin-left: -40px; margin-right: -40px; } }
+
+    .empty-line { color: #666; padding: 16px; margin: 0; text-align: center; }
+
+    /* Phone: bigger text (15px), narrower page edges and cells, so all four columns fit
+       without sideways scrolling; the few longest team names wrap on the narrowest phones. */
+    @media (max-width: 480px) {
+      /* Tighter top so more rows fit below the frozen part */
+      body { padding: 0 10px 10px; }
+      .frozen { padding-top: 12px; }
+      .accent-bar { margin-bottom: 12px; }
+      .subtitle, .crosslink { margin-bottom: 10px; }
+      .blurb .desk { display: none; }
+      .blurb .mob { display: inline; }
+      .filters { margin-bottom: 8px; }
+      .search { padding: 6px 10px; }
+      .note { margin-top: 8px; }
+      th, td { font-size: 15px; padding: 10px 5px; }
+      td.rec { padding-left: 4px; padding-right: 4px; }
+      td.pr { padding-left: 4px; padding-right: 4px; }
+      td.team { white-space: normal; padding-left: 2px; }
+      td.conf { padding-right: 8px; }
+      td.team .full { display: none; }
+      td.team .short { display: inline; }
+    }
+
+    /* Narrowest phones (320px, e.g. iPhone SE): slightly smaller text and tighter cells so
+       all five columns still fit without sideways scrolling. */
+    @media (max-width: 340px) {
+      body { padding-left: 6px; padding-right: 6px; }
+      th, td { font-size: 14px; padding: 9px 3px; }
+      td.team { padding-left: 1px; }
+      td.conf { padding-right: 4px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="frozen" id="frozen">
+    <div class="accent-bar"></div>
+    <h1>Men&rsquo;s College Basketball Ratings</h1>
+    <p class="subtitle" id="subtitle"></p>
+    <p class="crosslink"><a href="/ncaam/conferences/">Conferences</a> · <a href="/ncaam/games-of-the-day/">Today's Games</a> · <a href="/">Home</a></p>
+    <div id="stale"></div>
+
+    <div class="filters">
+    <input class="search" id="search" type="search" placeholder="Find a team" aria-label="Find a team" />
+    <select class="search" id="conf-filter" aria-label="Show one conference">
+      <option value="">Select Conference</option>
+    </select>
+    </div>
+    <p class="blurb"><span class="desk">Rtg: Points vs average team on a neutral court. Home teams get an extra three points.</span><span class="mob">Rtg: Points vs average team on neutral court.<br>Add three points to home teams.</span></p>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead id="head"></thead>
+        <tbody id="body"></tbody>
+      </table>
+    </div>
+    <p class="note">Records count games between Division I teams only.</p>
+    <p class="empty-line" id="empty" hidden>No teams match that search.</p>
+  </div>
+
+  <script>
+    const DATA_URL = "data/rankings_latest.json";
+
+    // The header row sticks just below the frozen top block, whatever its height.
+    const frozen = document.getElementById("frozen");
+    new ResizeObserver(() => document.documentElement.style.setProperty(
+      "--frozen-h", frozen.offsetHeight + "px")).observe(frozen);
+
+    function esc(s) {
+      return String(s ?? "").replace(/[&<>"']/g, c =>
+        ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+    }
+
+    function longDate(iso) {
+      const [y, m, d] = iso.split("-").map(Number);
+      return new Date(y, m - 1, d).toLocaleDateString("en-US",
+        { weekday: "long", month: "long", day: "numeric" });
+    }
+
+    // "2026-10-31 11:04" → "Updated Saturday, Oct. 31 · 11:04 a.m. ET" (AP-style month; the file's
+    // time is the publishing Mac's, Eastern). No time in the file → date only.
+    function updatedLine(stamp, fallbackIso) {
+      const [day, hm] = String(stamp || "").split(" ");
+      const [y, mo, d] = (day || fallbackIso).split("-").map(Number);
+      const MONTHS = ["Jan.", "Feb.", "March", "April", "May", "June", "July", "Aug.",
+        "Sept.", "Oct.", "Nov.", "Dec."];
+      const weekday = new Date(y, mo - 1, d).toLocaleDateString("en-US", { weekday: "long" });
+      let line = `Updated ${weekday}, ${MONTHS[mo - 1]} ${d}`;
+      const [h, m] = (hm || "").split(":").map(Number);
+      if (Number.isFinite(h) && Number.isFinite(m)) {
+        const h12 = h % 12 === 0 ? 12 : h % 12;
+        line += ` · ${h12}:${String(m).padStart(2, "0")} ${h < 12 ? "a.m." : "p.m."} ET`;
+      }
+      return line;
+    }
+
+    // Short conference names for the table (the dropdown keeps the full names).
+    // A name not listed here shows in full.
+    const CONF_SHORT = {
+      "America East": "AmEast", "American Athletic": "AAC", "Atlantic 10": "A-10",
+      "Coastal Athletic": "CAA", "Conference USA": "C-USA", "Horizon League": "Horizon",
+      "Ivy League": "Ivy", "Metro Atlantic": "MAAC", "Mid-American": "MAC",
+      "Missouri Valley": "MVC", "Mountain West": "MWC", "Northeast": "NEC",
+      "Ohio Valley": "OVC", "Patriot League": "Patriot", "Southern": "SoCon",
+      "Summit League": "Summit", "United Athletic": "UAC", "West Coast": "WCC",
+    };
+    // Short conference names on phones only; desktop shows the full name.
+    const PHONE = window.matchMedia("(max-width: 480px)");
+    const confShort = name => (PHONE.matches ? CONF_SHORT[name] || name : name);
+    PHONE.addEventListener("change", () => render());
+
+    // Columns: Rk, Team, Conference, D1 Record. Click a header to sort; default is Rk.
+    const STATE = { key: "rk", desc: false, query: "", conf: "" };
+    let DATA = null;
+
+    // A blank conference (unknown) counts as missing, so it sorts last.
+    function value(t, key) {
+      if (key === "conf") return t.conf ? confShort(t.conf) : null;
+      // Record sorts by win percentage, then wins (0-0 teams count as 0%).
+      if (key === "rec") {
+        const g = t.w + t.l;
+        return (g ? t.w / g : 0) * 1000 + t.w / 1000;
+      }
+      if (key === "pr") return t.pr ?? null;
+      return t[key] || null;
+    }
+
+    function sortedTeams() {
+      const k = STATE.key, dir = STATE.desc ? -1 : 1;
+      return DATA.teams.slice().sort((a, b) => {
+        const x = value(a, k), y = value(b, k);
+        // Missing values always sort last, whichever way the column runs.
+        if (x == null) return 1;
+        if (y == null) return -1;
+        if (typeof x === "string") return dir * x.localeCompare(y) || a.rk - b.rk;
+        return dir * (x - y) || a.rk - b.rk;
+      });
+    }
+
+    function renderHead() {
+      const cols = [["rk", "Rk"], ["team", "Team"], ["conf", "Conf"], ["rec", "Rec"], ["pr", "Rtg"]];
+      document.getElementById("head").innerHTML = "<tr>" + cols.map(([key, label]) => {
+        const cls = [key === "team" ? "team" : key === "conf" ? "conf" : "", STATE.key === key ? "active" : "", STATE.key === key && STATE.desc ? "desc" : ""]
+          .filter(Boolean).join(" ");
+        return `<th class="${cls}" data-key="${esc(key)}">${esc(label)}</th>`;
+      }).join("") + "</tr>";
+    }
+
+    function renderBody() {
+      const q = STATE.query.trim().toLowerCase();
+      const teams = sortedTeams().filter(t =>
+        (!q || t.team.toLowerCase().includes(q) || (t.short || "").toLowerCase().includes(q)) && (!STATE.conf || t.conf === STATE.conf));
+      const body = document.getElementById("body");
+      body.innerHTML = teams.map(t => `<tr>
+          <td class="rk">${t.rk}</td>
+          <td class="team">${t.short
+            ? `<span class="full">${esc(t.team)}</span><span class="short">${esc(t.short)}</span>`
+            : esc(t.team)}</td>
+          <td class="conf" title="${esc(t.conf)}">${esc(confShort(t.conf))}</td>
+          <td class="rec">${t.w ?? 0}-${t.l ?? 0}</td>
+          <td class="pr">${t.pr == null ? "" : t.pr.toFixed(1)}</td>
+        </tr>`).join("");
+      document.getElementById("empty").hidden = teams.length > 0;
+    }
+
+    function render() {
+      renderHead();
+      renderBody();
+    }
+
+    document.getElementById("head").addEventListener("click", e => {
+      const th = e.target.closest("th");
+      if (!th) return;
+      const key = th.dataset.key;
+      // Text and rank columns start A→Z / best first; numbers start best first too.
+      if (STATE.key === key) STATE.desc = !STATE.desc;
+      else { STATE.key = key; STATE.desc = false; }
+      render();
+    });
+
+    document.getElementById("search").addEventListener("input", e => {
+      STATE.query = e.target.value;
+      renderBody();
+    });
+
+    document.getElementById("conf-filter").addEventListener("change", e => {
+      STATE.conf = e.target.value;
+      // Keep the address in step so a filtered view can be shared.
+      const url = new URL(location.href);
+      if (STATE.conf) url.searchParams.set("conf", STATE.conf);
+      else url.searchParams.delete("conf");
+      history.replaceState(null, "", url);
+      renderBody();
+    });
+
+    // One dropdown entry per conference in the data, A to Z.
+    function fillConferences() {
+      const names = [...new Set(DATA.teams.map(t => t.conf).filter(Boolean))].sort();
+      document.getElementById("conf-filter").insertAdjacentHTML("beforeend",
+        names.map(n => `<option value="${esc(n)}">${esc(n)}</option>`).join(""));
+    }
+
+    fetch(DATA_URL, { cache: "no-cache" })
+      .then(r => r.json())
+      .then(d => {
+        DATA = d;
+        const sub = document.getElementById("subtitle");
+        sub.textContent = updatedLine(d.updated, d.date);
+        if (d.source_date && d.source_date !== d.date) {
+          document.getElementById("stale").innerHTML =
+            `<p class="stale">These ratings are from ${esc(longDate(d.source_date))}. Today's are not in yet.</p>`;
+        }
+        if (!d.teams.length) {
+          sub.textContent = "No ratings published yet.";
+          document.getElementById("empty").textContent = "No ratings published yet.";
+          document.getElementById("empty").hidden = false;
+          return;
+        }
+        fillConferences();
+        // ?conf=<name> presets the dropdown; unknown names are ignored.
+        const want = new URLSearchParams(location.search).get("conf");
+        const sel = document.getElementById("conf-filter");
+        if (want && [...sel.options].some(o => o.value === want)) {
+          sel.value = want;
+          STATE.conf = want;
+        }
+        render();
+      })
+      .catch(() => {
+        document.getElementById("subtitle").textContent = "Could not load the ratings.";
+      });
+  </script>
+</body>
+</html>
