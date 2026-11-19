@@ -1,6 +1,6 @@
 {
  "date": "2026-11-19",
- "updated": "2026-11-19 08:25",
+ "updated": "2026-11-19 11:00",
  "source_date": "2026-11-19",
  "teams": [
   {
@@ -1151,18 +1151,18 @@
   },
   {
    "rk": 144,
-   "team": "Hawaii",
-   "conf": "Mountain West",
-   "w": 2,
-   "l": 2,
-   "pr": 0.35
-  },
-  {
-   "rk": 145,
    "team": "Toledo",
    "conf": "Mid-American",
    "w": 2,
    "l": 3,
+   "pr": 0.35
+  },
+  {
+   "rk": 145,
+   "team": "Hawaii",
+   "conf": "Mountain West",
+   "w": 2,
+   "l": 2,
    "pr": 0.35
   },
   {
@@ -1925,18 +1925,18 @@
   },
   {
    "rk": 240,
-   "team": "Iona",
-   "conf": "Metro Atlantic",
-   "w": 2,
-   "l": 4,
-   "pr": -4.85
-  },
-  {
-   "rk": 241,
    "team": "Bethune Cookman",
    "conf": "SWAC",
    "w": 0,
    "l": 5,
+   "pr": -4.85
+  },
+  {
+   "rk": 241,
+   "team": "Iona",
+   "conf": "Metro Atlantic",
+   "w": 2,
+   "l": 4,
    "pr": -4.85
   },
   {
@@ -2150,18 +2150,18 @@
   },
   {
    "rk": 268,
-   "team": "Winthrop",
-   "conf": "Big South",
-   "w": 0,
-   "l": 5,
-   "pr": -6.46
-  },
-  {
-   "rk": 269,
    "team": "Presbyterian",
    "conf": "Big South",
    "w": 1,
    "l": 3,
+   "pr": -6.46
+  },
+  {
+   "rk": 269,
+   "team": "Winthrop",
+   "conf": "Big South",
+   "w": 0,
+   "l": 5,
    "pr": -6.46
   },
   {
