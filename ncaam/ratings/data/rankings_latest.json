@@ -1,6 +1,6 @@
 {
  "date": "2026-11-19",
- "updated": "2026-11-19 06:50",
+ "updated": "2026-11-19 08:25",
  "source_date": "2026-11-19",
  "teams": [
   {
@@ -1609,18 +1609,18 @@
   },
   {
    "rk": 201,
-   "team": "Samford",
-   "conf": "Southern",
-   "w": 1,
-   "l": 2,
-   "pr": -3.29
-  },
-  {
-   "rk": 202,
    "team": "Western Carolina",
    "conf": "Southern",
    "w": 1,
    "l": 3,
+   "pr": -3.29
+  },
+  {
+   "rk": 202,
+   "team": "Samford",
+   "conf": "Southern",
+   "w": 1,
+   "l": 2,
    "pr": -3.29
   },
   {
@@ -1925,18 +1925,18 @@
   },
   {
    "rk": 240,
-   "team": "Bethune Cookman",
-   "conf": "SWAC",
-   "w": 0,
-   "l": 5,
-   "pr": -4.85
-  },
-  {
-   "rk": 241,
    "team": "Iona",
    "conf": "Metro Atlantic",
    "w": 2,
    "l": 4,
+   "pr": -4.85
+  },
+  {
+   "rk": 241,
+   "team": "Bethune Cookman",
+   "conf": "SWAC",
+   "w": 0,
+   "l": 5,
    "pr": -4.85
   },
   {
