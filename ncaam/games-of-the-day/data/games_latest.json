@@ -1,6 +1,6 @@
 {
  "date": "2026-11-21",
- "updated": "2026-11-21 07:04",
+ "updated": "2026-11-21 11:00",
  "games": [
   {
    "time": "11:00 AM",
@@ -410,8 +410,8 @@
   },
   {
    "time": "5:00 PM",
-   "tv": "",
-   "tv_url": "",
+   "tv": "YouTube",
+   "tv_url": "https://www.youtube.com",
    "visitor": "272 Nicholls",
    "home": "256 Southern Miss",
    "venue": "Pensacola Bay Center (Pensacola, FL)",
