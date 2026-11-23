@@ -1,6 +1,6 @@
 {
  "date": "2026-11-23",
- "updated": "2026-11-23 11:01",
+ "updated": "2026-11-23 11:46",
  "source_date": "2026-11-23",
  "teams": [
   {
@@ -1086,16 +1086,16 @@
   },
   {
    "rk": 136,
-   "team": "UAB",
-   "conf": "American Athletic",
+   "team": "St. Thomas",
+   "conf": "Summit League",
    "w": 4,
    "l": 3,
    "pr": 1.57
   },
   {
    "rk": 137,
-   "team": "St. Thomas",
-   "conf": "Summit League",
+   "team": "UAB",
+   "conf": "American Athletic",
    "w": 4,
    "l": 3,
    "pr": 1.57
