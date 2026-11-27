@@ -1,6 +1,6 @@
 {
  "date": "2026-11-27",
- "updated": "2026-11-27 06:53",
+ "updated": "2026-11-27 11:00",
  "source_date": "2026-11-27",
  "teams": [
   {
@@ -1763,18 +1763,18 @@
   },
   {
    "rk": 220,
-   "team": "UMass Lowell",
-   "conf": "America East",
-   "w": 3,
-   "l": 2,
-   "pr": -4.14
-  },
-  {
-   "rk": 221,
    "team": "Drexel",
    "conf": "Coastal Athletic",
    "w": 3,
    "l": 3,
+   "pr": -4.14
+  },
+  {
+   "rk": 221,
+   "team": "UMass Lowell",
+   "conf": "America East",
+   "w": 3,
+   "l": 2,
    "pr": -4.14
   },
   {
