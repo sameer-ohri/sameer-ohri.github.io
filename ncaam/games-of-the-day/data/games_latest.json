@@ -1,6 +1,6 @@
 {
  "date": "2026-11-27",
- "updated": "2026-11-27 06:53",
+ "updated": "2026-11-27 11:00",
  "games": [
   {
    "time": "11:00 AM",
@@ -74,8 +74,8 @@
   },
   {
    "time": "1:30 PM",
-   "tv": "",
-   "tv_url": "",
+   "tv": "ACC Network",
+   "tv_url": "https://www.espn.com/watch/catalog/76b92674-175c-4ff1-8989-380aa514eb87/_/redirected/trueStreaming",
    "visitor": "63 Memphis",
    "home": "74 Wake Forest",
    "venue": "Imperial Arena (Nassau, Bahamas)",
@@ -676,7 +676,7 @@
   },
   {
    "time": "11:30 PM",
-   "tv": "ESPN2, ESPN",
+   "tv": "ESPN2",
    "tv_url": "https://www.espn.com/watch",
    "visitor": "16 Texas Tech",
    "home": "59 San Diego St.",
