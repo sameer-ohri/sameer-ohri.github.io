@@ -248,53 +248,6 @@
     }
 
     #error { color: #c0392b; }
-
-    /* Daily email: the button opens the box right under it */
-    #signup { margin: -6px 0 20px; }
-
-    #signup-open, #signup-form button {
-      font: inherit;
-      font-size: 14px;
-      font-weight: 600;
-      border-radius: 9px;
-      padding: 10px 16px;
-      border: 1px solid #002868;
-      background: #002868;
-      color: #fff;
-      cursor: pointer;
-    }
-
-    #signup-form {
-      margin-top: 10px;
-      max-width: 450px;
-      background: #fff;
-      border: 1px solid #e2e6ea;
-      border-radius: 12px;
-      padding: 14px;
-    }
-
-    #signup-form label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 4px; }
-    #signup-form .hint { font-size: 13px; color: #666; margin: 0 0 10px; }
-
-    /* 16px keeps iPhones from zooming in on the box */
-    #signup-email {
-      font: inherit;
-      font-size: 16px;
-      width: 100%;
-      padding: 10px 12px;
-      border: 1px solid #c8ced6;
-      border-radius: 9px;
-      margin-bottom: 10px;
-    }
-
-    #signup-form .buttons { display: flex; flex-wrap: wrap; gap: 8px; }
-    #signup-form button.secondary { background: #fff; color: #002868; }
-    #signup-form button:disabled { opacity: 0.5; cursor: default; }
-    #signup-msg { font-size: 14px; margin: 10px 0 0; }
-    #signup-msg:empty { display: none; }
-    #signup-msg.bad { color: #c0392b; }
-    /* Left empty by people; bots that fill in every field give themselves away */
-    #signup-company { position: absolute; left: -9999px; }
   </style>
 </head>
 <body>
@@ -303,23 +256,7 @@
     <div class="accent-bar"></div>
     <h1>Men&rsquo;s College Basketball<br>Games of the Day</h1>
     <p class="subtitle" id="subtitle">Loading…</p>
-    <p class="crosslink"><a href="/ncaam/ratings/">Ratings</a> · <a href="/ncaam/conferences/">Conferences</a> · <a href="/">Home</a></p>
-    <div id="signup" hidden>
-      <button id="signup-open" type="button" aria-expanded="false" aria-controls="signup-form">Get the daily email</button>
-      <form id="signup-form" hidden>
-        <label for="signup-email">Your email</label>
-        <p class="hint">Use any address you like. If this is a work phone, you may want your personal one.
-          We&rsquo;ll email you a link to confirm.</p>
-        <input id="signup-email" name="email" type="email" required maxlength="100"
-          autocomplete="email" autocapitalize="off" spellcheck="false" />
-        <input id="signup-company" name="company" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" />
-        <div class="buttons">
-          <button type="submit" value="subscribe">Subscribe</button>
-          <button type="submit" value="unsubscribe" class="secondary">Unsubscribe</button>
-        </div>
-        <p id="signup-msg" role="status"></p>
-      </form>
-    </div>
+    <p class="crosslink"><a href="/ncaam/ratings/">Ratings</a> · <a href="/ncaam/conferences/">Conferences</a> · <a href="/">Home</a><br><a href="/ncaam/subscribe/">Subscribe/Unsubscribe</a></p>
     <div class="stale" id="stale" style="display:none"></div>
 
     <div id="main" style="display:none">
@@ -344,9 +281,6 @@
 
   <script>
     const DATA_URL = "data/games_latest.json";
-    // The Google Apps Script behind the email box (NCAAM repo, subscribe_script/Code.gs).
-    // Empty = the "Get the daily email" button stays hidden.
-    const SIGNUP_URL = "https://script.google.com/macros/s/AKfycbxCstF7Nnqf16v_rFokgjS40NNsxfEwWZPA_ezfpO5r6WYKAkMf3M3Hhbetp_8xMp4/exec";
     const GAME_MINUTES = 160;  // how long a game counts as "on" after tip-off
 
     function esc(s) {
@@ -516,51 +450,6 @@
       document.getElementById("btn-day").classList.toggle("on", STATE.view === "day");
       document.getElementById("btn-rest").classList.toggle("on", STATE.view === "rest");
     }
-
-    // The daily email box. It has its own code so it works even if the games don't load.
-    // ?signup=1 (the email's Unsubscribe link) opens it.
-    (function () {
-      if (!SIGNUP_URL) return;
-      const $ = id => document.getElementById(id);
-      const form = $("signup-form"), open = $("signup-open"), msg = $("signup-msg");
-      const buttons = form.querySelectorAll("button");
-      function show(on) {
-        form.hidden = !on;
-        open.setAttribute("aria-expanded", String(on));
-      }
-      function say(text, bad) {
-        msg.textContent = text;
-        msg.className = bad ? "bad" : "";
-      }
-      $("signup").hidden = false;
-      open.onclick = () => show(form.hidden);
-      if (new URLSearchParams(location.search).has("signup")) show(true);
-
-      form.addEventListener("submit", e => {
-        e.preventDefault();
-        const action = e.submitter && e.submitter.value === "unsubscribe" ? "unsubscribe" : "subscribe";
-        const email = $("signup-email").value.trim();
-        const body = new URLSearchParams({ action, email, company: $("signup-company").value });
-        buttons.forEach(b => b.disabled = true);
-        say("Sending\u2026");
-        fetch(SIGNUP_URL, { method: "POST", body })
-          .then(r => r.json())
-          .then(answer => {
-            if (answer.ok) {
-              say(`Check ${email} for a message from us. Nothing changes until you ` +
-                "open the link in it and tap the button. Not there? Look in spam.");
-            } else if (answer.error === "bad_email") {
-              say("That doesn\u2019t look like an email address. Please check it.", true);
-            } else if (answer.error === "busy") {
-              say("Too many requests today. Please try again tomorrow.", true);
-            } else {
-              throw new Error("refused");
-            }
-          })
-          .catch(() => say("That didn\u2019t go through. Please try again in a few minutes.", true))
-          .finally(() => buttons.forEach(b => b.disabled = false));
-      });
-    })();
 
     fetch(DATA_URL, { cache: "no-store" })
       .then(r => {

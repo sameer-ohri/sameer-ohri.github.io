@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow,noarchive" />
+  <title>Men&rsquo;s College Basketball Daily Email</title>
+  <meta name="description" content="Subscribe or unsubscribe from the daily college basketball games email." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Men&rsquo;s College Basketball Daily Email" />
+  <meta property="og:description" content="Subscribe or unsubscribe from the daily college basketball games email." />
+  <meta property="og:image" content="https://sameerohri.com/ncaam/subscribe/preview.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://sameerohri.com/ncaam/subscribe/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      margin: 0;
+      padding: 24px 16px;
+      background: #f7f8fa;
+      color: #111;
+    }
+
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    .accent-bar {
+      height: 5px;
+      background: #002868;
+      border-radius: 3px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 22px;
+      font-weight: 600;
+      margin: 0 0 4px;
+      letter-spacing: -0.3px;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      color: #666;
+      margin: 0 0 8px;
+    }
+
+    .crosslink { font-size: 15px; margin: 0 0 20px; }
+    .crosslink a { color: #002868; }
+
+    #signup-form {
+      max-width: 450px;
+      background: #fff;
+      border: 1px solid #e2e6ea;
+      border-radius: 12px;
+      padding: 14px;
+    }
+
+    #signup-form label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+
+    #signup-form button {
+      font: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 9px;
+      padding: 10px 16px;
+      border: 1px solid #002868;
+      background: #002868;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* 16px keeps iPhones from zooming in on the box */
+    #signup-email {
+      font: inherit;
+      font-size: 16px;
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #c8ced6;
+      border-radius: 9px;
+      margin-bottom: 10px;
+    }
+
+    #signup-form .buttons { display: flex; flex-wrap: wrap; gap: 8px; }
+    #signup-form button.secondary { background: #fff; color: #002868; }
+    #signup-form button:disabled { opacity: 0.5; cursor: default; }
+    #signup-msg { font-size: 14px; margin: 10px 0 0; }
+    #signup-msg:empty { display: none; }
+    #signup-msg.bad { color: #c0392b; }
+    /* Left empty by people; bots that fill in every field give themselves away */
+    #signup-company { position: absolute; left: -9999px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="accent-bar"></div>
+    <h1>Men&rsquo;s College Basketball<br>Daily Email</h1>
+    <p class="crosslink"><a href="/ncaam/ratings/">Ratings</a> · <a href="/ncaam/conferences/">Conferences</a> · <a href="/ncaam/games-of-the-day/">Today&#39;s Games</a> · <a href="/">Home</a></p>
+
+    <form id="signup-form">
+      <label for="signup-email">Your email</label>
+      <input id="signup-email" name="email" type="email" required maxlength="100"
+        autocomplete="email" autocapitalize="off" spellcheck="false" />
+      <input id="signup-company" name="company" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" />
+      <div class="buttons">
+        <button type="submit" value="subscribe">Subscribe</button>
+        <button type="submit" value="unsubscribe" class="secondary">Unsubscribe</button>
+      </div>
+      <p id="signup-msg" role="status"></p>
+    </form>
+
+  </div>
+
+  <script>
+    // The Google Apps Script behind this box (NCAAM repo, subscribe_script/Code.gs)
+    const SIGNUP_URL = "https://script.google.com/macros/s/AKfycbxCstF7Nnqf16v_rFokgjS40NNsxfEwWZPA_ezfpO5r6WYKAkMf3M3Hhbetp_8xMp4/exec";
+
+    (function () {
+      const $ = id => document.getElementById(id);
+      const form = $("signup-form"), msg = $("signup-msg");
+      const buttons = form.querySelectorAll("button");
+      function say(text, bad) {
+        msg.textContent = text;
+        msg.className = bad ? "bad" : "";
+      }
+
+      form.addEventListener("submit", e => {
+        e.preventDefault();
+        const action = e.submitter && e.submitter.value === "unsubscribe" ? "unsubscribe" : "subscribe";
+        const email = $("signup-email").value.trim();
+        const body = new URLSearchParams({ action, email, company: $("signup-company").value });
+        buttons.forEach(b => b.disabled = true);
+        say("Sending\u2026");
+        fetch(SIGNUP_URL, { method: "POST", body })
+          .then(r => r.json())
+          .then(answer => {
+            if (answer.ok) {
+              say("Check your email to confirm.");
+            } else if (answer.error === "bad_email") {
+              say("That doesn\u2019t look like an email address. Please check it.", true);
+            } else if (answer.error === "busy") {
+              say("Too many requests today. Please try again tomorrow.", true);
+            } else {
+              throw new Error("refused");
+            }
+          })
+          .catch(() => say("That didn\u2019t go through. Please try again in a few minutes.", true))
+          .finally(() => buttons.forEach(b => b.disabled = false));
+      });
+    })();
+  </script>
+</body>
+</html>
