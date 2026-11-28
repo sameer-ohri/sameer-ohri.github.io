@@ -1,6 +1,6 @@
 {
  "date": "2026-11-28",
- "updated": "2026-11-28 06:50",
+ "updated": "2026-11-28 11:00",
  "games": [
   {
    "time": "12:00 PM",
@@ -74,8 +74,8 @@
   },
   {
    "time": "1:00 PM",
-   "tv": "",
-   "tv_url": "",
+   "tv": "YouTube",
+   "tv_url": "https://www.youtube.com",
    "visitor": "239 Radford",
    "home": "299 Hampton",
    "venue": "Bender Arena (Washington, DC)",
@@ -130,8 +130,8 @@
   },
   {
    "time": "1:30 PM",
-   "tv": "",
-   "tv_url": "",
+   "tv": "YouTube",
+   "tv_url": "https://www.youtube.com",
    "visitor": "255 Lehigh",
    "home": "153 Pepperdine",
    "venue": "Gilbert Arena (Thousand Oaks, CA)",
